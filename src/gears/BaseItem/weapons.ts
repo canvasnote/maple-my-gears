@@ -42,7 +42,7 @@ export const weapons: Array<IBaseItem> = [
 
   {
     type: "Weapon",
-    name: "アーケイン武器",
+    name: "ジェネシス武器",
     level: 200,
     baseStat: [
       { type: "AMA", amount: -1, defindByJob: true },
