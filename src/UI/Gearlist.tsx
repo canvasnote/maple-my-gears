@@ -66,7 +66,12 @@ export const GearsTable = () => {
     }
     
     const Options = (list: Array<IBaseItem>) => {
-        const result = list.map(element => <option value={element.type} className="bg-gray-600 justify-start">{element.JMSName}</option>)
+        const result = list.map(
+            element => 
+            <option key={element.JMSName} value={element.type} className="bg-gray-600 justify-start">
+                {element.JMSName}
+                </option>
+                )
         return <>{result}</>
     }
 
