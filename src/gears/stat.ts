@@ -11,6 +11,10 @@ type StatType =
     "MainStatNot%" | "SubStat1Not%" | "SubStat2Not%" |
     // ステ％
     "MainStat%" | "SubStat1%" | "SubStat2%" | "AllStat%" |
+    // FlatHPMP(潜在乗る)
+    "HP" | "MP" |
+    // HPMP%
+    "HP%" | "MP%" |
     // 攻撃力/魔力
     "AMA" | "AMA%" |
     // ダメージ％
@@ -26,5 +30,7 @@ type StatType =
     // フォース
     "ArcaneForce" | "AuthenticForce" |
     // メル獲得量/ドロップ率増加
-    "MesoAmount" | "DropRate"
+    "MesoAmount" | "DropRate" |
+    // 能力なし(セット効果付き装備を1個着用したときに使う)
+    "None"
 
