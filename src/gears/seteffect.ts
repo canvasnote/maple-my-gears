@@ -239,6 +239,63 @@ export const setEffects: Array<ISetEffect> = [
     },
 
     {
+        internalName: "Brilliant",
+        JMSName: "光輝のボスアクセサリーセット",
+        applying: ["Ring", "Ring", "Pendant", "Medal", "Face"], // 一旦2025/12KMS実装分まで 指輪2個は仕様
+        stats: [
+            [], // 1セット
+            [ // 2セット
+                { type: "AMA", amount: 20 },
+                { type: "MainStat", amount: 20},
+                { type: "SubStat1", amount: 20},
+                { type: "SubStat2", amount: 20},
+                { type: "HP", amount: 500},
+                { type: "BossDamage", amount: 15 }
+            ],
+            [ // 3セット
+                { type: "AMA", amount: 20 },
+                { type: "MainStat", amount: 20},
+                { type: "SubStat1", amount: 20},
+                { type: "SubStat2", amount: 20},
+                { type: "HP", amount: 500},
+                { type: "IgnoreDefence", amount: 15 }
+            ],
+            [ // 4セット
+                { type: "AMA", amount: 20 },
+                { type: "MainStat", amount: 20},
+                { type: "SubStat1", amount: 20},
+                { type: "SubStat2", amount: 20},
+                { type: "HP", amount: 500},
+                { type: "CriticalDamage", amount: 5 }
+            ],
+            [ // 5セット
+                { type: "AMA", amount: 20 },
+                { type: "MainStat", amount: 20},
+                { type: "SubStat1", amount: 20},
+                { type: "SubStat2", amount: 20},
+                { type: "HP", amount: 500},
+                { type: "BossDamage", amount: 15 }
+                
+            ],
+            [// 6セット以降未実装
+                
+            ],
+            [ // 7セット
+                
+            ],
+            [ // 8セット
+                
+            ],
+            [ // 9セット
+                
+            ],
+            [ // 10セット
+                
+            ],
+        ]
+    },
+
+    {
         internalName: "ArcaneShade",
         JMSName: "アーケインセット",
         applying: ["Weapon", "Head", "FullCloth", "Shoulder", "Mantle", "Gloves", "Boots"],
