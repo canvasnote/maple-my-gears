@@ -167,7 +167,7 @@ export const subweapons: Array<IBaseItem> = [
   },
   {
     type: "SubWeapon",
-    JMSName: "アーケインシェード扇(UGとスタフォと転生は魔力の半分を入力してください)",
+    JMSName: "アブソレス扇(UGとスタフォと転生は魔力の半分を入力してください)",
     level: 160,
     setEffectName: [],
     baseStat: [
