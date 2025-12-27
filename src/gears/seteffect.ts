@@ -126,6 +126,38 @@ export const setEffects: Array<ISetEffect> = [
     },
 
     {
+        internalName: "Dawn",
+        JMSName: "黎明のボスアクセサリーセット",
+        applying: ["Face", "Eye", "Ring", "EarRing"],
+        stats: [
+            [], // 1セット
+            [ // 2セット
+                { type: "AMA", amount: 10 },
+                { type: "MainStat", amount: 10 },
+                { type: "SubStat1", amount: 10 },
+                { type: "SubStat2", amount: 10 },
+                { type: "HP", amount: 250 },
+                { type: "BossDamage", amount: 10 }
+            ],
+            [ // 3セット
+                { type: "AMA", amount: 10 },
+                { type: "MainStat", amount: 10 },
+                { type: "SubStat1", amount: 10 },
+                { type: "SubStat2", amount: 10 },
+                { type: "HP", amount: 250 },
+            ],
+            [ // 4セット
+                { type: "AMA", amount: 10 },
+                { type: "MainStat", amount: 10 },
+                { type: "SubStat1", amount: 10 },
+                { type: "SubStat2", amount: 10 },
+                { type: "HP", amount: 250 },
+                { type: "IgnoreDefence", amount: 10 }
+            ]
+        ]
+    },
+
+    {
         internalName: "ArcaneShade",
         JMSName: "アーケインセット",
         applying: ["Weapon", "Head", "FullCloth", "Shoulder", "Mantle", "Gloves", "Boots"],
