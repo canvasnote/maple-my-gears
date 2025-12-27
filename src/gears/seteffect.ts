@@ -82,6 +82,25 @@ export const setEffects: Array<ISetEffect> = [
         ]
     },
 
+    {
+        internalName: "Meister",
+        JMSName: "マイスターセット",
+        applying: ["Weapon", "Ring", "Shoulder", "EarRing"],
+        stats: [
+            [], // 1セット
+            [ // 2セット
+                { type: "HP%", amount: 10 },
+                { type: "MP%", amount: 10 }
+            ],
+            [ // 3セット
+                { type: "AMA", amount: 40 }
+            ],
+            [ // 4セット
+                { type: "BossDamage", amount: 20 }
+            ]
+        ]
+    },
+
 　　　{
         internalName: "Boss",
         JMSName: "ボスアクセサリーセット",
