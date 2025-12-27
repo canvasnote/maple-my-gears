@@ -82,6 +82,49 @@ export const setEffects: Array<ISetEffect> = [
         ]
     },
 
+　　　{
+        internalName: "Boss",
+        JMSName: "ボスアクセサリーセット",
+        applying: ["Face", "Eyes", "Ring", "Pendant", "Shoulder", "EarRing", "Pocket", "Badge"],
+        stats: [
+            [], // 1セット
+            [], // 2セット
+            [ // 3セット
+                { type: "AMA", amount: 5 },
+                { type: "MainStat", amount: 10},
+                { type: "SubStat1", amount: 10},
+                { type: "SubStat2", amount: 10},
+                { type: "HP%", amount: 5},
+                 { type: "MP%", amount: 5}
+            ],
+            [], // 4セット
+            [ // 5セット
+                { type: "AMA", amount: 5 },
+                { type: "MainStat", amount: 10},
+                { type: "SubStat1", amount: 10},
+                { type: "SubStat2", amount: 10},
+                { type: "HP%", amount: 5},
+                 { type: "MP%", amount: 5}
+            ],
+            [], // 6セット
+            [ // 7セット
+                { type: "AMA", amount: 10 },
+                { type: "MainStat", amount: 10},
+                { type: "SubStat1", amount: 10},
+                { type: "SubStat2", amount: 10},
+                { type: "IgnoreDefence", amount: 10 }
+            ],
+            [], // 8セット
+            [ // 9セット
+                { type: "AMA", amount: 10 },
+                { type: "MainStat", amount: 15},
+                { type: "SubStat1", amount: 15},
+                { type: "SubStat2", amount: 15},
+                { type: "BossDamage", amount: 10 }
+            ],
+        ]
+    },
+
     {
         internalName: "ArcaneShade",
         JMSName: "アーケインセット",
