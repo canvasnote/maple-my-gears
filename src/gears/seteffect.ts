@@ -169,6 +169,31 @@ export const setEffects: Array<ISetEffect> = [
                 { type: "BossDamage", amount: 15}
             ]
         ]
-    }
+    },
+    {
+        internalName: "Verrad",
+        JMSName: "ヴェラッドセット",
+        applying: ["EarRing", "Pendant", "Ring", "Belt"],
+        stats: [
+            [], // 1セット
+            [ // 2セット
+                { type: "MainStat", amount: 20},
+                { type: "SubStat1", amount: 20},
+                { type: "SubStat2", amount: 20},
+                 { type: "HP", amount: 1500},
+                { type: "MP", amount: 1500},
+            ],
+            [ // 3セット
+                { type: "AMA", amount: 35 },
+                { type: "HP%", amount: 13 },
+                 { type: "MP%", amount: 13 }
+            ],
+            [ // 4セット
+                { type: "BossDamage", amount: 30 },
+                { type: "IgnoreDefence", amount: 30}
+            ]
+
+        ]
+    },
 ]
 
