@@ -85,7 +85,7 @@ export const setEffects: Array<ISetEffect> = [
 　　　{
         internalName: "Boss",
         JMSName: "ボスアクセサリーセット",
-        applying: ["Face", "Eyes", "Ring", "Pendant", "Shoulder", "EarRing", "Pocket", "Badge"],
+        applying: ["Face", "Eyes", "Ring", "Pendant", "Shoulder", "Belt", "EarRing", "Pocket", "Badge"],
         stats: [
             [], // 1セット
             [], // 2セット
@@ -154,6 +154,87 @@ export const setEffects: Array<ISetEffect> = [
                 { type: "HP", amount: 250 },
                 { type: "IgnoreDefence", amount: 10 }
             ]
+        ]
+    },
+
+    {
+        internalName: "Pitched",
+        JMSName: "漆黒のボスアクセサリーセット",
+        applying: ["Face", "Eyes", "Ring", "Pendant", "EarRing", "Belt", "Pocket", "Badge", "Heart", "Embrem"],
+        stats: [
+            [], // 1セット
+            [ // 2セット
+                { type: "AMA", amount: 10 },
+                { type: "MainStat", amount: 10},
+                { type: "SubStat1", amount: 10},
+                { type: "SubStat2", amount: 10},
+                { type: "HP", amount: 250},
+                { type: "BossDamage", amount: 10 }
+            ],
+            [ // 3セット
+                { type: "AMA", amount: 10 },
+                { type: "MainStat", amount: 10},
+                { type: "SubStat1", amount: 10},
+                { type: "SubStat2", amount: 10},
+                { type: "HP", amount: 250},
+                { type: "IgnoreDefence", amount: 10 }
+            ],
+            [ // 4セット
+                { type: "AMA", amount: 15 },
+                { type: "MainStat", amount: 15},
+                { type: "SubStat1", amount: 15},
+                { type: "SubStat2", amount: 15},
+                { type: "HP", amount: 375},
+                { type: "CriticalDamage", amount: 5 }
+            ],
+            [ // 5セット
+                { type: "AMA", amount: 15 },
+                { type: "MainStat", amount: 15},
+                { type: "SubStat1", amount: 15},
+                { type: "SubStat2", amount: 15},
+                { type: "HP", amount: 375},
+                { type: "BossDamage", amount: 10 }
+            ],
+            [// 6セット
+                { type: "AMA", amount: 15 },
+                { type: "MainStat", amount: 15},
+                { type: "SubStat1", amount: 15},
+                { type: "SubStat2", amount: 15},
+                { type: "HP", amount: 375},
+                { type: "IgnoreDefence", amount: 10 }
+            ],
+            [ // 7セット
+                { type: "AMA", amount: 15 },
+                { type: "MainStat", amount: 15},
+                { type: "SubStat1", amount: 15},
+                { type: "SubStat2", amount: 15},
+                { type: "HP", amount: 375},
+                { type: "CriticalDamage", amount: 5 }
+            ],
+            [ // 8セット
+                { type: "AMA", amount: 15 },
+                { type: "MainStat", amount: 15},
+                { type: "SubStat1", amount: 15},
+                { type: "SubStat2", amount: 15},
+                { type: "HP", amount: 375},
+                { type: "BossDamage", amount: 10 }
+            ],
+            [ // 9セット
+                { type: "AMA", amount: 15 },
+                { type: "MainStat", amount: 15},
+                { type: "SubStat1", amount: 15},
+                { type: "SubStat2", amount: 15},
+                { type: "HP", amount: 375},
+                { type: "CriticalDamage", amount: 5 }
+            ],
+            [ // 10セット
+                { type: "AMA", amount: 20 },
+                { type: "MainStat", amount: 20},
+                { type: "SubStat1", amount: 20},
+                { type: "SubStat2", amount: 20},
+                { type: "HP", amount: 500},
+                { type: "BossDamage", amount: 10 }
+            ],
         ]
     },
 
