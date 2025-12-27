@@ -3,7 +3,22 @@ import type { IBaseItem } from "./baseitem";
 export const weapons: Array<IBaseItem> = [
   {
     type: "Weapon",
-    name: "ファフニール武器",
+    JMSName: "ファフニール武器",
+    level: 150,
+    setEffectName: ["Fafnir"],
+    baseStat: [
+      { type: "AMA", amount: -1, defindByJob: true },
+      { type: "MainStat", amount: 40 },
+      { type: "SubStat1", amount: 40 },
+      { type: "IgnoreDefence", amount: 10 },
+      { type: "BossDamage", amount: 30 },
+    ],
+  },
+
+  {
+    type: "Weapon",
+    JMSName: "アブソレス武器",
+    setEffectName: ["Absolab"],
     level: 150,
     baseStat: [
       { type: "AMA", amount: -1, defindByJob: true },
@@ -16,20 +31,8 @@ export const weapons: Array<IBaseItem> = [
 
   {
     type: "Weapon",
-    name: "アブソレス武器",
-    level: 150,
-    baseStat: [
-      { type: "AMA", amount: -1, defindByJob: true },
-      { type: "MainStat", amount: 40 },
-      { type: "SubStat1", amount: 40 },
-      { type: "IgnoreDefence", amount: 10 },
-      { type: "BossDamage", amount: 30 },
-    ],
-  },
-
-  {
-    type: "Weapon",
-    name: "アーケイン武器",
+    JMSName: "アーケイン武器",
+    setEffectName: ["ArcaneShade"],
     level: 200,
     baseStat: [
       { type: "AMA", amount: -1, defindByJob: true },
@@ -42,7 +45,8 @@ export const weapons: Array<IBaseItem> = [
 
   {
     type: "Weapon",
-    name: "ジェネシス武器",
+    JMSName: "ジェネシス武器",
+    setEffectName: ["Luckey", "Eternel"],
     level: 200,
     baseStat: [
       { type: "AMA", amount: -1, defindByJob: true },
@@ -56,7 +60,8 @@ export const weapons: Array<IBaseItem> = [
 
   {
     type: "Weapon",
-    name: "ディスティニー武器",
+    JMSName: "ディスティニー武器",
+    setEffectName: ["Luckey", "Eternel"],
     level: 200,
     baseStat: [
       { type: "AMA", amount: -1, defindByJob: true },

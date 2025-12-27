@@ -3,8 +3,9 @@ import type { IBaseItem } from "./baseitem";
 export const subweapons: Array<IBaseItem> = [
   {
     type: "SubWeapon",
-    name: "補助武器(通常)",
+    JMSName: "補助武器(通常)",
     level: 100,
+    setEffectName: [],
     baseStat: [
       { type: "AMA", amount: 3 },
       { type: "MainStat", amount: 10 },
@@ -13,8 +14,16 @@ export const subweapons: Array<IBaseItem> = [
   },
   {
     type: "SubWeapon",
-    name: "補助武器(ブラック)",
+    JMSName: "補助武器(通常, 能力なし--メルセデス等)",
     level: 100,
+    setEffectName: [],
+    baseStat: [],
+  },
+  {
+    type: "SubWeapon",
+    JMSName: "補助武器(ブラック)",
+    level: 100,
+    setEffectName: [],
     baseStat: [
       { type: "AMA", amount: 5 },
       { type: "MainStat", amount: 8 },
@@ -23,8 +32,9 @@ export const subweapons: Array<IBaseItem> = [
   },
   {
     type: "SubWeapon",
-    name: "補助武器(ノウヒメ)",
+    JMSName: "補助武器(ノウヒメ)",
     level: 100,
+    setEffectName: [],
     baseStat: [
       { type: "AMA", amount: 9 },
       { type: "MainStat", amount: 14 },
@@ -33,27 +43,28 @@ export const subweapons: Array<IBaseItem> = [
   },
   {
     type: "SubWeapon",
-    name: "130盾",
+    JMSName: "130(ダイモス)盾",
     level: 130,
+    setEffectName: [],
     baseStat: [
-      { type: "AMA", amount: "" },
-      { type: "MainStat", amount: "" },
-      { type: "SubStat1", amount: "" },
+      { type: "MainStat", amount: 10 },
     ],
   },
   {
     type: "SubWeapon",
-    name: "ファフニールラピッドフエッジ",
+    JMSName: "ラヴァナイフ",
     level: 150,
+    setEffectName: [],
     baseStat: [
-      { type: "AMA", amount: 81 },
-      { type: "MainStat", amount: 40 },
+      { type: "AMA", amount: 15 },
+      { type: "MainStat", amount: 2 },
     ],
   },
   {
     type: "SubWeapon",
-    name: "アブソレスブレイド",
+    JMSName: "アブソレスブレイド",
     level: 160,
+    setEffectName: [],
     baseStat: [
       { type: "AMA", amount: 97 },
       { type: "MainStat", amount: 40 },
@@ -63,18 +74,38 @@ export const subweapons: Array<IBaseItem> = [
   },
   {
     type: "SubWeapon",
-    name: "スイングウォーターブレイド",
+    JMSName: "スイングウォーターブレイド",
     level: 160,
+    setEffectName: [],
     baseStat: [
       { type: "AMA", amount: 86 },
     ],
   },
   {
     type: "SubWeapon",
-    name: "アーケインシェードブレイド",
+    JMSName: "アーケインシェードブレイド",
     level: 200,
+    setEffectName: [],
     baseStat: [
       { type: "AMA", amount: 140 },
+    ],
+  },
+  {
+    type: "SubWeapon",
+    JMSName: "アーケインシェード扇(UGとスタフォと転生は魔力の半分を入力してください)",
+    level: 160,
+    setEffectName: [],
+    baseStat: [
+      { type: "AMA", amount: 241 / 2 },
+    ],
+  },
+  {
+    type: "SubWeapon",
+    JMSName: "アーケインシェード扇(UGとスタフォと転生は魔力の半分を入力してください)",
+    level: 200,
+    setEffectName: [],
+    baseStat: [
+      { type: "AMA", amount: 347 / 2 },
     ],
   },
 ];
