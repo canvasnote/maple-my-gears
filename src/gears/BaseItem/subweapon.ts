@@ -92,6 +92,69 @@ export const subweapons: Array<IBaseItem> = [
   },
   {
     type: "SubWeapon",
+    JMSName: "ラズリ 5型(150LV)",
+    level: 150,
+    setEffectName: [],
+    baseStat: [
+      { type: "AMA", amount: 121 },
+    ],
+  },
+  {
+    type: "SubWeapon",
+    JMSName: "ラズリ 6型(160LV)",
+    level: 160,
+    setEffectName: [],
+    baseStat: [
+      { type: "AMA", amount: 139 },
+    ],
+  },
+  {
+    type: "SubWeapon",
+    JMSName: "ラズリ 7型(170LV)",
+    level: 170,
+    setEffectName: [],
+    baseStat: [
+      { type: "AMA", amount: 173 },
+    ],
+  },
+  {
+    type: "SubWeapon",
+    JMSName: "ラズリ 8型(180LV/アブソレス)",
+    level: 180,
+    setEffectName: [],
+    baseStat: [
+      { type: "AMA", amount: 207 },
+    ],
+  },
+  {
+    type: "SubWeapon",
+    JMSName: "ラズリ 9型(200LV/アーケイン)",
+    level: 200,
+    setEffectName: [],
+    baseStat: [
+      { type: "AMA", amount: 297 },
+    ],
+  },
+  {
+    type: "SubWeapon",
+    JMSName: "ラズリ 10型(200LV/ジェネシス)",
+    level: 200,
+    setEffectName: [],
+    baseStat: [
+      { type: "AMA", amount: 342 },
+    ],
+  },
+{
+    type: "SubWeapon",
+    JMSName: "ディスティニーラズリ(250LV)",
+    level: 250,
+    setEffectName: [],
+    baseStat: [
+      { type: "AMA", amount: 370 },
+    ],
+  },
+  {
+    type: "SubWeapon",
     JMSName: "アーケインシェード扇(UGとスタフォと転生は魔力の半分を入力してください)",
     level: 160,
     setEffectName: [],
