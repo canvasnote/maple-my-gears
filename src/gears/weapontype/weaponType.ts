@@ -1,6 +1,6 @@
 export interface IWeaponType{
     internalName: string
-    jpName: string
+    JMSName: string
     atkFafnir: number
     atkAbsolab: number
     atkArcane: number
@@ -11,7 +11,7 @@ export interface IWeaponType{
 export const jobs: Array<IWeaponType> = [
     {
         internalName: "Warrior",
-        jpName: "----戦士----",
+        JMSName: "----戦士----",
         atkFafnir: 0,
         atkAbsolab: 0,
         atkArcane: 0,
@@ -20,7 +20,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "OneHandedSword",
-        jpName: "片手剣",
+        JMSName: "片手剣",
         atkFafnir: 164,
         atkAbsolab: 197,
         atkArcane: 283,
@@ -29,7 +29,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "TwoHandedSword",
-        jpName: "両手剣",
+        JMSName: "両手剣",
         atkFafnir: 171,
         atkAbsolab: 205,
         atkArcane: 295,
@@ -38,7 +38,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "OneHandedSword",
-        jpName: "片手斧",
+        JMSName: "片手斧",
         atkFafnir: 164,
         atkAbsolab: 197,
         atkArcane: 283,
@@ -47,7 +47,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "TwoHandedSword",
-        jpName: "両手斧",
+        JMSName: "両手斧",
         atkFafnir: 171,
         atkAbsolab: 205,
         atkArcane: 295,
@@ -56,7 +56,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "OneHandedBlunt",
-        jpName: "片手鈍器",
+        JMSName: "片手鈍器",
         atkFafnir: 164,
         atkAbsolab: 197,
         atkArcane: 283,
@@ -65,7 +65,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "TwoHandedBlunt",
-        jpName: "両手鈍器",
+        JMSName: "両手鈍器",
         atkFafnir: 171,
         atkAbsolab: 205,
         atkArcane: 295,
@@ -74,7 +74,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "Halberd",
-        jpName: "鉾",
+        JMSName: "鉾",
         atkFafnir: 171,
         atkAbsolab: 184,
         atkArcane: 264,
@@ -83,7 +83,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "Hero_OneHandedSword",
-        jpName: "槍",
+        JMSName: "槍",
         atkFafnir: 153,
         atkAbsolab: 205,
         atkArcane: 295,
@@ -92,7 +92,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "Hero_OneHandedSword",
-        jpName: "デスペラード",
+        JMSName: "デスペラード",
         atkFafnir: 171,
         atkAbsolab: 205,
         atkArcane: 295,
@@ -101,7 +101,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "GuantletRevolber",
-        jpName: "ガントレットリボルバー",
+        JMSName: "ガントレットリボルバー",
         atkFafnir: 128,
         atkAbsolab: 154,
         atkArcane: 221,
@@ -110,7 +110,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "Tuner",
-        jpName: "チューナー",
+        JMSName: "チューナー",
         atkFafnir: 171,
         atkAbsolab: 205,
         atkArcane: 295,
@@ -118,8 +118,17 @@ export const jobs: Array<IWeaponType> = [
         atkDestiny: 0
     },
     {
+        internalName: "Zero",
+        JMSName: "太刀(ゼロ)",
+        atkFafnir: 0,
+        atkAbsolab: 0,
+        atkArcane: 0,
+        atkGenesis: 340,
+        atkDestiny: 0
+    },
+    {
         internalName: "Ren",
-        jpName: "長剣",
+        JMSName: "長剣",
         atkFafnir: 171,
         atkAbsolab: 205,
         atkArcane: 295,
@@ -128,7 +137,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "Katana",
-        jpName: "刀",
+        JMSName: "刀",
         atkFafnir: 164,
         atkAbsolab: 197,
         atkArcane: 283,
@@ -137,7 +146,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "Wizard",
-        jpName: "----魔法使い----",
+        JMSName: "----魔法使い----",
         atkFafnir: 0,
         atkAbsolab: 0,
         atkArcane: 0,
@@ -146,7 +155,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "Staff",
-        jpName: "杖(ワンド)",
+        JMSName: "杖(ワンド)",
         atkFafnir: 201,
         atkAbsolab: 241,
         atkArcane: 347,
@@ -155,7 +164,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "Staff",
-        jpName: "棒(スタッフ)",
+        JMSName: "棒(スタッフ)",
         atkFafnir: 204,
         atkAbsolab: 245,
         atkArcane: 353,
@@ -164,7 +173,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "ShiningRod",
-        jpName: "シャイニングロッド",
+        JMSName: "シャイニングロッド",
         atkFafnir: 201,
         atkAbsolab: 241,
         atkArcane: 347,
@@ -173,7 +182,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "ESPLimitter",
-        jpName: "ESPリミッター",
+        JMSName: "ESPリミッター",
         atkFafnir: 201,
         atkAbsolab: 241,
         atkArcane: 347,
@@ -182,7 +191,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "MagicGuantlet",
-        jpName: "マジックガントレット",
+        JMSName: "マジックガントレット",
         atkFafnir: 201,
         atkAbsolab: 241,
         atkArcane: 347,
@@ -191,7 +200,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "Fan_Kanna",
-        jpName: "扇",
+        JMSName: "扇",
         atkFafnir: 175,
         atkAbsolab: 241,
         atkArcane: 347,
@@ -200,7 +209,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "MemorialStaff",
-        jpName: "メモリアルスタッフ",
+        JMSName: "メモリアルスタッフ",
         atkFafnir: 175,
         atkAbsolab: 241,
         atkArcane: 347,
@@ -209,7 +218,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "Archer",
-        jpName: "----弓使い----",
+        JMSName: "----弓使い----",
         atkFafnir: 0,
         atkAbsolab: 0,
         atkArcane: 0,
@@ -218,7 +227,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "Bow",
-        jpName: "弓",
+        JMSName: "弓",
         atkFafnir: 160,
         atkAbsolab: 192,
         atkArcane: 276,
@@ -227,7 +236,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "CrossBow",
-        jpName: "弩",
+        JMSName: "弩",
         atkFafnir: 164,
         atkAbsolab: 197,
         atkArcane: 283,
@@ -236,7 +245,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "DualBowgun",
-        jpName: "デュアルボウガン",
+        JMSName: "デュアルボウガン",
         atkFafnir: 160,
         atkAbsolab: 192,
         atkArcane: 276,
@@ -245,7 +254,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "AncientBow",
-        jpName: "エンシェントボウ",
+        JMSName: "エンシェントボウ",
         atkFafnir: 160,
         atkAbsolab: 192,
         atkArcane: 276,
@@ -254,7 +263,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "BlessShooter",
-        jpName: "ブレスシューター",
+        JMSName: "ブレスシューター",
         atkFafnir: 160,
         atkAbsolab: 192,
         atkArcane: 276,
@@ -263,7 +272,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "Rogue",
-        jpName: "----盗賊----",
+        JMSName: "----盗賊----",
         atkFafnir: 0,
         atkAbsolab: 0,
         atkArcane: 0,
@@ -272,7 +281,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "ShortSword",
-        jpName: "短剣",
+        JMSName: "短剣",
         atkFafnir: 160,
         atkAbsolab: 192,
         atkArcane: 276,
@@ -281,7 +290,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "Guantlet",
-        jpName: "篭手",
+        JMSName: "篭手",
         atkFafnir: 86,
         atkAbsolab: 103,
         atkArcane: 149,
@@ -290,7 +299,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "Cane",
-        jpName: "ケイン",
+        JMSName: "ケイン",
         atkFafnir: 164,
         atkAbsolab: 197,
         atkArcane: 283,
@@ -299,7 +308,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "Chain",
-        jpName: "チェーン",
+        JMSName: "チェーン",
         atkFafnir: 128,
         atkAbsolab: 192,
         atkArcane: 276,
@@ -308,7 +317,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "Fan_Hoyong",
-        jpName: "術扇",
+        JMSName: "術扇",
         atkFafnir: 128,
         atkAbsolab: 192,
         atkArcane: 276,
@@ -317,7 +326,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "Chakram",
-        jpName: "チャクラム",
+        JMSName: "チャクラム",
         atkFafnir: 128,
         atkAbsolab: 192,
         atkArcane: 276,
@@ -326,7 +335,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "Pirate",
-        jpName: "----海賊----",
+        JMSName: "----海賊----",
         atkFafnir: 0,
         atkAbsolab: 0,
         atkArcane: 0,
@@ -335,7 +344,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "Knuckle",
-        jpName: "ナックル",
+        JMSName: "ナックル",
         atkFafnir: 128,
         atkAbsolab: 154,
         atkArcane: 221,
@@ -344,7 +353,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "Gun",
-        jpName: "銃",
+        JMSName: "銃",
         atkFafnir: 125,
         atkAbsolab: 150,
         atkArcane: 216,
@@ -353,7 +362,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "HandCannon",
-        jpName: "ハンドキャノン",
+        JMSName: "ハンドキャノン",
         atkFafnir: 175,
         atkAbsolab: 210,
         atkArcane: 302,
@@ -362,7 +371,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "SoulShooter",
-        jpName: "ソウルシューター",
+        JMSName: "ソウルシューター",
         atkFafnir: 128,
         atkAbsolab: 154,
         atkArcane: 221,
@@ -371,7 +380,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "Xenon",
-        jpName: "----ゼノン----",
+        JMSName: "----ゼノン----",
         atkFafnir: 0,
         atkAbsolab: 0,
         atkArcane: 0,
@@ -380,7 +389,7 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "EnergySword",
-        jpName: "エナジーソード",
+        JMSName: "エナジーソード",
         atkFafnir: 128,
         atkAbsolab: 154,
         atkArcane: 221,
