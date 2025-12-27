@@ -6,17 +6,21 @@ export interface ISetEffect {
     JMSName: string
     applying: Array<GearType>
     stats: Array<Array<IStat>>
-} 
+}
 
 export type SetEffectName =
-// ファフニール/アブソレス/アーケインシェード/エテルネル
-"Fafnir" | "Absolab" | "ArcaneShade" | "Eternel" | 
-// ボスアクセ/黎明/漆黒/光輝
-"Boss" | "Dawn" | "Pitched" | "Brilliance" |
-// ヴェラッド/マイスター
-"Verrad" | "Meister" | 
-// ラッキーアイテム
-"Luckey"
+    // ファフニール/アブソレス/アーケインシェード/エテルネル
+    "Fafnir" | "Absolab" | "ArcaneShade" | "Eternel" |
+    // ボスアクセ/黎明/漆黒/光輝
+    "Boss" | "Dawn" | "Pitched" | "Brilliance" |
+    // ヴェラッド/マイスター
+    "Verrad" | "Meister" |
+    // モンパ
+    "MonsterPark" |
+    // トーテム
+    "AfterLand" | "GuildCastle" |
+    // ラッキーアイテム
+    "Luckey"
 
 export const setEffects: Array<ISetEffect> = [
     {
@@ -53,14 +57,14 @@ export const setEffects: Array<ISetEffect> = [
                 { type: "AMA", amount: 20 },
                 { type: "HP", amount: 1500 },
                 { type: "MP", amount: 1500 },
-                { type: "BossDamage", amount: 10}
+                { type: "BossDamage", amount: 10 }
             ],
             [ // 3セット
                 { type: "AMA", amount: 20 },
-                { type: "MainStat", amount: 30},
-                { type: "SubStat1", amount: 30},
-                { type: "SubStat2", amount: 30},
-                { type: "BossDamage", amount: 10}
+                { type: "MainStat", amount: 30 },
+                { type: "SubStat1", amount: 30 },
+                { type: "SubStat2", amount: 30 },
+                { type: "BossDamage", amount: 10 }
             ],
             [ // 4セット
                 { type: "AMA", amount: 25 },
@@ -68,7 +72,7 @@ export const setEffects: Array<ISetEffect> = [
             ],
             [ // 5セット
                 { type: "AMA", amount: 30 },
-                { type: "BossDamage", amount: 10}
+                { type: "BossDamage", amount: 10 }
             ],
             [ // 6セット
                 { type: "AMA", amount: 20 },
@@ -101,7 +105,7 @@ export const setEffects: Array<ISetEffect> = [
         ]
     },
 
-　　　{
+    {
         internalName: "Boss",
         JMSName: "ボスアクセサリーセット",
         applying: ["Face", "Eyes", "Ring", "Pendant", "Shoulder", "Belt", "EarRing", "Pocket", "Badge"],
@@ -110,35 +114,35 @@ export const setEffects: Array<ISetEffect> = [
             [], // 2セット
             [ // 3セット
                 { type: "AMA", amount: 5 },
-                { type: "MainStat", amount: 10},
-                { type: "SubStat1", amount: 10},
-                { type: "SubStat2", amount: 10},
-                { type: "HP%", amount: 5},
-                 { type: "MP%", amount: 5}
+                { type: "MainStat", amount: 10 },
+                { type: "SubStat1", amount: 10 },
+                { type: "SubStat2", amount: 10 },
+                { type: "HP%", amount: 5 },
+                { type: "MP%", amount: 5 }
             ],
             [], // 4セット
             [ // 5セット
                 { type: "AMA", amount: 5 },
-                { type: "MainStat", amount: 10},
-                { type: "SubStat1", amount: 10},
-                { type: "SubStat2", amount: 10},
-                { type: "HP%", amount: 5},
-                 { type: "MP%", amount: 5}
+                { type: "MainStat", amount: 10 },
+                { type: "SubStat1", amount: 10 },
+                { type: "SubStat2", amount: 10 },
+                { type: "HP%", amount: 5 },
+                { type: "MP%", amount: 5 }
             ],
             [], // 6セット
             [ // 7セット
                 { type: "AMA", amount: 10 },
-                { type: "MainStat", amount: 10},
-                { type: "SubStat1", amount: 10},
-                { type: "SubStat2", amount: 10},
+                { type: "MainStat", amount: 10 },
+                { type: "SubStat1", amount: 10 },
+                { type: "SubStat2", amount: 10 },
                 { type: "IgnoreDefence", amount: 10 }
             ],
             [], // 8セット
             [ // 9セット
                 { type: "AMA", amount: 10 },
-                { type: "MainStat", amount: 15},
-                { type: "SubStat1", amount: 15},
-                { type: "SubStat2", amount: 15},
+                { type: "MainStat", amount: 15 },
+                { type: "SubStat1", amount: 15 },
+                { type: "SubStat2", amount: 15 },
                 { type: "BossDamage", amount: 10 }
             ],
         ]
@@ -147,7 +151,7 @@ export const setEffects: Array<ISetEffect> = [
     {
         internalName: "Dawn",
         JMSName: "黎明のボスアクセサリーセット",
-        applying: ["Face", "Eye", "Ring", "EarRing"],
+        applying: ["Face", "Eyes", "Ring", "EarRing"],
         stats: [
             [], // 1セット
             [ // 2セット
@@ -184,132 +188,132 @@ export const setEffects: Array<ISetEffect> = [
             [], // 1セット
             [ // 2セット
                 { type: "AMA", amount: 10 },
-                { type: "MainStat", amount: 10},
-                { type: "SubStat1", amount: 10},
-                { type: "SubStat2", amount: 10},
-                { type: "HP", amount: 250},
+                { type: "MainStat", amount: 10 },
+                { type: "SubStat1", amount: 10 },
+                { type: "SubStat2", amount: 10 },
+                { type: "HP", amount: 250 },
                 { type: "BossDamage", amount: 10 }
             ],
             [ // 3セット
                 { type: "AMA", amount: 10 },
-                { type: "MainStat", amount: 10},
-                { type: "SubStat1", amount: 10},
-                { type: "SubStat2", amount: 10},
-                { type: "HP", amount: 250},
+                { type: "MainStat", amount: 10 },
+                { type: "SubStat1", amount: 10 },
+                { type: "SubStat2", amount: 10 },
+                { type: "HP", amount: 250 },
                 { type: "IgnoreDefence", amount: 10 }
             ],
             [ // 4セット
                 { type: "AMA", amount: 15 },
-                { type: "MainStat", amount: 15},
-                { type: "SubStat1", amount: 15},
-                { type: "SubStat2", amount: 15},
-                { type: "HP", amount: 375},
+                { type: "MainStat", amount: 15 },
+                { type: "SubStat1", amount: 15 },
+                { type: "SubStat2", amount: 15 },
+                { type: "HP", amount: 375 },
                 { type: "CriticalDamage", amount: 5 }
             ],
             [ // 5セット
                 { type: "AMA", amount: 15 },
-                { type: "MainStat", amount: 15},
-                { type: "SubStat1", amount: 15},
-                { type: "SubStat2", amount: 15},
-                { type: "HP", amount: 375},
+                { type: "MainStat", amount: 15 },
+                { type: "SubStat1", amount: 15 },
+                { type: "SubStat2", amount: 15 },
+                { type: "HP", amount: 375 },
                 { type: "BossDamage", amount: 10 }
             ],
             [// 6セット
                 { type: "AMA", amount: 15 },
-                { type: "MainStat", amount: 15},
-                { type: "SubStat1", amount: 15},
-                { type: "SubStat2", amount: 15},
-                { type: "HP", amount: 375},
+                { type: "MainStat", amount: 15 },
+                { type: "SubStat1", amount: 15 },
+                { type: "SubStat2", amount: 15 },
+                { type: "HP", amount: 375 },
                 { type: "IgnoreDefence", amount: 10 }
             ],
             [ // 7セット
                 { type: "AMA", amount: 15 },
-                { type: "MainStat", amount: 15},
-                { type: "SubStat1", amount: 15},
-                { type: "SubStat2", amount: 15},
-                { type: "HP", amount: 375},
+                { type: "MainStat", amount: 15 },
+                { type: "SubStat1", amount: 15 },
+                { type: "SubStat2", amount: 15 },
+                { type: "HP", amount: 375 },
                 { type: "CriticalDamage", amount: 5 }
             ],
             [ // 8セット
                 { type: "AMA", amount: 15 },
-                { type: "MainStat", amount: 15},
-                { type: "SubStat1", amount: 15},
-                { type: "SubStat2", amount: 15},
-                { type: "HP", amount: 375},
+                { type: "MainStat", amount: 15 },
+                { type: "SubStat1", amount: 15 },
+                { type: "SubStat2", amount: 15 },
+                { type: "HP", amount: 375 },
                 { type: "BossDamage", amount: 10 }
             ],
             [ // 9セット
                 { type: "AMA", amount: 15 },
-                { type: "MainStat", amount: 15},
-                { type: "SubStat1", amount: 15},
-                { type: "SubStat2", amount: 15},
-                { type: "HP", amount: 375},
+                { type: "MainStat", amount: 15 },
+                { type: "SubStat1", amount: 15 },
+                { type: "SubStat2", amount: 15 },
+                { type: "HP", amount: 375 },
                 { type: "CriticalDamage", amount: 5 }
             ],
             [ // 10セット
                 { type: "AMA", amount: 20 },
-                { type: "MainStat", amount: 20},
-                { type: "SubStat1", amount: 20},
-                { type: "SubStat2", amount: 20},
-                { type: "HP", amount: 500},
+                { type: "MainStat", amount: 20 },
+                { type: "SubStat1", amount: 20 },
+                { type: "SubStat2", amount: 20 },
+                { type: "HP", amount: 500 },
                 { type: "BossDamage", amount: 10 }
             ],
         ]
     },
 
     {
-        internalName: "Brilliant",
+        internalName: "Brilliance",
         JMSName: "光輝のボスアクセサリーセット",
         applying: ["Ring", "Ring", "Pendant", "Medal", "Face"], // 一旦2025/12KMS実装分まで 指輪2個は仕様
         stats: [
             [], // 1セット
             [ // 2セット
                 { type: "AMA", amount: 20 },
-                { type: "MainStat", amount: 20},
-                { type: "SubStat1", amount: 20},
-                { type: "SubStat2", amount: 20},
-                { type: "HP", amount: 500},
+                { type: "MainStat", amount: 20 },
+                { type: "SubStat1", amount: 20 },
+                { type: "SubStat2", amount: 20 },
+                { type: "HP", amount: 500 },
                 { type: "BossDamage", amount: 15 }
             ],
             [ // 3セット
                 { type: "AMA", amount: 20 },
-                { type: "MainStat", amount: 20},
-                { type: "SubStat1", amount: 20},
-                { type: "SubStat2", amount: 20},
-                { type: "HP", amount: 500},
+                { type: "MainStat", amount: 20 },
+                { type: "SubStat1", amount: 20 },
+                { type: "SubStat2", amount: 20 },
+                { type: "HP", amount: 500 },
                 { type: "IgnoreDefence", amount: 15 }
             ],
             [ // 4セット
                 { type: "AMA", amount: 20 },
-                { type: "MainStat", amount: 20},
-                { type: "SubStat1", amount: 20},
-                { type: "SubStat2", amount: 20},
-                { type: "HP", amount: 500},
+                { type: "MainStat", amount: 20 },
+                { type: "SubStat1", amount: 20 },
+                { type: "SubStat2", amount: 20 },
+                { type: "HP", amount: 500 },
                 { type: "CriticalDamage", amount: 5 }
             ],
             [ // 5セット
                 { type: "AMA", amount: 20 },
-                { type: "MainStat", amount: 20},
-                { type: "SubStat1", amount: 20},
-                { type: "SubStat2", amount: 20},
-                { type: "HP", amount: 500},
+                { type: "MainStat", amount: 20 },
+                { type: "SubStat1", amount: 20 },
+                { type: "SubStat2", amount: 20 },
+                { type: "HP", amount: 500 },
                 { type: "BossDamage", amount: 15 }
-                
+
             ],
             [// 6セット以降未実装
-                
+
             ],
             [ // 7セット
-                
+
             ],
             [ // 8セット
-                
+
             ],
             [ // 9セット
-                
+
             ],
             [ // 10セット
-                
+
             ],
         ]
     },
@@ -322,33 +326,33 @@ export const setEffects: Array<ISetEffect> = [
             [], // 1セット
             [ // 2セット
                 { type: "AMA", amount: 30 },
-                { type: "BossDamage", amount: 10}
+                { type: "BossDamage", amount: 10 }
             ],
             [ // 3セット
                 { type: "AMA", amount: 30 },
-                { type: "IgnoreDefence", amount: 10}
+                { type: "IgnoreDefence", amount: 10 }
             ],
             [ // 4セット
                 { type: "AMA", amount: 35 },
-                { type: "MainStat", amount: 50},
-                { type: "SubStat1", amount: 50},
-                { type: "SubStat2", amount: 50},
+                { type: "MainStat", amount: 50 },
+                { type: "SubStat1", amount: 50 },
+                { type: "SubStat2", amount: 50 },
                 { type: "BossDamage", amount: 10 }
             ],
             [ // 5セット
                 { type: "AMA", amount: 40 },
-                { type: "HP", amount: 2000},
-                { type: "MP", amount: 2000},
-                { type: "BossDamage", amount: 10}
+                { type: "HP", amount: 2000 },
+                { type: "MP", amount: 2000 },
+                { type: "BossDamage", amount: 10 }
             ],
             [ // 6セット
                 { type: "AMA", amount: 30 },
-                { type: "HP%", amount: 30},
-                { type: "MP%", amount: 30},
+                { type: "HP%", amount: 30 },
+                { type: "MP%", amount: 30 },
             ],
             [ // 7セット
                 { type: "AMA", amount: 30 },
-                { type: "IgnoreDefence", amount: 10}
+                { type: "IgnoreDefence", amount: 10 }
             ]
         ]
     },
@@ -360,45 +364,45 @@ export const setEffects: Array<ISetEffect> = [
         stats: [
             [], // 1セット
             [ // 2セット
-                { type: "HP", amount: 2500},
-                { type: "MP", amount: 2500},
+                { type: "HP", amount: 2500 },
+                { type: "MP", amount: 2500 },
                 { type: "AMA", amount: 40 },
-                { type: "BossDamage", amount: 10}
+                { type: "BossDamage", amount: 10 }
             ],
             [ // 3セット
                 { type: "AMA", amount: 40 },
-                { type: "MainStat", amount: 50},
-                { type: "SubStat1", amount: 50},
-                { type: "SubStat2", amount: 50},
-                { type: "BossDamage", amount: 10}
+                { type: "MainStat", amount: 50 },
+                { type: "SubStat1", amount: 50 },
+                { type: "SubStat2", amount: 50 },
+                { type: "BossDamage", amount: 10 }
             ],
             [ // 4セット
                 { type: "AMA", amount: 40 },
-                { type: "HP%", amount: 15},
-                { type: "MP%", amount: 15},
+                { type: "HP%", amount: 15 },
+                { type: "MP%", amount: 15 },
                 { type: "BossDamage", amount: 10 }
             ],
             [ // 5セット
                 { type: "AMA", amount: 40 },
-                { type: "IgnoreDefence", amount: 20}
+                { type: "IgnoreDefence", amount: 20 }
             ],
             [ // 6セット
                 { type: "AMA", amount: 40 },
-                { type: "BossDamage", amount: 15}
+                { type: "BossDamage", amount: 15 }
             ],
             [ // 7セット
                 { type: "AMA", amount: 40 },
-                { type: "IgnoreDefence", amount: 10},
-                { type: "MainStat", amount: 50},
-                { type: "SubStat1", amount: 50},
-                { type: "SubStat2", amount: 50},
-                { type: "HP", amount: 2500},
-                { type: "MP", amount: 2500},
-                { type: "BossDamage", amount: 10}
+                { type: "IgnoreDefence", amount: 10 },
+                { type: "MainStat", amount: 50 },
+                { type: "SubStat1", amount: 50 },
+                { type: "SubStat2", amount: 50 },
+                { type: "HP", amount: 2500 },
+                { type: "MP", amount: 2500 },
+                { type: "BossDamage", amount: 10 }
             ],
             [ // 8セット
                 { type: "AMA", amount: 40 },
-                { type: "BossDamage", amount: 15}
+                { type: "BossDamage", amount: 15 }
             ]
         ]
     },
@@ -409,23 +413,59 @@ export const setEffects: Array<ISetEffect> = [
         stats: [
             [], // 1セット
             [ // 2セット
-                { type: "MainStat", amount: 20},
-                { type: "SubStat1", amount: 20},
-                { type: "SubStat2", amount: 20},
-                 { type: "HP", amount: 1500},
-                { type: "MP", amount: 1500},
+                { type: "MainStat", amount: 20 },
+                { type: "SubStat1", amount: 20 },
+                { type: "SubStat2", amount: 20 },
+                { type: "HP", amount: 1500 },
+                { type: "MP", amount: 1500 },
             ],
             [ // 3セット
                 { type: "AMA", amount: 35 },
                 { type: "HP%", amount: 13 },
-                 { type: "MP%", amount: 13 }
+                { type: "MP%", amount: 13 }
             ],
             [ // 4セット
                 { type: "BossDamage", amount: 30 },
-                { type: "IgnoreDefence", amount: 30}
+                { type: "IgnoreDefence", amount: 30 }
             ]
 
         ]
     },
+    {
+        internalName: "AfterLand",
+        JMSName: "アフターランド",
+        applying: ["Totem", "Totem", "Totem"],
+        stats: [
+            [], // 1セット
+            [], // 2セット
+            [ // 3セット
+                { type: "AMA", amount: 10 }
+            ],
+        ]
+    },
+    {
+        internalName: "MonsterPark",
+        JMSName: "七曜セット",
+        applying: ["Badge", "Medal"],
+        stats: [
+            [], // 1セット
+            [ // 2セット
+                { type: "IgnoreDefence", amount: 10 }
+            ],
+        ]
+    },
+    {
+        internalName: "GuildCastle",
+        JMSName: "ギルド城ブローチ",
+        applying: ["Totem", "Totem", "Totem"],
+        stats: [
+            [], // 1セット
+            [ // 2セット
+                { type: "AMA", amount: 5 }
+            ],
+            [ // 3セット
+                { type: "AMA", amount: 10 }
+            ],
+        ]
+    },
 ]
-

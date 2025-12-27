@@ -14,6 +14,22 @@ import { gloves } from "./gloves"
 import { boots } from "./boots"
 import { subweapons } from "./subweapon"
 import { embrems } from "./emblems"
+import { rings } from "./rings"
+import { hearts } from "./hearts"
+import { pendants } from "./pendants"
+import { belts } from "./belts"
+import { earrings } from "./earrings"
+import { faces } from "./faces"
+import { eyes } from "./eyes"
+import { pockets } from "./pockets"
+import { badges } from "./badges"
+import { medals } from "./medals"
+import { titles } from "./titles"
+import { totems } from "./totems"
+import { jewels } from "./jewels"
+import { arcanesymbols } from "./arcanesymbols"
+import { authenticsymbols } from "./authenticsymbols"
+import { grandauthenticsymbols } from "./grandauthenticsymbols"
 
 export interface IBaseItem{
     type: GearType
@@ -40,4 +56,20 @@ export const baseItems: Array<IBaseItem> = [
     ...mantles,
     ...gloves,
     ...boots,
+    ...pendants,
+    ...belts,
+    ...earrings,
+    ...rings,
+    ...faces,
+    ...eyes,
+    ...pockets,
+    ...badges,
+    ...medals,
+    ...titles,
+    ...hearts,
+    ...totems,
+    ...jewels,
+    ...arcanesymbols,
+    ...authenticsymbols,
+    ...grandauthenticsymbols
 ]

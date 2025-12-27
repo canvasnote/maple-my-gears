@@ -34,7 +34,11 @@ export type GearType =
   // シンボル
   | "ArcaneSymbol"
   | "AuthenticSymbol"
-  | "GrandAuthenticSymbol";
+  | "GrandAuthenticSymbol"
+  // その他
+  | "Heart"
+  | "Medal"
+  | "Title";
 
 // export const GearType = {
 //     // 3種の神器

@@ -52,6 +52,18 @@ export const subweapons: Array<IBaseItem> = [
   },
   {
     type: "SubWeapon",
+    JMSName: "ルインフォースシールド",
+    level: 100,
+    setEffectName: [],
+    baseStat: [
+      { type: "MainStat", amount: 10 },
+      { type: "SubStat1", amount: 10 },
+      { type: "HP", amount: 560 },
+      { type: "FinalDamage", amount: 10 },
+    ],
+  },
+  {
+    type: "SubWeapon",
     JMSName: "ラヴァナイフ",
     level: 150,
     setEffectName: [],

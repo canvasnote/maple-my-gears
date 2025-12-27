@@ -11,10 +11,14 @@ const GearTypeNameList = {
     "Shoulder":8,  "Mantle":9,  "Gloves":10,  "Boots":11,
     // アクセサリ
     "Pendant":12,  "Ring":13,  "Belt":14,  "EarRing":15,  "Face":16,  "Eyes":17,  "Pocket":18,  "Badge":19,
+    // 勲章＆称号
+    "Title": 20, "Medal": 21,
     // "Valuables"にあるやつ
-    "Totem":20,  "Jewel":21,
+    "Totem":22,  "Jewel":23,
     // シンボル
-    "ArcaneSymbol":22,  "AuthenticSymbol":23,  "GrandAuthenticSymbol":24
+    "ArcaneSymbol":24,  "AuthenticSymbol":25,  "GrandAuthenticSymbol":26,
+    // 機械心臓部
+    "Heart": 27
 } as const
 
 const strToGearType = (str: string): GearType => {
@@ -39,6 +43,9 @@ const strToGearType = (str: string): GearType => {
         case "Eyes": return "Eyes"
         case "Pocket": return "Pocket"
         case "Badge": return "Badge"
+        case "Heart": return "Heart"
+        case "Title": return "Title"
+        case "Medal": return "Medal"
         case "Totem": return "Totem"
         case "Jewel": return "Jewel"
         case "ArcaneSymbol": return "ArcaneSymbol"
@@ -83,12 +90,12 @@ export const GearsTable = () => {
     )
 
     return (
-      <table border={1} cellSpacing={0}>
+      <table border={1} cellSpacing={0} className="justify-start">
          <thead>
             <tr>
-               <th>Number</th>
-               <th>Type</th>
-               <th>Name</th>
+               <th>No.</th>
+               <th>種別</th>
+               <th>名前</th>
             </tr>
          </thead>
          <tbody>
