@@ -7,9 +7,11 @@ import logo from "./assets/images/genesis_staff.png"
 import { GearSets, initGearSet } from "./gears/Gearset/gearset";
 import { GearsTable } from "./UI/Gearlist";
 import { WeaponType } from "./UI/WeaPonType";
+import { Region } from "./i18n";
 
 export function App() {
-  const [currentGearSet, setCurrentGearSet] = useImmer(initGearSet())
+  const [currentGearSet, updateCurrentGearSet] = useImmer(initGearSet())
+  const [region, setRegion] = useImmer(new Region("JMS"))
 
   return (
     <div className="max-w-7xl mx-auto p-8 text-center relative z-10">
@@ -23,8 +25,8 @@ export function App() {
 
       <h1 className="text-5xl font-bold my-4 leading-tight">メイプルマイギア</h1>
 
-      {WeaponType(currentGearSet)}
-      {GearsTable(currentGearSet)}
+      {WeaponType(currentGearSet, region)}
+      {GearsTable(currentGearSet,updateCurrentGearSet, region)}
     </div>
   );
 }

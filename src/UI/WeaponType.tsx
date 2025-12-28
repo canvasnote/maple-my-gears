@@ -2,6 +2,7 @@ import type { ReactElement, ReactNode } from "react"
 import { weapons } from "@/gears/BaseItem/weapons"
 import { jobs } from "@/gears/weapontype/weaponType"
 import type { GearSet } from "@/gears/Gearset/gearset";
+import type { Region } from "@/i18n";
 
 const Options = () => {
     const result = jobs.map(
@@ -17,7 +18,7 @@ const Options = () => {
     return <>{result}</>
     };
 
-export const WeaponType = (currentGearSet: GearSet) => {
+export const WeaponType = (currentGearSet: GearSet, region: Region) => {
     return <>
         あなたの武器種＝ 
         <select name="weapontype">

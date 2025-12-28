@@ -9,7 +9,8 @@ export const weapons: Array<IBaseItem> = [
     baseStat: [
     ],
   }, 
- {
+  
+  {
     type: "Weapon",
     JMSName: "ファフニール武器",
     level: 150,

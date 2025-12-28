@@ -1,86 +1,47 @@
 import type { ReactElement, ReactNode } from "react"
 import type { GearType } from "@/gears/gear"
 import { baseItems, type IBaseItem } from "@/gears/BaseItem/baseitem"
-import type { GearSet } from "@/gears/Gearset/gearset"
+import { strToGearType, strToSlotType, type GearSet, type SlotType, GearSlot, slotTypeToGearType } from "@/gears/Gearset/gearset"
+import type { IStat } from "@/gears/stat"
+import type { Region } from "@/i18n"
+import type { Updater } from "use-immer"
 
-const GearTypeNameList = {
-    // 3種の神器
-    "Weapon": 1, "SubWeapon":2,  "Embrem":3,
-    // 防具1
-    "Head":4,  "FullCloth":5,  "Armour":6,  "Pants":7,
-    // 防具2
-    "Shoulder":8,  "Mantle":9,  "Gloves":10,  "Boots":11,
-    // アクセサリ
-    "Pendant":12,  "Ring":13,  "Belt":14,  "EarRing":15,  "Face":16,  "Eyes":17,  "Pocket":18,  "Badge":19,
-    // 勲章＆称号
-    "Title": 20, "Medal": 21,
-    // "Valuables"にあるやつ
-    "Totem":22,  "Jewel":23,
-    // シンボル
-    "ArcaneSymbol":24,  "AuthenticSymbol":25,  "GrandAuthenticSymbol":26,
-    // 機械心臓部
-    "Heart": 27
-} as const
-
-const strToGearType = (str: string): GearType => {
-    // stringからGearTypeに変換するためだけにある関数　泥臭い
-    switch(str){
-        case "Weapon": return "Weapon"
-        case "SubWeapon": return "SubWeapon"
-        case "Embrem": return "Embrem"
-        case "Head": return "Head"
-        case "FullCloth": return "FullCloth"
-        case "Armour": return "Armour"
-        case "Pants": return "Pants"
-        case "Shoulder": return "Shoulder"
-        case "Mantle": return "Mantle"
-        case "Gloves": return "Gloves"
-        case "Boots": return "Boots"
-        case "Pendant": return "Pendant"
-        case "Ring": return "Ring"
-        case "Belt": return "Belt"
-        case "EarRing": return "EarRing"
-        case "Face": return "Face"
-        case "Eyes": return "Eyes"
-        case "Pocket": return "Pocket"
-        case "Badge": return "Badge"
-        case "Heart": return "Heart"
-        case "Title": return "Title"
-        case "Medal": return "Medal"
-        case "Totem": return "Totem"
-        case "Jewel": return "Jewel"
-        case "PetEquip": return "PetEquip"
-        case "ArcaneSymbol": return "ArcaneSymbol"
-        case "AuthenticSymbol": return "AuthenticSymbol"
-        case "GrandAuthenticSymbol": return "GrandAuthenticSymbol"
-
-        default: throw Error("strToGearType: 渡された文字列が装備タイプと一致しません: " + str)
-    }
-}
-
-export const GearsTable = (currentGearSet: GearSet) => {
-    let result: ReactNode = <></>
-    
-    const typeMatchedGears = (gear: GearType) => {
+export const GearsTable = (currentGearSet: GearSet,updateCurrentGearSet: Updater<GearSet>, region: Region) => {
+    const typeMatchedGears = (slotType: SlotType) => {
+        const gearType = strToGearType(slotTypeToGearType(slotType))
         return baseItems.filter((item) => {
-            if (item.type === gear) { return true }
+            if (item.type === gearType) { return true }
         })
     }
-    
+
     const Options = (list: Array<IBaseItem>) => {
         const result = list.map(
             element => 
-            <option key={element.JMSName} value={element.type} className="bg-gray-600 justify-start">
+            <option key={element.JMSName} value={element.JMSName} className="bg-gray-600 justify-start">
                 {element.JMSName}
                 </option>
                 )
         return <>{result}</>
     }
 
-    const matchedGearList = (type: GearType) =>
-        <select name={type.toString()} className="w-60">
+    const matchedGearList = (type: SlotType, acceptType: GearType) =>
+        <select 
+        name={type} 
+        className="w-60" 
+        onChange={e => { updateCurrentGearSet(currentGearSet.setSlotBaseItem(strToSlotType(e.target.name), e.target.value, region))}}
+        >
             { Options(typeMatchedGears(type)) }
         </select>
+
+    const statListToString = (list: IStat[] | undefined) =>{
+        if (list === undefined) {return ""}
+
+        let result = ""
+        list.map((stat, index) => {
+            result += stat.type + ": " + stat.amount + "<br /><br />"
+        })
+        return result
+    }
 
     const rows = currentGearSet.slots.map((slot, index) => 
         <tr key={slot.type}>
@@ -91,7 +52,10 @@ export const GearsTable = (currentGearSet: GearSet) => {
                 {slot.JMSName}
             </td>
             <td>
-                {matchedGearList(strToGearType(slot.acceptType))}
+                {matchedGearList(strToSlotType(slot.type), slot.acceptType)}
+            </td>
+            <td>
+                {statListToString(slot.gear?.baseStat)}
             </td>
         </tr>
     )
@@ -103,6 +67,7 @@ export const GearsTable = (currentGearSet: GearSet) => {
                <th>No.</th>
                <th>種別</th>
                <th>名前</th>
+               <th>基礎値</th>
             </tr>
          </thead>
          <tbody>
