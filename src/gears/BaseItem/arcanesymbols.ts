@@ -3,6 +3,14 @@ import type { IBaseItem } from "./baseitem";
 export const arcanesymbols: Array<IBaseItem> = [
   {
     type: "ArcaneSymbol",
+    JMSName: "なし",
+    level: 200,
+    setEffectName: [],
+    baseStat: [
+    ],
+  },
+  {
+    type: "ArcaneSymbol",
     JMSName: "アーケインシンボル:消滅の旅路",
     level: 200,
     setEffectName: [],

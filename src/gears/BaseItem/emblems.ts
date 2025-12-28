@@ -3,6 +3,15 @@ import type { IBaseItem } from "./baseitem";
 export const embrems: Array<IBaseItem> = [
   {
     type: "Embrem",
+    JMSName: "なし",
+    level: 0,
+    setEffectName: [],
+    baseStat: [
+    ],
+  }, 
+
+  {
+    type: "Embrem",
     JMSName: "ゴールドエンブレム",
     level: 100,
     setEffectName: [],

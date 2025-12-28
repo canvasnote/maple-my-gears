@@ -3,6 +3,15 @@ import type { IBaseItem } from "./baseitem";
 export const armours: Array<IBaseItem> = [
   {
     type: "Armour",
+    JMSName: "なし",
+    level: 0,
+    setEffectName: [],
+    baseStat: [
+    ],
+  }, 
+
+  {
+    type: "Armour",
     JMSName: "アビス鎧上",
     level: 150,
     setEffectName: ["Fafnir"],

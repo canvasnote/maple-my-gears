@@ -3,6 +3,14 @@ import type { IBaseItem } from "./baseitem";
 export const rings: Array<IBaseItem> = [
   {
     type: "Ring",
+    JMSName: "なし",
+    level: 0,
+    setEffectName: [],
+    baseStat: [
+    ],
+  }, 
+  {
+    type: "Ring",
     JMSName: "イベント指輪(AMA25/All40)",
     level: 120,
     setEffectName: [],

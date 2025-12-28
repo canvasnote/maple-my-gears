@@ -3,6 +3,15 @@ import type { IBaseItem } from "./baseitem";
 export const authenticsymbols: Array<IBaseItem> = [
   {
     type: "AuthenticSymbol",
+    JMSName: "なし",
+    level: 0,
+    setEffectName: [],
+    baseStat: [
+    ],
+  }, 
+
+  {
+    type: "AuthenticSymbol",
     JMSName: "オーセンティックシンボル:セルニウム",
     level: 200,
     setEffectName: [],

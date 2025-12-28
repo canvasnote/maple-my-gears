@@ -1,6 +1,7 @@
 import type { IBaseItem } from "./baseitem";
 
 export const petequips: Array<IBaseItem> = [
+
   {
     type: "PetEquip",
     JMSName: "なし",

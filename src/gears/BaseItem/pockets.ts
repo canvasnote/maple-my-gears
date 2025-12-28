@@ -3,6 +3,14 @@ import type { IBaseItem } from "./baseitem";
 export const pockets: Array<IBaseItem> = [
   {
     type: "Pocket",
+    JMSName: "なし",
+    level: 0,
+    setEffectName: [],
+    baseStat: [
+    ],
+  }, 
+  {
+    type: "Pocket",
     JMSName: "ピンクの聖杯",
     level: 140,
     setEffectName: ["Boss"],

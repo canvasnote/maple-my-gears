@@ -3,6 +3,15 @@ import type { IBaseItem } from "./baseitem";
 export const eyes: Array<IBaseItem> = [
   {
     type: "Eyes",
+    JMSName: "なし",
+    level: 0,
+    setEffectName: [],
+    baseStat: [
+    ],
+  }, 
+
+  {
+    type: "Eyes",
     JMSName: "アクアティックレター目飾り",
     level: 100,
     setEffectName: ["Boss"],

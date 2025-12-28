@@ -3,6 +3,14 @@ import type { IBaseItem } from "./baseitem";
 export const pendants: Array<IBaseItem> = [
   {
     type: "Pendant",
+    JMSName: "なし",
+    level: 0,
+    setEffectName: [],
+    baseStat: [
+    ],
+  }, 
+  {
+    type: "Pendant",
     JMSName: "メーカーネイターペンダント",
     level: 120,
     setEffectName: ["Boss"],

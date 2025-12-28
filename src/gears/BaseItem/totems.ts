@@ -3,6 +3,14 @@ import type { IBaseItem } from "./baseitem";
 export const totems: Array<IBaseItem> = [
   {
     type: "Totem",
+    JMSName: "なし",
+    level: 0,
+    setEffectName: [],
+    baseStat: [
+    ],
+  }, 
+  {
+    type: "Totem",
     JMSName: "アフターランド(メインステ)",
     level: 0,
     setEffectName: ["AfterLand"],

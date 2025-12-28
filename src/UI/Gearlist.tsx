@@ -78,7 +78,7 @@ export const GearsTable = (currentGearSet: GearSet) => {
     }
 
     const matchedGearList = (type: GearType) =>
-        <select name={type.toString()}>
+        <select name={type.toString()} className="w-60">
             { Options(typeMatchedGears(type)) }
         </select>
 

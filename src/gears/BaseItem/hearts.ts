@@ -3,6 +3,15 @@ import type { IBaseItem } from "./baseitem";
 export const hearts: Array<IBaseItem> = [
   {
     type: "Heart",
+    JMSName: "なし",
+    level: 0,
+    setEffectName: [],
+    baseStat: [
+    ],
+  }, 
+
+  {
+    type: "Heart",
     JMSName: "アイアンハート",
     level: 30,
     setEffectName: [],

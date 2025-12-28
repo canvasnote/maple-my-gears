@@ -3,6 +3,14 @@ import type { IBaseItem } from "./baseitem";
 export const weapons: Array<IBaseItem> = [
   {
     type: "Weapon",
+    JMSName: "なし",
+    level: 0,
+    setEffectName: [],
+    baseStat: [
+    ],
+  }, 
+ {
+    type: "Weapon",
     JMSName: "ファフニール武器",
     level: 150,
     setEffectName: ["Fafnir"],

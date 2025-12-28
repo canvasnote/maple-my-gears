@@ -3,6 +3,15 @@ import type { IBaseItem } from "./baseitem";
 export const belts: Array<IBaseItem> = [
   {
     type: "Belt",
+    JMSName: "なし",
+    level: 0,
+    setEffectName: [],
+    baseStat: [
+    ],
+  }, 
+
+  {
+    type: "Belt",
     JMSName: "ゴールデンクローバーベルト",
     level: 140,
     setEffectName: ["Boss"],

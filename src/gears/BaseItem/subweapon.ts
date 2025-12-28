@@ -3,6 +3,14 @@ import type { IBaseItem } from "./baseitem";
 export const subweapons: Array<IBaseItem> = [
   {
     type: "SubWeapon",
+    JMSName: "なし",
+    level: 0,
+    setEffectName: [],
+    baseStat: [
+    ],
+  }, 
+  {
+    type: "SubWeapon",
     JMSName: "補助武器(通常)",
     level: 100,
     setEffectName: [],

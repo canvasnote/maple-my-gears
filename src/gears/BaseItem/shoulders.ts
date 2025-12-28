@@ -3,6 +3,14 @@ import type { IBaseItem } from "./baseitem";
 export const shoulders: Array<IBaseItem> = [
   {
     type: "Shoulder",
+    JMSName: "なし",
+    level: 0,
+    setEffectName: [],
+    baseStat: [
+    ],
+  }, 
+  {
+    type: "Shoulder",
     JMSName: "アブソ肩",
     level: 160,
     setEffectName: ["Absolab"],

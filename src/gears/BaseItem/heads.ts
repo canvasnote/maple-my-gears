@@ -3,6 +3,15 @@ import type { IBaseItem } from "./baseitem";
 export const heads: Array<IBaseItem> = [
   {
     type: "Head",
+    JMSName: "なし",
+    level: 0,
+    setEffectName: [],
+    baseStat: [
+    ],
+  }, 
+
+  {
+    type: "Head",
     JMSName: "アビス頭",
     level: 150,
     setEffectName: ["Fafnir"],

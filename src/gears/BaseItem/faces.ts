@@ -3,6 +3,15 @@ import type { IBaseItem } from "./baseitem";
 export const faces: Array<IBaseItem> = [
   {
     type: "Face",
+    JMSName: "なし",
+    level: 0,
+    setEffectName: [],
+    baseStat: [
+    ],
+  }, 
+
+  {
+    type: "Face",
     JMSName: "凝縮された力の結晶石",
     level: 110,
     setEffectName: ["Boss"],

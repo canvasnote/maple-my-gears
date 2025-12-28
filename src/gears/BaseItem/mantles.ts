@@ -3,6 +3,15 @@ import type { IBaseItem } from "./baseitem";
 export const mantles: Array<IBaseItem> = [
   {
     type: "Mantle",
+    JMSName: "なし",
+    level: 0,
+    setEffectName: [],
+    baseStat: [
+    ],
+  }, 
+  
+  {
+    type: "Mantle",
     JMSName: "アブソマント",
     level: 160,
     setEffectName: ["Absolab"],

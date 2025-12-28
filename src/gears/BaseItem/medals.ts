@@ -3,6 +3,14 @@ import type { IBaseItem } from "./baseitem";
 export const medals: Array<IBaseItem> = [
   {
     type: "Medal",
+    JMSName: "なし",
+    level: 0,
+    setEffectName: [],
+    baseStat: [
+    ],
+  }, 
+  {
+    type: "Medal",
     JMSName: "カオスベルルム討伐者",
     level: 0,
     setEffectName: [],

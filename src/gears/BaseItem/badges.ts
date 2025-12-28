@@ -3,6 +3,15 @@ import type { IBaseItem } from "./baseitem";
 export const badges: Array<IBaseItem> = [
   {
     type: "Badge",
+    JMSName: "なし",
+    level: 0,
+    setEffectName: [],
+    baseStat: [
+    ],
+  }, 
+
+  {
+    type: "Badge",
     JMSName: "クリスタルウェントゥスバッジ",
     level: 130,
     setEffectName: ["Boss"],
