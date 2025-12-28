@@ -30,6 +30,7 @@ import { jewels } from "./jewels"
 import { arcanesymbols } from "./arcanesymbols"
 import { authenticsymbols } from "./authenticsymbols"
 import { grandauthenticsymbols } from "./grandauthenticsymbols"
+import { petequips } from "./petequips"
 
 export interface IBaseItem{
     type: GearType
@@ -67,6 +68,7 @@ export const baseItems: Array<IBaseItem> = [
     ...medals,
     ...titles,
     ...hearts,
+    ...petequips,
     ...totems,
     ...jewels,
     ...arcanesymbols,
