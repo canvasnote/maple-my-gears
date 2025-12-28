@@ -1,4 +1,4 @@
-import { useState, type ReactElement, type ReactNode } from "react"
+import { useState, type Dispatch, type ReactElement, type ReactNode, type SetStateAction } from "react"
 import type { GearType } from "@/gears/gear"
 import { baseItems, getBaseItemByName, type IBaseItem } from "@/gears/BaseItem/baseitem"
 import { strToGearType, strToSlotType, type GearSet, type SlotType, GearSlot, slotTypeToGearType } from "@/gears/Gearset/gearset"
@@ -7,7 +7,7 @@ import type { Region } from "@/i18n"
 import type { Updater } from "use-immer"
 import { randomUUIDv7 } from "bun"
 
-export const GearsTotalStat = (currentGearSet: GearSet, updateCurrentGearSet: Updater<GearSet>, region: Region) => {
+export const GearsTotalStat = (globalRenderer: number, setGlobalRenderer: Dispatch<SetStateAction<number>>, currentGearSet: GearSet, updateCurrentGearSet: Updater<GearSet>, region: Region) => {
     const gatherStat = () => {
         let result: Array<Array<IStat>> = []
         currentGearSet.slots.map((slot) => {
@@ -51,6 +51,10 @@ export const GearsTotalStat = (currentGearSet: GearSet, updateCurrentGearSet: Up
             "DropRate":         gatherStat().flat().filter((stat) => stat.type === "DropRate").map((item) => item.amount),
             // "None":             gatherStat().flat().filter((stat) => stat.type === "None").map((item) => item.amount),
         }
+        const formatter = new Intl.NumberFormat('en-US', {
+            minimumFractionDigits: 2, // 小数点以下最小2桁
+            maximumFractionDigits: 2, // 小数点以下最大4桁
+        });
         const accumilacionStat = {
             "MainStat":         classificationStat["MainStat"].length===0          ? 0 : classificationStat["MainStat"].reduce((acc, cur) => acc += cur)                        ,
             "SubStat1":         classificationStat["SubStat1"].length===0          ? 0 : classificationStat["SubStat1"].reduce((acc, cur) => acc += cur)                        ,
@@ -76,8 +80,8 @@ export const GearsTotalStat = (currentGearSet: GearSet, updateCurrentGearSet: Up
             "NormalDamage":     classificationStat["NormalDamage"].length===0      ? 0 : classificationStat["NormalDamage"].reduce((acc, cur) => acc += cur)                +"%",
             "CriticalRate":     classificationStat["CriticalRate"].length===0      ? 0 : classificationStat["CriticalRate"].reduce((acc, cur) => acc += cur)                +"%",
             "CriticalDamage":   classificationStat["CriticalDamage"].length===0    ? 0 : classificationStat["CriticalDamage"].reduce((acc, cur) => acc += cur)              +"%",
-            "FinalDamage":      classificationStat["FinalDamage"].length===0       ? 0 : classificationStat["FinalDamage"].reduce((acc, cur) => acc *= (1 + cur * 0.01))    +"%",
-            "IgnoreDefence":    classificationStat["IgnoreDefence"].length===0     ? 0 : classificationStat["IgnoreDefence"].reduce((acc, cur) => acc *= (1 - cur * 0.01))  +"%",
+            "FinalDamage":      classificationStat["FinalDamage"].length===0       ? 0 : formatter.format(classificationStat["FinalDamage"].reduce((acc, cur) => acc *= (1 + cur * 0.01),))  +"%",
+            "IgnoreDefence":    classificationStat["IgnoreDefence"].length===0     ? 0 : formatter.format((1 - classificationStat["IgnoreDefence"].reduce((acc, cur) => acc *= (1 - cur * 0.01), 1)) * 100)+"%",
             "CoolTimeReduction":classificationStat["CoolTimeReduction"].length===0 ? 0 : classificationStat["CoolTimeReduction"].reduce((acc, cur) => acc += cur)           +"秒",
             "ArcaneForce":      classificationStat["ArcaneForce"].length===0       ? 0 : classificationStat["ArcaneForce"].reduce((acc, cur) => acc += cur)                     ,
             "AuthenticForce":   classificationStat["AuthenticForce"].length===0    ? 0 : classificationStat["AuthenticForce"].reduce((acc, cur) => acc += cur)                  ,

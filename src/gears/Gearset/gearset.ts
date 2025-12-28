@@ -9,6 +9,7 @@ import { type GearType, Gear } from "../gear"
 import type { Region } from "../../i18n.ts"
 import { baseItems, type IBaseItem } from "../BaseItem/baseitem.ts";
 import type { IWeaponType } from "../weapontype/weaponType.ts";
+import type { Updater } from "use-immer";
 
 export class GearSets {
   currentSet: GearSet = new GearSet()
@@ -49,7 +50,8 @@ export class GearSet {
 
   
 
-  setSlotBaseItem = (slotType: SlotType, equipName: string, region: Region): GearSet => {
+  setSlotWithBaseItem = (slotType: SlotType, equipName: string, region: Region): GearSet => {
+    throw Error("これを呼ぶと描画がついてこない")
     /// 装備スロットと装備名とリージョンから該当するベース装備を探してきて装備名と基礎能力とレベルをセットし、更新済みのギアセットを返す
     let matchedSlotIndex = -1
     let matchedBaseItem: IBaseItem | null = null
@@ -79,6 +81,8 @@ export class GearSet {
           }
         });
 
+
+        // スロットにその装備の名前と基礎能力とレベルをセット
         if (matchedBaseItem === null || matchedStat === null){
           // ベース装備が見つからなかったらエラー
           throw TypeError("setSlotBaseItem: ベース装備が見つかりません(" + slotType + ", " + equipName + ", " + region.name + ")")
@@ -89,6 +93,19 @@ export class GearSet {
           this.slots[matchedSlotIndex]!.gear.baseStat = matchedStat;
           this.slots[matchedSlotIndex]!.gear.level = matchedLevel;
         }
+        // updateCurrentGearSet((draft) => {
+        //   if (matchedBaseItem === null || matchedStat === null){
+        //     // ベース装備が見つからなかったらエラー
+        //     throw TypeError("setSlotBaseItem: ベース装備が見つかりません(" + slotType + ", " + equipName + ", " + region.name + ")")
+        //   }
+        //   draft.slots[matchedSlotIndex]!.gear.name = matchedBaseItem.JMSName;
+        //   draft.slots[matchedSlotIndex]!.gear.baseStat = matchedStat;
+        //   draft.slots[matchedSlotIndex]!.gear.level = matchedLevel;
+        // })
+
+        // UI上の装備の選択状態を上書き
+        // TODO
+        
       }
     }
     else{ throw TypeError("未実装のリージョンです: " + region.name)}

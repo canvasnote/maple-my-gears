@@ -1,4 +1,4 @@
-import { useState, type ReactElement, type ReactNode } from "react"
+import { useState, type Dispatch, type ReactElement, type ReactNode, type SetStateAction } from "react"
 import type { GearType } from "@/gears/gear"
 import { baseItems, getBaseItemByName, type IBaseItem } from "@/gears/BaseItem/baseitem"
 import { strToGearType, strToSlotType, type GearSet, type SlotType, GearSlot, slotTypeToGearType } from "@/gears/Gearset/gearset"
@@ -7,7 +7,7 @@ import type { Region } from "@/i18n"
 import type { Updater } from "use-immer"
 import { randomUUIDv7 } from "bun"
 
-export const GearsTable = (currentGearSet: GearSet, updateCurrentGearSet: Updater<GearSet>, region: Region) => {
+export const GearsTable = (globalRenderer: number, setGlobalRenderer: Dispatch<SetStateAction<number>>, currentGearSet: GearSet, updateCurrentGearSet: Updater<GearSet>, region: Region) => {
     const [changeCount, setChangeCount] = useState(0)
     const typeMatchedGears = (slotType: SlotType) => {
         const gearType = strToGearType(slotTypeToGearType(slotType))
@@ -19,7 +19,7 @@ export const GearsTable = (currentGearSet: GearSet, updateCurrentGearSet: Update
     const Options = (list: Array<IBaseItem>) => {
         const result = list.map(
             element => 
-            <option key={element.JMSName} value={element.JMSName} className="bg-gray-600 justify-start">
+            <option  key={element.type + "-" + element.JMSName + "-" + globalRenderer} value={element.JMSName} className="bg-gray-600 justify-start">
                 {element.JMSName}
                 </option>
                 )
@@ -29,6 +29,8 @@ export const GearsTable = (currentGearSet: GearSet, updateCurrentGearSet: Update
     const matchedGearList = (type: SlotType, acceptType: GearType) =>
         <select 
         name={type} 
+        key={"select-" + type + "-" + globalRenderer}
+        value={currentGearSet.slots[currentGearSet.getSlotIndexBySlotType(type)]?.gear.name}
         className="w-60" 
         onChange={e => { 
             setChangeCount(changeCount + 1);

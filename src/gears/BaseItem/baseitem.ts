@@ -77,11 +77,11 @@ export const baseItems: Array<IBaseItem> = [
 ]
 
 export const getBaseItemByName = (baseItems: Array<IBaseItem>,type: GearType, name: string): IBaseItem => {
-// 装備のタイプと名前からベース装備を返す
-// 該当するベース装備を取得
-const matchedBaseItem = baseItems.filter((item, index) => {
-    if (item.type === type && item.JMSName === name){ return true }
-})
-if (matchedBaseItem.length !== 1){ throw TypeError("指定された装備がないか、複数あります: " + type + ", " + name)}
-else return matchedBaseItem[0]!
+    // 装備のタイプと名前からベース装備を返す
+    // 該当するベース装備を取得
+    const matchedBaseItem = baseItems.filter((item, index) => {
+        if (item.type === type && item.JMSName === name){ return true }
+    })
+    if (matchedBaseItem.length !== 1){ throw TypeError("指定された装備がないか、複数あります: " + type + ", " + name)}
+    else return matchedBaseItem[0]!
 }

@@ -1,4 +1,4 @@
-import { useState, type ReactElement, type ReactNode } from "react"
+import { useState, type Dispatch, type ReactElement, type ReactNode, type SetStateAction } from "react"
 import { weapons } from "@/gears/BaseItem/weapons"
 import { jobs } from "@/gears/weapontype/weaponType"
 import type { GearSet } from "@/gears/Gearset/gearset";
@@ -19,7 +19,7 @@ const Options = () => {
     return <>{result}</>
     };
 
-export const WeaponType = (currentGearSet: GearSet, updateCurrentGearSet: Updater<GearSet>, region: Region) => {
+export const WeaponType = (globalRenderer: number, setGlobalRenderer: Dispatch<SetStateAction<number>>, currentGearSet: GearSet, updateCurrentGearSet: Updater<GearSet>, region: Region) => {
     const [changeCount, setChangeCount] = useState(0)
     return <>
         あなたの武器種＝ 

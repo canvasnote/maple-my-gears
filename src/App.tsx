@@ -9,8 +9,10 @@ import { GearsTable } from "./UI/Gearlist";
 import { WeaponType } from "./UI/WeaPonType";
 import { Region } from "./i18n";
 import { GearsTotalStat } from "./UI/GearsTotalStat";
+import { PresetField } from "./UI/PresetField";
 
 export function App() {
+  const [globalRenderer, setGlobalRenderer] = useState(0)
   const [currentGearSet, updateCurrentGearSet] = useImmer(initGearSet())
   const [region, setRegion] = useImmer(new Region("JMS"))
 
@@ -26,11 +28,13 @@ export function App() {
 
       <h1 className="text-5xl font-bold my-4 leading-tight">メイプルマイギア</h1>
 
-      {WeaponType(currentGearSet, updateCurrentGearSet, region)}
+      {WeaponType(globalRenderer, setGlobalRenderer, currentGearSet, updateCurrentGearSet, region)}
       <hr></hr>
-      {GearsTable(currentGearSet, updateCurrentGearSet, region)}
+      {PresetField(globalRenderer, setGlobalRenderer, currentGearSet, updateCurrentGearSet, region)}
       <hr></hr>
-      {GearsTotalStat(currentGearSet, updateCurrentGearSet, region)}
+      {GearsTable(globalRenderer, setGlobalRenderer, currentGearSet, updateCurrentGearSet, region)}
+      <hr></hr>
+      {GearsTotalStat(globalRenderer, setGlobalRenderer, currentGearSet, updateCurrentGearSet, region)}
     </div>
   );
 }
