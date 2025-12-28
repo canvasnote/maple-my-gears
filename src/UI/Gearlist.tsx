@@ -1,12 +1,13 @@
-import type { ReactElement, ReactNode } from "react"
+import { useState, type ReactElement, type ReactNode } from "react"
 import type { GearType } from "@/gears/gear"
-import { baseItems, type IBaseItem } from "@/gears/BaseItem/baseitem"
+import { baseItems, getBaseItemByName, type IBaseItem } from "@/gears/BaseItem/baseitem"
 import { strToGearType, strToSlotType, type GearSet, type SlotType, GearSlot, slotTypeToGearType } from "@/gears/Gearset/gearset"
 import type { IStat } from "@/gears/stat"
 import type { Region } from "@/i18n"
 import type { Updater } from "use-immer"
 
 export const GearsTable = (currentGearSet: GearSet,updateCurrentGearSet: Updater<GearSet>, region: Region) => {
+    const [changeCount, setChangeCount] = useState(0)
     const typeMatchedGears = (slotType: SlotType) => {
         const gearType = strToGearType(slotTypeToGearType(slotType))
         return baseItems.filter((item) => {
@@ -28,19 +29,29 @@ export const GearsTable = (currentGearSet: GearSet,updateCurrentGearSet: Updater
         <select 
         name={type} 
         className="w-60" 
-        onChange={e => { updateCurrentGearSet(currentGearSet.setSlotBaseItem(strToSlotType(e.target.name), e.target.value, region))}}
+        onChange={e => { 
+            setChangeCount(changeCount + 1);
+            updateCurrentGearSet(draft =>{
+                const targetSlotIndex = currentGearSet.getSlotIndexBySlotType(strToSlotType(e.target.name))
+                const matchedBaseItem = getBaseItemByName(baseItems, slotTypeToGearType(e.target.name), e.target.value)
+                draft.slots[targetSlotIndex]!.gear.name = matchedBaseItem.JMSName
+                draft.slots[targetSlotIndex]!.gear.baseStat = structuredClone(matchedBaseItem.baseStat)
+                draft.slots[targetSlotIndex]!.gear.level = matchedBaseItem.level
+                // console.log(JSON.stringify(draft.slots[targetSlotIndex]!.gear))
+            }
+        )}}
         >
             { Options(typeMatchedGears(type)) }
         </select>
 
-    const statListToString = (list: IStat[] | undefined) =>{
-        if (list === undefined) {return ""}
+    const StatList = (list: IStat[] | undefined) =>{
+        if (list === undefined) {return <>qqq</>}
 
-        let result = ""
-        list.map((stat, index) => {
-            result += stat.type + ": " + stat.amount + "<br /><br />"
-        })
-        return result
+        const result = list.map((stat, index) => 
+            <p>{stat.type}: {stat.amount}</p>
+        )
+        console.log(<>aaa</>)
+        return <>{result}</>
     }
 
     const rows = currentGearSet.slots.map((slot, index) => 
@@ -55,7 +66,7 @@ export const GearsTable = (currentGearSet: GearSet,updateCurrentGearSet: Updater
                 {matchedGearList(strToSlotType(slot.type), slot.acceptType)}
             </td>
             <td>
-                {statListToString(slot.gear?.baseStat)}
+                {StatList(slot.gear?.baseStat)}
             </td>
         </tr>
     )

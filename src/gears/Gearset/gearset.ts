@@ -1,3 +1,4 @@
+import { immerable } from "immer"
 import type { IntRange } from "type-fest";
 
 import type { Potential } from "../potential";
@@ -14,7 +15,25 @@ export class GearSets {
 }
 
 export class GearSet {
+  [immerable] = true
   slots: Array<GearSlot> = [];
+
+  getSlotIndexBySlotType = (slotType: SlotType): number => {
+    // 装備スロット名から該当するスロット番号を返す
+    let matchedSlotIndex = -1
+    this.slots.map((slot, index) => {
+      if (slot.type === slotType){
+        matchedSlotIndex = index
+      }
+    });
+
+    if (matchedSlotIndex === -1) { 
+        // スロットが見つからなかったらエラー
+        throw TypeError("getSlotIndex: 装備スロットが見つかりません(" + slotType + ")") 
+    }
+    else return matchedSlotIndex
+  }
+
   setSlotBaseItem = (slotType: SlotType, equipName: string, region: Region): GearSet => {
     /// 装備スロットと装備名とリージョンから該当するベース装備を探してきて装備名と基礎能力とレベルをセットし、更新済みのギアセットを返す
     let matchedSlotIndex = -1
@@ -33,7 +52,8 @@ export class GearSet {
       
       if (matchedSlotIndex === 1) { 
         // スロットが見つからなかったらエラー
-        throw TypeError("setSlotBaseItem: 装備スロットが見つかりません(" + {slotType: slotType, equipName: equipName, region: region} + ")") }
+        throw TypeError("setSlotBaseItem: 装備スロットが見つかりません(" + {slotType: slotType, equipName: equipName, region: region} + ")") 
+      }
       else{
         // スロットが見つかったらベース装備を探してきて装備名と基礎能力とレベルをセット
         baseItems.map((item, index) => {
@@ -58,7 +78,7 @@ export class GearSet {
     }
     else{ throw TypeError("未実装のリージョンです: " + region.name)}
     console.log(JSON.stringify(this.slots[matchedSlotIndex]))
-    return structuredClone(this)
+    return this
   };
 }
 

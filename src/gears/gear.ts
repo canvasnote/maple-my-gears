@@ -3,7 +3,7 @@ import type { IntRange } from "type-fest";
 import type { Potential } from "./potential";
 import type { BonusPotential } from "./bonuspotential";
 import type { IStat } from "./stat";
-import { baseItems } from "./BaseItem/baseitem";
+import { baseItems, type IBaseItem } from "./BaseItem/baseitem";
 
 export type GearType =
   // 3種の神器
