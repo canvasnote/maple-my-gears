@@ -9,7 +9,7 @@ export const weapons: Array<IBaseItem> = [
     baseStat: [
     ],
   }, 
-  
+
   {
     type: "Weapon",
     JMSName: "ファフニール武器",
@@ -31,8 +31,8 @@ export const weapons: Array<IBaseItem> = [
     level: 150,
     baseStat: [
       { type: "AMA", amount: -1, defindByJob: true },
-      { type: "MainStat", amount: 40 },
-      { type: "SubStat1", amount: 40 },
+      { type: "MainStat", amount: 60 },
+      { type: "SubStat1", amount: 60 },
       { type: "IgnoreDefence", amount: 10 },
       { type: "BossDamage", amount: 30 },
     ],
@@ -74,8 +74,8 @@ export const weapons: Array<IBaseItem> = [
     level: 200,
     baseStat: [
       { type: "AMA", amount: -1, defindByJob: true },
-      { type: "MainStat", amount: 150 },
-      { type: "SubStat1", amount: 150 },
+      { type: "MainStat", amount: 190 },
+      { type: "SubStat1", amount: 190 },
       { type: "IgnoreDefence", amount: 20 },
       { type: "BossDamage", amount: 30 },
       { type: "FinalDamage", amount: 10 },

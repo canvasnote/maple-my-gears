@@ -8,6 +8,7 @@ import type { IStat } from "../stat";
 import { type GearType, Gear } from "../gear"
 import type { Region } from "../../i18n.ts"
 import { baseItems, type IBaseItem } from "../BaseItem/baseitem.ts";
+import type { IWeaponType } from "../weapontype/weaponType.ts";
 
 export class GearSets {
   currentSet: GearSet = new GearSet()
@@ -16,6 +17,18 @@ export class GearSets {
 
 export class GearSet {
   [immerable] = true
+  weaponType: IWeaponType = {
+        internalName: "NotSelected",
+        JMSName: "選択してください",
+        mainStat: "STR",
+        subStat: "DEX",
+        disabled: false,
+        atkFafnir: 0,
+        atkAbsolab: 0,
+        atkArcane: 0,
+        atkGenesis: 0,
+        atkDestiny: 0
+    }
   slots: Array<GearSlot> = [];
 
   getSlotIndexBySlotType = (slotType: SlotType): number => {
@@ -33,6 +46,8 @@ export class GearSet {
     }
     else return matchedSlotIndex
   }
+
+  
 
   setSlotBaseItem = (slotType: SlotType, equipName: string, region: Region): GearSet => {
     /// 装備スロットと装備名とリージョンから該当するベース装備を探してきて装備名と基礎能力とレベルをセットし、更新済みのギアセットを返す

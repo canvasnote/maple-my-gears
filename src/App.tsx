@@ -25,8 +25,8 @@ export function App() {
 
       <h1 className="text-5xl font-bold my-4 leading-tight">メイプルマイギア</h1>
 
-      {WeaponType(currentGearSet, region)}
-      {GearsTable(currentGearSet,updateCurrentGearSet, region)}
+      {WeaponType(currentGearSet, updateCurrentGearSet, region)}
+      {GearsTable(currentGearSet, updateCurrentGearSet, region)}
     </div>
   );
 }

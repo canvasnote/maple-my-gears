@@ -1,6 +1,11 @@
+import {mainStat} from "../stat"
+
 export interface IWeaponType{
     internalName: string
-    JMSName: string
+    JMSName: string,
+    mainStat: mainStat
+    subStat: "STR" | "INT" | "DEX" | "LUK"
+    subStat2?: "STR" | "INT" | "DEX" | "LUK"
     disabled: boolean
     atkFafnir: number
     atkAbsolab: number
@@ -13,6 +18,8 @@ export const jobs: Array<IWeaponType> = [
     {
         internalName: "NotSelected",
         JMSName: "選択してください",
+        mainStat: "STR",
+        subStat: "DEX",
         disabled: false,
         atkFafnir: 0,
         atkAbsolab: 0,
@@ -23,6 +30,8 @@ export const jobs: Array<IWeaponType> = [
     {
         internalName: "Warrior",
         JMSName: "----戦士----",
+        mainStat: "STR",
+        subStat: "DEX",
         disabled: true,
         atkFafnir: 0,
         atkAbsolab: 0,
@@ -33,146 +42,176 @@ export const jobs: Array<IWeaponType> = [
     {
         internalName: "OneHandedSword",
         JMSName: "片手剣",
+        mainStat: "STR",
+        subStat: "DEX",
         disabled: false,
         atkFafnir: 164,
         atkAbsolab: 197,
         atkArcane: 283,
         atkGenesis: 326,
-        atkDestiny: 0
+        atkDestiny: 358
     },
     {
         internalName: "TwoHandedSword",
         JMSName: "両手剣",
+        mainStat: "STR",
+        subStat: "DEX",
         disabled: false,
         atkFafnir: 171,
         atkAbsolab: 205,
         atkArcane: 295,
         atkGenesis: 340,
-        atkDestiny: 0
+        atkDestiny: 373
     },
     {
         internalName: "OneHandedAxe",
         JMSName: "片手斧",
+        mainStat: "STR",
+        subStat: "DEX",
         disabled: false,
         atkFafnir: 164,
         atkAbsolab: 197,
         atkArcane: 283,
         atkGenesis: 326,
-        atkDestiny: 0
+        atkDestiny: 358
     },
     {
         internalName: "TwoHandedAxe",
         JMSName: "両手斧",
+        mainStat: "STR",
+        subStat: "DEX",
         disabled: false,
         atkFafnir: 171,
         atkAbsolab: 205,
         atkArcane: 295,
         atkGenesis: 340,
-        atkDestiny: 0
+        atkDestiny: 373
     },
     {
         internalName: "OneHandedBlunt",
         JMSName: "片手鈍器",
+        mainStat: "STR",
+        subStat: "DEX",
         disabled: false,
         atkFafnir: 164,
         atkAbsolab: 197,
         atkArcane: 283,
         atkGenesis: 326,
-        atkDestiny: 0
+        atkDestiny: 358
     },
     {
         internalName: "TwoHandedBlunt",
         JMSName: "両手鈍器",
+        mainStat: "STR",
+        subStat: "DEX",
         disabled: false,
         atkFafnir: 171,
         atkAbsolab: 205,
         atkArcane: 295,
         atkGenesis: 340,
-        atkDestiny: 0
+        atkDestiny: 373
     },
     {
         internalName: "Halberd",
         JMSName: "鉾",
+        mainStat: "STR",
+        subStat: "DEX",
         disabled: false,
         atkFafnir: 171,
         atkAbsolab: 184,
         atkArcane: 264,
         atkGenesis: 304,
-        atkDestiny: 0
+        atkDestiny: 334
     },
     {
         internalName: "Spear",
         JMSName: "槍",
+        mainStat: "STR",
+        subStat: "DEX",
         disabled: false,
         atkFafnir: 153,
         atkAbsolab: 205,
         atkArcane: 295,
         atkGenesis: 340,
-        atkDestiny: 0
+        atkDestiny: 373
     },
     {
         internalName: "Desperado",
         JMSName: "デスペラード",
+        mainStat: "STR",
+        subStat: "DEX",
         disabled: false,
         atkFafnir: 171,
         atkAbsolab: 205,
         atkArcane: 295,
         atkGenesis: 340,
-        atkDestiny: 0
+        atkDestiny: 373
     },
     {
         internalName: "GuantletRevolber",
         JMSName: "ガントレットリボルバー",
+        mainStat: "STR",
+        subStat: "DEX",
         disabled: false,
         atkFafnir: 128,
         atkAbsolab: 154,
         atkArcane: 221,
         atkGenesis: 255,
-        atkDestiny: 0
+        atkDestiny: 280
     },
     {
         internalName: "Tuner",
         JMSName: "チューナー",
+        mainStat: "STR",
+        subStat: "DEX",
         disabled: false,
         atkFafnir: 171,
         atkAbsolab: 205,
         atkArcane: 295,
         atkGenesis: 340,
-        atkDestiny: 0
+        atkDestiny: 373
     },
     {
         internalName: "Zero",
-        JMSName: "太刀(ゼロ)",
+        JMSName: "ラズリ(ゼロ/アルファ)",
+        mainStat: "STR",
+        subStat: "DEX",
         disabled: false,
-        atkFafnir: 0,
-        atkAbsolab: 0,
-        atkArcane: 0,
-        atkGenesis: 340,
-        atkDestiny: 0
+        atkFafnir: 169,
+        atkAbsolab: 203,
+        atkArcane: 293,
+        atkGenesis: 337,
+        atkDestiny: 370
     },
     {
         internalName: "Ren",
         JMSName: "長剣",
+        mainStat: "STR",
+        subStat: "DEX",
         disabled: false,
         atkFafnir: 171,
         atkAbsolab: 205,
         atkArcane: 295,
         atkGenesis: 340,
-        atkDestiny: 0
+        atkDestiny: 375
     },
     {
         internalName: "Katana",
         JMSName: "刀",
+        mainStat: "STR",
+        subStat: "DEX",
         disabled: false,
         atkFafnir: 164,
         atkAbsolab: 197,
         atkArcane: 283,
         atkGenesis: 326,
-        atkDestiny: 0
+        atkDestiny: 358
     },
     {
         internalName: "Wizard",
         JMSName: "----魔法使い----",
+        mainStat: "INT",
+        subStat: "LUK",
         disabled: true,
         atkFafnir: 0,
         atkAbsolab: 0,
@@ -183,76 +222,92 @@ export const jobs: Array<IWeaponType> = [
     {
         internalName: "Wand",
         JMSName: "杖(ワンド)",
+        mainStat: "INT",
+        subStat: "LUK",
         disabled: false,
         atkFafnir: 201,
         atkAbsolab: 241,
         atkArcane: 347,
         atkGenesis: 400,
-        atkDestiny: 0
+        atkDestiny: 439
     },
     {
         internalName: "Staff",
         JMSName: "棒(スタッフ)",
+        mainStat: "INT",
+        subStat: "LUK",
         disabled: false,
         atkFafnir: 204,
         atkAbsolab: 245,
         atkArcane: 353,
         atkGenesis: 406,
-        atkDestiny: 0
+        atkDestiny: 445
     },
     {
         internalName: "ShiningRod",
         JMSName: "シャイニングロッド",
+        mainStat: "INT",
+        subStat: "LUK",
         disabled: false,
         atkFafnir: 201,
         atkAbsolab: 241,
         atkArcane: 347,
         atkGenesis: 400,
-        atkDestiny: 0
+        atkDestiny: 439
     },
     {
         internalName: "ESPLimitter",
         JMSName: "ESPリミッター",
+        mainStat: "INT",
+        subStat: "LUK",
         disabled: false,
         atkFafnir: 201,
         atkAbsolab: 241,
         atkArcane: 347,
         atkGenesis: 400,
-        atkDestiny: 0
+        atkDestiny: 439
     },
     {
         internalName: "MagicGuantlet",
         JMSName: "マジックガントレット",
+        mainStat: "INT",
+        subStat: "LUK",
         disabled: false,
         atkFafnir: 201,
         atkAbsolab: 241,
         atkArcane: 347,
         atkGenesis: 400,
-        atkDestiny: 0
+        atkDestiny: 439
     },
     {
         internalName: "Fan_Kanna",
         JMSName: "扇",
+        mainStat: "INT",
+        subStat: "LUK",
         disabled: false,
         atkFafnir: 175,
         atkAbsolab: 241,
         atkArcane: 347,
         atkGenesis: 400,
-        atkDestiny: 0
+        atkDestiny: 439
     },
     {
         internalName: "MemorialStaff",
         JMSName: "メモリアルスタッフ",
+        mainStat: "INT",
+        subStat: "LUK",
         disabled: false,
         atkFafnir: 175,
         atkAbsolab: 241,
         atkArcane: 347,
         atkGenesis: 400,
-        atkDestiny: 0
+        atkDestiny: 439
     },
     {
         internalName: "Archer",
         JMSName: "----弓使い----",
+        mainStat: "DEX",
+        subStat: "STR",
         disabled: true,
         atkFafnir: 0,
         atkAbsolab: 0,
@@ -263,56 +318,68 @@ export const jobs: Array<IWeaponType> = [
     {
         internalName: "Bow",
         JMSName: "弓",
+        mainStat: "DEX",
+        subStat: "STR",
         disabled: false,
         atkFafnir: 160,
         atkAbsolab: 192,
         atkArcane: 276,
         atkGenesis: 318,
-        atkDestiny: 0
+        atkDestiny: 349
     },
     {
         internalName: "CrossBow",
         JMSName: "弩",
+        mainStat: "DEX",
+        subStat: "STR",
         disabled: false,
         atkFafnir: 164,
         atkAbsolab: 197,
         atkArcane: 283,
         atkGenesis: 326,
-        atkDestiny: 0
+        atkDestiny: 358
     },
     {
         internalName: "DualBowgun",
         JMSName: "デュアルボウガン",
+        mainStat: "DEX",
+        subStat: "STR",
         disabled: false,
         atkFafnir: 160,
         atkAbsolab: 192,
         atkArcane: 276,
         atkGenesis: 318,
-        atkDestiny: 0
+        atkDestiny: 349
     },
     {
         internalName: "AncientBow",
         JMSName: "エンシェントボウ",
+        mainStat: "DEX",
+        subStat: "STR",
         disabled: false,
         atkFafnir: 160,
         atkAbsolab: 192,
         atkArcane: 276,
         atkGenesis: 318,
-        atkDestiny: 0
+        atkDestiny: 349
     },
     {
         internalName: "BlessShooter",
         JMSName: "ブレスシューター",
+        mainStat: "DEX",
+        subStat: "STR",
         disabled: false,
         atkFafnir: 160,
         atkAbsolab: 192,
         atkArcane: 276,
         atkGenesis: 318,
-        atkDestiny: 0
+        atkDestiny: 349
     },
     {
         internalName: "Rogue",
         JMSName: "----盗賊----",
+        mainStat: "LUK",
+        subStat: "DEX",
         disabled: true,
         atkFafnir: 0,
         atkAbsolab: 0,
@@ -321,68 +388,96 @@ export const jobs: Array<IWeaponType> = [
         atkDestiny: 0
     },
     {
-        internalName: "ShortSword",
+        internalName: "ShortSword(シャドー)",
         JMSName: "短剣",
+        mainStat: "LUK",
+        subStat: "STR",
+        subStat2: "DEX",
         disabled: false,
         atkFafnir: 160,
         atkAbsolab: 192,
         atkArcane: 276,
         atkGenesis: 318,
-        atkDestiny: 0
+        atkDestiny: 349
+    },
+    {
+        internalName: "ShortSword(デュアルブレイド)",
+        JMSName: "短剣",
+        mainStat: "LUK",
+        subStat: "DEX",
+        disabled: false,
+        atkFafnir: 160,
+        atkAbsolab: 192,
+        atkArcane: 276,
+        atkGenesis: 318,
+        atkDestiny: 349
     },
     {
         internalName: "Guantlet",
         JMSName: "篭手",
+        mainStat: "LUK",
+        subStat: "DEX",
         disabled: false,
         atkFafnir: 86,
         atkAbsolab: 103,
         atkArcane: 149,
         atkGenesis: 172,
-        atkDestiny: 0
+        atkDestiny: 189
     },
     {
         internalName: "Cane",
         JMSName: "ケイン",
+        mainStat: "LUK",
+        subStat: "DEX",
         disabled: false,
         atkFafnir: 164,
         atkAbsolab: 197,
         atkArcane: 283,
         atkGenesis: 326,
-        atkDestiny: 0
+        atkDestiny: 358
     },
     {
         internalName: "Chain",
         JMSName: "チェーン",
+        mainStat: "LUK",
+        subStat: "STR",
+        subStat2: "DEX",
         disabled: false,
         atkFafnir: 128,
         atkAbsolab: 192,
         atkArcane: 276,
         atkGenesis: 318,
-        atkDestiny: 0
+        atkDestiny: 349
     },
     {
         internalName: "Fan_Hoyong",
         JMSName: "術扇",
+        mainStat: "LUK",
+        subStat: "DEX",
         disabled: false,
         atkFafnir: 128,
         atkAbsolab: 192,
         atkArcane: 276,
         atkGenesis: 318,
-        atkDestiny: 0
+        atkDestiny: 349
     },
     {
         internalName: "Chakram",
         JMSName: "チャクラム",
+        mainStat: "LUK",
+        subStat: "DEX",
         disabled: false,
         atkFafnir: 128,
         atkAbsolab: 192,
         atkArcane: 276,
         atkGenesis: 318,
-        atkDestiny: 0
+        atkDestiny: 349
     },
     {
         internalName: "Pirate",
         JMSName: "----海賊----",
+        mainStat: "STR",
+        subStat: "DEX",
         disabled: true,
         atkFafnir: 0,
         atkAbsolab: 0,
@@ -393,46 +488,57 @@ export const jobs: Array<IWeaponType> = [
     {
         internalName: "Knuckle",
         JMSName: "ナックル",
+        mainStat: "STR",
+        subStat: "DEX",
         disabled: false,
         atkFafnir: 128,
         atkAbsolab: 154,
         atkArcane: 221,
         atkGenesis: 255,
-        atkDestiny: 0
+        atkDestiny: 280
     },
     {
         internalName: "Gun",
         JMSName: "銃",
+        mainStat: "DEX",
+        subStat: "STR",
         disabled: false,
         atkFafnir: 125,
         atkAbsolab: 150,
         atkArcane: 216,
         atkGenesis: 249,
-        atkDestiny: 0
+        atkDestiny: 273
     },
     {
         internalName: "HandCannon",
         JMSName: "ハンドキャノン",
+        mainStat: "STR",
+        subStat: "DEX",
         disabled: false,
         atkFafnir: 175,
         atkAbsolab: 210,
         atkArcane: 302,
         atkGenesis: 348,
-        atkDestiny: 0
+        atkDestiny: 382
     },
     {
         internalName: "SoulShooter",
         JMSName: "ソウルシューター",
+        mainStat: "DEX",
+        subStat: "STR",
         disabled: false,
         atkFafnir: 128,
         atkAbsolab: 154,
         atkArcane: 221,
         atkGenesis: 255,
-        atkDestiny: 0
+        atkDestiny: 280
     },
     {
         internalName: "Xenon",
         JMSName: "----ゼノン----",
+        mainStat: "STR",
+        subStat: "DEX",
+        subStat2: "LUK",
         disabled: true,
         atkFafnir: 0,
         atkAbsolab: 0,
@@ -442,12 +548,41 @@ export const jobs: Array<IWeaponType> = [
     },
     {
         internalName: "EnergySword",
-        JMSName: "エナジーソード",
+        JMSName: "エナジーソード(STR>DEX>LUK)",
+        disabled: false,
+        mainStat: "STR",
+        subStat: "DEX",
+        subStat2: "LUK",
+        atkFafnir: 128,
+        atkAbsolab: 154,
+        atkArcane: 221,
+        atkGenesis: 255,
+        atkDestiny: 280
+    },
+    {
+        internalName: "EnergySword",
+        JMSName: "エナジーソード(DEX>STR>LUK)",
+        mainStat: "DEX",
+        subStat: "STR",
+        subStat2: "LUK",
         disabled: false,
         atkFafnir: 128,
         atkAbsolab: 154,
         atkArcane: 221,
         atkGenesis: 255,
-        atkDestiny: 0
+        atkDestiny: 280
+    },
+    {
+        internalName: "EnergySword",
+        JMSName: "エナジーソード(LUK>STR>DEX)",
+        mainStat: "LUK",
+        subStat: "STR",
+        subStat2: "DEX",
+        disabled: false,
+        atkFafnir: 128,
+        atkAbsolab: 154,
+        atkArcane: 221,
+        atkGenesis: 255,
+        atkDestiny: 280
     },
 ]

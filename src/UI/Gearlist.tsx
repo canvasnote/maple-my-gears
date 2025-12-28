@@ -2,11 +2,12 @@ import { useState, type ReactElement, type ReactNode } from "react"
 import type { GearType } from "@/gears/gear"
 import { baseItems, getBaseItemByName, type IBaseItem } from "@/gears/BaseItem/baseitem"
 import { strToGearType, strToSlotType, type GearSet, type SlotType, GearSlot, slotTypeToGearType } from "@/gears/Gearset/gearset"
-import type { IStat } from "@/gears/stat"
+import { describeStat, type IStat } from "@/gears/stat"
 import type { Region } from "@/i18n"
 import type { Updater } from "use-immer"
+import { randomUUIDv7 } from "bun"
 
-export const GearsTable = (currentGearSet: GearSet,updateCurrentGearSet: Updater<GearSet>, region: Region) => {
+export const GearsTable = (currentGearSet: GearSet, updateCurrentGearSet: Updater<GearSet>, region: Region) => {
     const [changeCount, setChangeCount] = useState(0)
     const typeMatchedGears = (slotType: SlotType) => {
         const gearType = strToGearType(slotTypeToGearType(slotType))
@@ -66,7 +67,29 @@ export const GearsTable = (currentGearSet: GearSet,updateCurrentGearSet: Updater
                 {matchedGearList(strToSlotType(slot.type), slot.acceptType)}
             </td>
             <td>
-                {StatList(slot.gear?.baseStat)}
+                {
+                    slot.gear.baseStat.map((stat, index) =><p key={slot.type + stat.type}>
+                        {describeStat(
+                            stat.type,
+                            stat.amount,
+                            currentGearSet.weaponType.mainStat,
+                            currentGearSet.weaponType.subStat,
+                            currentGearSet.weaponType.subStat2,
+                            region,
+                            slot.gear.type,
+                            currentGearSet
+                        )}
+                    </p>)
+                }
+                {/* {describeStat(
+                    slot.gear.baseStat[0]!.type,
+                    slot.gear.baseStat[0]!.amount,
+                    currentGearSet.weaponType.mainStat,
+                    currentGearSet.weaponType.subStat,
+                    currentGearSet.weaponType.subStat2,
+                    region
+                    )}
+                {StatList(slot.gear?.baseStat)} */}
             </td>
         </tr>
     )
