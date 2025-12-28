@@ -35,6 +35,8 @@ export type GearType =
   | "ArcaneSymbol"
   | "AuthenticSymbol"
   | "GrandAuthenticSymbol"
+  // ペット装備
+  | "PetEquip"
   // その他
   | "Heart"
   | "Medal"
@@ -55,7 +57,7 @@ export type GearType =
 //     "ArcaneSymbol":22,  "AuthenticSymbol":23,  "GrandAuthenticSymbol":24
 // } as const
 
-interface IGear {
+export interface IGear {
   type: GearType | undefined;
   name: string | undefined;
   level: IntRange<0, 251> | undefined;
@@ -68,14 +70,4 @@ interface IGear {
   starForce: number;
 }
 
-interface IGearSets {
-  slots: Array<IGearSet>;
-}
 
-interface IGearSet {
-  slots: Array<IGearSlot>;
-}
-
-interface IGearSlot {
-  gear: IGear;
-}

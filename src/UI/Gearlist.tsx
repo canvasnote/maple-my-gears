@@ -1,6 +1,7 @@
 import type { ReactElement, ReactNode } from "react"
 import type { GearType } from "@/gears/gear"
 import { baseItems, type IBaseItem } from "@/gears/BaseItem/baseitem"
+import type { GearSet } from "@/gears/Gearset/gearset"
 
 const GearTypeNameList = {
     // 3種の神器
@@ -48,15 +49,16 @@ const strToGearType = (str: string): GearType => {
         case "Medal": return "Medal"
         case "Totem": return "Totem"
         case "Jewel": return "Jewel"
+        case "PetEquip": return "PetEquip"
         case "ArcaneSymbol": return "ArcaneSymbol"
         case "AuthenticSymbol": return "AuthenticSymbol"
         case "GrandAuthenticSymbol": return "GrandAuthenticSymbol"
 
-        default: throw Error("strToGearType: 渡された文字列が装備タイプと一致しません")
+        default: throw Error("strToGearType: 渡された文字列が装備タイプと一致しません: " + str)
     }
 }
 
-export const GearsTable = () => {
+export const GearsTable = (currentGearSet: GearSet) => {
     let result: ReactNode = <></>
     
     const typeMatchedGears = (gear: GearType) => {
@@ -80,16 +82,16 @@ export const GearsTable = () => {
             { Options(typeMatchedGears(type)) }
         </select>
 
-    const rows = Object.keys(GearTypeNameList).map((type, index) => 
-        <tr key={type}>
+    const rows = currentGearSet.slots.map((slot, index) => 
+        <tr key={slot.type}>
             <td>
                 {index + 1}
             </td>
             <td>
-                {type}
+                {slot.JMSName}
             </td>
             <td>
-                {matchedGearList(strToGearType(type))}
+                {matchedGearList(strToGearType(slot.acceptType))}
             </td>
         </tr>
     )
