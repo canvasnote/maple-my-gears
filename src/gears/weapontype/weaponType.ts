@@ -388,8 +388,8 @@ export const jobs: Array<IWeaponType> = [
         atkDestiny: 0
     },
     {
-        internalName: "ShortSword(シャドー)",
-        JMSName: "短剣",
+        internalName: "ShortSword_Shadow",
+        JMSName: "短剣(シャドー)",
         mainStat: "LUK",
         subStat: "STR",
         subStat2: "DEX",
@@ -401,8 +401,8 @@ export const jobs: Array<IWeaponType> = [
         atkDestiny: 349
     },
     {
-        internalName: "ShortSword(デュアルブレイド)",
-        JMSName: "短剣",
+        internalName: "ShortSword_DualBlade",
+        JMSName: "短剣(デュアルブレイド)",
         mainStat: "LUK",
         subStat: "DEX",
         disabled: false,
@@ -547,7 +547,7 @@ export const jobs: Array<IWeaponType> = [
         atkDestiny: 0
     },
     {
-        internalName: "EnergySword",
+        internalName: "EnergySword_SDL",
         JMSName: "エナジーソード(STR>DEX>LUK)",
         disabled: false,
         mainStat: "STR",
@@ -560,7 +560,7 @@ export const jobs: Array<IWeaponType> = [
         atkDestiny: 280
     },
     {
-        internalName: "EnergySword",
+        internalName: "EnergySword_DSL",
         JMSName: "エナジーソード(DEX>STR>LUK)",
         mainStat: "DEX",
         subStat: "STR",
@@ -573,7 +573,7 @@ export const jobs: Array<IWeaponType> = [
         atkDestiny: 280
     },
     {
-        internalName: "EnergySword",
+        internalName: "EnergySword_LSD",
         JMSName: "エナジーソード(LUK>STR>DEX)",
         mainStat: "LUK",
         subStat: "STR",

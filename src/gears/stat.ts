@@ -41,6 +41,70 @@ type StatType =
     // 能力なし(セット効果付き装備を1個着用したときに使う)
     "None"
 
+export const getLocaledStat = (statType: string, mainStat: MainStat, subStat: MainStat, subStat2: MainStat | undefined, region: Region) => {
+    if (region.name === "JMS"){
+        switch (statType){
+            case "MainStat": if(mainStat === "STR" || mainStat === "DEX" || mainStat === "INT" || mainStat === "LUK") return `${mainStat}`
+                if(mainStat === "HP") return `STR`
+                throw TypeError("メインステの処理がおかしいです　これが出るのはバグです")
+            case "SubStat1": 
+                if(mainStat === "STR" || mainStat === "DEX" || mainStat === "INT" || mainStat === "LUK") return `${subStat}`
+                if(mainStat === "HP") return `` // DAはなんもなし
+                throw TypeError("サブステの処理がおかしいです　これが出るのはバグです")
+            case "SubStat2": 
+                if(subStat2 !== undefined) return `${subStat2}` // サブステ2個ある組だけ
+                else return ``
+            case "MainStatPerLevel": return `レベル9ごとに${mainStat}`
+            case "SubStat1PerLevel": return `レベル9ごとに${subStat}`
+            case "SubStat2PerLevel": return `レベル9ごとに${subStat2}`
+            case "MainStatNot%": return `${mainStat}(%非適用)`
+            case "SubStat1Not%": return `${subStat}(%非適用)`
+            case "SubStat2Not%":  
+                if(subStat2) return `${subStat2}(%非適用)` // サブステ2個ある組だけ
+                else return ``
+            case "MainStat%": 
+                if(mainStat === "STR" || mainStat === "DEX" || mainStat === "INT" || mainStat === "LUK") return `${mainStat}%`
+                if(mainStat === "HP") return `STR%`
+                throw TypeError("メインステ%の処理がおかしいです　これが出るのはバグです")
+            case "SubStat1%": 
+                if(mainStat === "STR" || mainStat === "DEX" || mainStat === "INT" || mainStat === "LUK") return `${subStat}%`
+                if(mainStat === "HP") return `` // DAはなんもなし
+                throw TypeError("サブステの処理がおかしいです　これが出るのはバグです")
+            case "SubStat2%": 
+                if(subStat2) return `${subStat2}%` // サブステ2個ある組だけ
+                else return ``
+            case "AllStat%": return `オールステータス%`
+            case "HP": return `HP`
+            case "MP": return `MP`
+            case "HP%": return `HP%`
+            case "MP%": return `MP%`
+            case "AMA": 
+                if(mainStat === "STR" || mainStat === "DEX" || mainStat === "LUK" || mainStat === "HP") return `攻撃力`
+                if(mainStat === "INT") return `魔力`
+                throw TypeError("AMAの処理がおかしいです　これが出るのはバグです")
+            case "AMA%": 
+                if(mainStat === "STR" || mainStat === "DEX" || mainStat === "LUK" || mainStat === "HP") return `攻撃力%`
+                if(mainStat === "INT") return `魔力%`
+                throw TypeError("AMA%の処理がおかしいです　これが出るのはバグです")
+            case "Damage": return `ダメージ`
+            case "BossDamage": return `ボスダメージ`
+            case "NormalDamage": return `一般ダメージ`
+            case "CriticalRate": return `クリティカル率`
+            case "CriticalDamage": return `クリティカルダメージ`
+            case "FinalDamage": return `最終ダメージ`
+            case "IgnoreDefence": return `防御率無視`
+            case "CoolTimeReduction": return `クールタイム減少`
+            case "ArcaneForce": return `アーケインフォース`
+            case "AuthenticForce": return `オーセンティックフォース`
+            case "MesoAmount": return `メル獲得量`
+            case "DropRate": return `ドロップ率`
+            case "None": return ``
+            default: throw TypeError("定義のないステータスを翻訳しようとしました")
+        }
+    }
+    throw TypeError("このリージョンには対応していません")
+}
+
 export const describeStat = (statType: StatType, amount: number, mainStat: MainStat, subStat: MainStat, subStat2: MainStat | undefined, region: Region, gearType: GearType, currentGearSet: GearSet) => {
     if (region.name === "JMS") {
         switch (statType) {

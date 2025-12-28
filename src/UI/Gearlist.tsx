@@ -49,7 +49,7 @@ export const GearsTable = (currentGearSet: GearSet, updateCurrentGearSet: Update
         if (list === undefined) {return <>qqq</>}
 
         const result = list.map((stat, index) => 
-            <p>{stat.type}: {stat.amount}</p>
+            <div>{stat.type}: {stat.amount} <br /></div>
         )
         console.log(<>aaa</>)
         return <>{result}</>

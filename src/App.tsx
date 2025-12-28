@@ -8,6 +8,7 @@ import { GearSets, initGearSet } from "./gears/Gearset/gearset";
 import { GearsTable } from "./UI/Gearlist";
 import { WeaponType } from "./UI/WeaPonType";
 import { Region } from "./i18n";
+import { GearsTotalStat } from "./UI/GearsTotalStat";
 
 export function App() {
   const [currentGearSet, updateCurrentGearSet] = useImmer(initGearSet())
@@ -26,7 +27,10 @@ export function App() {
       <h1 className="text-5xl font-bold my-4 leading-tight">メイプルマイギア</h1>
 
       {WeaponType(currentGearSet, updateCurrentGearSet, region)}
+      <hr></hr>
       {GearsTable(currentGearSet, updateCurrentGearSet, region)}
+      <hr></hr>
+      {GearsTotalStat(currentGearSet, updateCurrentGearSet, region)}
     </div>
   );
 }

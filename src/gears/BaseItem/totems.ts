@@ -38,6 +38,7 @@ export const totems: Array<IBaseItem> = [
     setEffectName: ["AfterLand"],
     baseStat: [
       { type: "AMA", amount: 7 },
+      { type: "SubStat2", amount: 20 },
     ],
   },
 
