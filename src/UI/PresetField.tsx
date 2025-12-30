@@ -7,6 +7,13 @@ import type { Region } from "@/i18n"
 import { useState, type Dispatch, type JSX, type SetStateAction } from "react"
 import type { IntRange } from "type-fest"
 import type { Updater } from "use-immer"
+import { BaseEquip } from "./Preset/BaseEquip"
+import { UG } from "./Preset/UG"
+import { StarForce } from "./Preset/StarForce"
+import { PotentialWeapon } from "./Preset/PotentialWeapon"
+import { PotentialSubWeapon } from "./Preset/PotentialSubWeapon"
+import { PotentialEmbrem } from "./Preset/PotentialEmbrem"
+import { BonusStat } from "./Preset/BonusStat"
 
 export const PresetField = (globalRenderer: number, setGlobalRenderer: Dispatch<SetStateAction<number>>, currentGearSet: GearSet, updateCurrentGearSet: Updater<GearSet>, region: Region) => {
     const [choosingPreset, setChoosingPreset] = useState("default")
@@ -121,6 +128,15 @@ export const PresetField = (globalRenderer: number, setGlobalRenderer: Dispatch<
     return (
         <>
             <h2>プリセットを適用</h2>
+            <div className="container columns-7 gap-8">
+                {BaseEquip()}
+                {UG()}
+                {StarForce()}
+                {PotentialWeapon()}
+                {PotentialSubWeapon()}
+                {PotentialEmbrem()}
+                {BonusStat()}
+            </div>
             <select
                 name="selectPreset"
                 onChange={e => {
