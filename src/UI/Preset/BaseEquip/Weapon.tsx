@@ -8,13 +8,13 @@ export const Weapon = () => {
 
     return (
         <>
-            <table className="border-collapse border border-slate-500 break-after-column">
+            <table className="border-collapse border border-slate-500 break-after-column w-max">
                 <caption>
                     武器
                 </caption>
                 <tbody>
                     <tr>
-                        <td className="border border-slate-700">
+                        <td className="border border-slate-700 w-7">
                             <img src={fafnir}></img>
                         </td>
                         <td className="border border-slate-700">

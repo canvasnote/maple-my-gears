@@ -18,43 +18,55 @@ import silver_blossom  from "@/assets/images/Accesory/silver_blossom.png"
 import aquatic_letter from "@/assets/images/Accesory/aquatic_letter.png"
 import condensed  from "@/assets/images/Accesory/condensed.png"
 import twilight from "@/assets/images/Accesory/twilight.png"
+import papulatus from "@/assets/images/Accesory/papulatus.png"
+import blackbean from "@/assets/images/Accesory/blackbean.png"
 
-export const Face = () => {
+export const Eyes = () => {
 
     return (
         <>
             <table className="border-collapse border border-slate-500 break-after-column">
                 <caption>
-                    顔の飾り
+                    目の飾り
                 </caption>
                 <tbody>
                     <tr>
                         <td className="border border-slate-700 w-7">
-                            <img src={condensed}></img>
+                            <img src={aquatic_letter}></img>
                         </td>
                         <td className="border border-slate-700">
                             <button>
-                                凝縮された力の結晶石
+                                アクアティックレター目飾り
                             </button>
                         </td>
                     </tr>
                     <tr>
                         <td className="border border-slate-700">
-                            <img src={twilight}></img>
+                            <img src={blackbean}></img>
                         </td>
                         <td className="border border-slate-700">
                             <button>
-                                トワイライトマーク
+                                ブラックビーンマーク
                             </button>
                         </td>
                     </tr>
                     <tr>
                         <td className="border border-slate-700">
-                            <img src={magical_eyepatch}></img>
+                            <img src={papulatus}></img>
                         </td>
                         <td className="border border-slate-700">
                             <button>
-                                魔力が宿った眼帯
+                                ビシャスプラントマーク
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td className="border border-slate-700">
+                            <img src={lose_control_machine}></img>
+                        </td>
+                        <td className="border border-slate-700">
+                            <button>
+                                ルージュコントロールマシンマーク
                             </button>
                         </td>
                     </tr>

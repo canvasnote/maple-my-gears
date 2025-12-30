@@ -4,6 +4,8 @@ import verrad_pendant from "@/assets/images/Accesory/verrad_pendant.png"
 import verrad_belt from "@/assets/images/Accesory/verrad_belt.png"
 import { Ring } from "./Accesory/Ring"
 import { Face } from "./Accesory/Face"
+import { Eyes } from "./Accesory/Eyes"
+import { Pocket } from "./Accesory/Pocket"
 
 export const Accesory = () => {
 
@@ -11,8 +13,9 @@ export const Accesory = () => {
         <>
             {Ring()}
             {Face()}
+            {Eyes()}
             {Ring()}
-            {Ring()}
+            {Pocket()}
         </>
     )
 }

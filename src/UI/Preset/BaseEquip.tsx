@@ -7,18 +7,17 @@ import { Heart } from "./BaseEquip/Heart"
 import { Weapon } from "./BaseEquip/Weapon"
 
 export const BaseEquip = () => {
-
-
     return (
-        <div className="container columns-7 gap-8">
-            <div className="break-after-column">ベース装備</div>
-            <div className="break-after-column">{Weapon()}</div>
-            <div className="break-after-column">{Armour()}</div>
-            <div className="break-after-column">{Accesory()}</div>
-            {/* <div className="break-after-column">{Accesory_old()}</div> */}
-            <div className="break-after-column">{Embrem()}</div>
-            <div className="break-after-column">{Heart()}</div>
-            <div className="break-after-column">{Badge()}</div>
-        </div>
+        <>
+            <h1 className="text-2xl font-bold my-4 leading-tight">ベース装備のプリセット</h1>
+            <div className="container columns-10 gap-2">
+                <div className="break-after-column">{Weapon()}</div>
+                <div className="break-after-column">{Armour()}</div>
+                <div className="break-after-column">{Accesory()}</div>
+                <div className="break-after-column">{Embrem()}</div>
+                <div className="break-after-column">{Heart()}</div>
+                <div className="break-after-column">{Badge()}</div>
+            </div>
+        </>
     )
 }

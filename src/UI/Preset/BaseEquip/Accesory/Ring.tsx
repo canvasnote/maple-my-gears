@@ -22,13 +22,13 @@ export const Ring = () => {
 
     return (
         <>
-            <table className="border-collapse border border-slate-500">
+            <table className="border-collapse border border-slate-500 break-after-column">
                 <caption>
                     指輪
                 </caption>
                 <tbody>
                     <tr>
-                        <td className="border border-slate-700">
+                        <td className="border border-slate-700 w-7">
                             <img src={verrad_ring}></img>
                             <img src={fear}></img>
                             <img src={oath}></img>

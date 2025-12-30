@@ -17,7 +17,7 @@ export function App() {
   const [region, setRegion] = useImmer(new Region("JMS"))
 
   return (
-    <div className="max-w-7xl mx-auto p-8 text-center relative z-10">
+    <div className="max-w-full mx-auto p-8 text-center relative z-10">
       <div className="flex justify-center items-center gap-8 mb-8">
         <img
           src={logo}

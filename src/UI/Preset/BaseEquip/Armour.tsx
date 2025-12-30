@@ -27,7 +27,23 @@ export const Armour = () => {
                 </caption>
                 <tbody>
                     <tr>
-                        <td className="border border-slate-700">
+                        <select>
+                            <option>
+                                
+                                <img src={hyness}></img>
+                                <img src={eagleeye}></img>
+                                <img src={trickster}></img>
+                                <img src={absolab_cape}></img>
+                                <img src={absolab_glove}></img>
+                                <img src={absolab_shoes}></img>
+                                <img src={absolab_shoulder}></img>
+                                <br />
+                                キノコ装備7セット
+                            </option>
+                        </select>
+                    </tr>
+                    <tr>
+                        <td className="border border-slate-700 w-7">
                             <img src={hyness}></img>
                             <img src={eagleeye}></img>
                             <img src={trickster}></img>
