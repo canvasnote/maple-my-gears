@@ -128,14 +128,26 @@ export const PresetField = (globalRenderer: number, setGlobalRenderer: Dispatch<
     return (
         <>
             <h2>プリセットを適用</h2>
-            <div className="container columns-7 gap-8">
-                {BaseEquip()}
-                {UG()}
-                {StarForce()}
-                {PotentialWeapon()}
-                {PotentialSubWeapon()}
-                {PotentialEmbrem()}
-                {BonusStat()}
+            <div className="container">
+                    {BaseEquip()}
+                <br />
+                <div className="container columns-7 gap-8">
+                    {UG()}
+                </div>
+                <br />
+                <div className="container columns-7 gap-8">
+                    {StarForce()}
+                </div>
+                <br />
+                <div className="container columns-7 gap-8">
+                    {PotentialWeapon()}
+                    {PotentialSubWeapon()}
+                    {PotentialEmbrem()}
+                </div>
+                <br />
+                <div className="container columns-7 gap-8">
+                    {BonusStat()}
+                </div>
             </div>
             <select
                 name="selectPreset"

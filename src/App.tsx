@@ -3,10 +3,10 @@ import { useImmer } from "use-immer";
 
 import "./index.css";
 
-import logo from "./assets/images/genesis_staff.png"
+import logo from "@/assets/images/genesis_staff.png"
 import { GearSets, initGearSet } from "./gears/Gearset/gearset";
 import { GearsTable } from "./UI/Gearlist";
-import { WeaponType } from "./UI/WeaPonType";
+import { WeaponType } from "./UI/WeaponType";
 import { Region } from "./i18n";
 import { GearsTotalStat } from "./UI/GearsTotalStat";
 import { PresetField } from "./UI/PresetField";

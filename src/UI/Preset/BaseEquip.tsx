@@ -1,62 +1,24 @@
-
+import { Accesory } from "./BaseEquip/Accesory"
+import { Accesory_old } from "./BaseEquip/Accesory_old"
+import { Armour } from "./BaseEquip/Armour"
+import { Badge } from "./BaseEquip/Badge"
+import { Embrem } from "./BaseEquip/Embrem"
+import { Heart } from "./BaseEquip/Heart"
+import { Weapon } from "./BaseEquip/Weapon"
 
 export const BaseEquip = () => {
 
+
     return (
-        <>
-            <table className="border-collapse border border-slate-500 break-after-column">
-                <thead>
-                    <tr className="border border-slate-600">
-                        <thead>
-                            ベース装備
-                        </thead>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td className="border border-slate-700">
-                        <button>
-                            キノコ装備<br></br>(最大強化)
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td className="border border-slate-700">
-                        <button>
-                            アビス3セット
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td className="border border-slate-700">
-                        <button>
-                            アブソレス4セット
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td className="border border-slate-700">
-                        <button>
-                            アーケイン4セット
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td className="border border-slate-700">
-                        <button>
-                            エテルネル3セット
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td className="border border-slate-700">
-                        <button>
-                            エテルネル4セット
-                        </button></td>
-                    </tr>
-                    <tr>
-                        <td className="border border-slate-700">
-                        <button>
-                            エテルネル7セット
-                        </button></td>
-                    </tr>
-                </tbody>
-            </table>
-        </>
+        <div className="container columns-7 gap-8">
+            <div className="break-after-column">ベース装備</div>
+            <div className="break-after-column">{Weapon()}</div>
+            <div className="break-after-column">{Armour()}</div>
+            <div className="break-after-column">{Accesory()}</div>
+            {/* <div className="break-after-column">{Accesory_old()}</div> */}
+            <div className="break-after-column">{Embrem()}</div>
+            <div className="break-after-column">{Heart()}</div>
+            <div className="break-after-column">{Badge()}</div>
+        </div>
     )
 }
