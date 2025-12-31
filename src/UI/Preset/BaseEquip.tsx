@@ -38,11 +38,11 @@ export const BaseEquip = () => {
                         <td>
                             武器
                         </td>
-                        <td>
+                        < td className="relative">
                             <button style={{border:'solid 1px', borderRadius: 14, padding: 2}} onClick={() => setWpshow(!wpshow)}><img src={fafnir} height={30} width={30}></img></button>
-                            <div hidden={wpshow}>
-                                <button style={{border:'solid 1px', borderRadius: 14, padding: 2}}><img src={fafnir} height={30} width={30}></img></button>
-                                <button style={{border:'solid 1px', borderRadius: 14, padding: 2}}><img src={fafnir} height={30} width={30}></img></button>
+                            <div hidden={wpshow} className="absolute left-10 my-64 bg-white rounded-lg">
+                                <button className="border-gray-500 p-2 bg-gray"><img src={fafnir} height={30} width={30}></img></button>
+                                <button style={{border:'solid 1px', borderRadius: 14, padding: 2}}><img src={fafnir} height={30} width={30}></img>ファフニール武器</button> <br />
                                 <button style={{border:'solid 1px', borderRadius: 14, padding: 2}}><img src={absolab} height={30} width={30}></img></button>
                                 <button style={{border:'solid 1px', borderRadius: 14, padding: 2}}><img src={arcaneshade} height={30} width={30}></img></button>
                                 <button style={{border:'solid 1px', borderRadius: 14, padding: 2}}><img src={genesis} height={30} width={30}></img></button>
