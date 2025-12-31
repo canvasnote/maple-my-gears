@@ -1,3 +1,5 @@
+import Select from "react-select/base"
+
 import hyness from "@/assets/images/Armour/hyness.png"
 import eagleeye from "@/assets/images/Armour/eagleeye.png"
 import trickster from "@/assets/images/Armour/trickster.png"
@@ -16,32 +18,43 @@ import eternel_cape from "@/assets/images/Armour/eternel_cape.png"
 import eternel_glove from "@/assets/images/Armour/eternel_glove.png"
 import eternel_shoes from "@/assets/images/Armour/eternel_shoes.png"
 import eternel_shoulder from "@/assets/images/Armour/eternel_shoulder.png"
+import { SelectPreset } from "../SelectPreset"
 
 export const Armour = () => {
+    const ArmoursSelection = () => (
+        <Select 
+            // defaultValue={options[0]} 
+            options={options} 
+            name="color"
+            
+            className="basic-single"
+            classNamePrefix="select"
+            isDisabled={false}
+            isLoading={false}
+            isClearable={false}
+            isRtl={false}
+            isSearchable={false} />
+    )
+
+    const options = [
+        {value: "キノコ装備7セット", label: "キノコ装備7セット"},
+        {value: "アビス3セット", label: "アビス3セット"},
+        {value: "アブソレス4セット", label: "アブソレス4セット"},
+        {value: "アーケイン4セット", label: "アーケイン4セット"},
+        {value: "エテルネル4セット", label: "エテルネル4セット"},
+        {value: "エテルネル7セット", label: "エテルネル7セット"},
+    ]
 
     return (
         <>
+            {/* {ArmoursSelection()} */}
+            {/* <div style={{backgroundImage: `url(${hyness})`}}>aaa</div> */}
+            {/* {SelectPreset(options, "防具")} */}
             <table className="border-collapse border border-slate-500 break-after-column">
                 <caption>
                     防具
                 </caption>
                 <tbody>
-                    <tr>
-                        <select>
-                            <option>
-                                
-                                <img src={hyness}></img>
-                                <img src={eagleeye}></img>
-                                <img src={trickster}></img>
-                                <img src={absolab_cape}></img>
-                                <img src={absolab_glove}></img>
-                                <img src={absolab_shoes}></img>
-                                <img src={absolab_shoulder}></img>
-                                <br />
-                                キノコ装備7セット
-                            </option>
-                        </select>
-                    </tr>
                     <tr>
                         <td className="border border-slate-700 w-7">
                             <img src={hyness}></img>
@@ -53,9 +66,25 @@ export const Armour = () => {
                             <img src={absolab_shoulder}></img>
                         </td>
                         <td className="border border-slate-700">
-                        <button>
+                        <div style={
+                            {
+                                alignItems: 'right',
+                                display: 'flex',
+                                fontSize: 9,
+
+                                ':before': {
+                                    backgroundColor: "black",
+                                    borderRadius: 10,
+                                    content: '" "',
+                                    display: 'block',
+                                    marginRight: 8,
+                                    height: 10,
+                                    width: 10,
+                                },
+                            }
+                        }>
                             キノコ装備7セット
-                        </button></td>
+                        </div></td>
                     </tr>
                 {/* </tbody>
             </table>
