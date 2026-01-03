@@ -1,27 +1,39 @@
+import { immerable } from "immer"
+
 import type { IBaseItem } from "@/gears/BaseItem/baseitem"
 import type { SlotType } from "@/gears/Gearset/gearset"
-import type { UGPreset } from "./UGPreset"
+import { UGPreset } from "./UGPreset"
 import type { Potential } from "@/gears/potential"
 import type { BonusPotential } from "@/gears/bonuspotential"
 import type { IStat } from "@/gears/stat"
 
+import noneimg from "@/assets/images/noneimg.png"
+import { UG_None } from "./UGPreset/weapon"
+
 export class ChooseMatrix{
-    choose: Array<Choose> = []
+    [immerable] = true
+    chooses: Array<Choose>
+
+    constructor(choose: Array<Choose>){
+        this.chooses = choose
+    }
 }
 
 export class Choose{
     slot: SlotType
     baseItemName: string
+    images: Array<string>
     UG: UGPreset | undefined
     starForce: number | undefined
     potential: Array<Potential> | undefined
     bonusPotential: Array<BonusPotential> | undefined
-    additionalStat: Array<IStat>
+    additionalStat: Array<IStat> | undefined
     symbolLevel: number | undefined
 
     constructor(
         slot: SlotType, 
         baseItemName: string, 
+        images: Array<string>,
         UG: UGPreset | undefined, 
         starForce: number | undefined, 
         potential: Array<Potential> | undefined, 
@@ -30,6 +42,7 @@ export class Choose{
         symbolLevel: number | undefined){
             this.slot = slot
             this.baseItemName = baseItemName
+            this.images = images
             this.UG = UG
             this.starForce = starForce
             this.potential = potential
@@ -37,4 +50,473 @@ export class Choose{
             this.additionalStat = additionalStat
             this.symbolLevel = symbolLevel
     }
+}
+
+export const initChooseMatrix = () => {
+    return new ChooseMatrix(
+        [
+            {
+                slot: "Weapon",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "SubWeapon",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "Embrem",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "Head",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "Armour",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "Pants",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "Mantle",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "Gloves",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "Shoulder",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "Boots",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "Pendant",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "PendantSlot",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "Ring1",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "Ring2",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "Ring3",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "Ring4",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "Face",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "Eyes",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "Pocket",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "Badge",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "Heart",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "Title",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "Medal",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "Totem1",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "Totem2",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "Totem3",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "Jewel",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "PetEquip1",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "PetEquip2",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "PetEquip3",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "ArcaneSymbol2",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "ArcaneSymbol3",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "ArcaneSymbol4",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "ArcaneSymbol5",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "ArcaneSymbol6",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "AuthenticSymbol1",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "AuthenticSymbol2",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "AuthenticSymbol3",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "AuthenticSymbol4",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "AuthenticSymbol5",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "AuthenticSymbol6",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+            {
+                slot: "GrandAuthenticSymbol1",
+                baseItemName: "なし",
+                images: [noneimg],
+                UG: UG_None,
+                starForce: undefined,
+                potential: undefined,
+                bonusPotential: undefined,
+                additionalStat: undefined,
+                symbolLevel: undefined
+            },
+        ]
+    )
 }

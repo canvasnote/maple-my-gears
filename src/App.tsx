@@ -10,9 +10,11 @@ import { WeaponType } from "./UI/WeaponType";
 import { Region } from "./i18n";
 import { GearsTotalStat } from "./UI/GearsTotalStat";
 import { PresetField } from "./UI/PresetField";
+import { initChooseMatrix } from "./models/chooseMatrix";
 
 export function App() {
   const [globalRenderer, setGlobalRenderer] = useState(0)
+  const [currentChooseMatrix, updateCurrentChooseMatrix] = useImmer(initChooseMatrix())
   const [currentGearSet, updateCurrentGearSet] = useImmer(initGearSet())
   const [region, setRegion] = useImmer(new Region("JMS"))
 
@@ -30,7 +32,7 @@ export function App() {
 
       {WeaponType(globalRenderer, setGlobalRenderer, currentGearSet, updateCurrentGearSet, region)}
       <hr></hr>
-      {PresetField(globalRenderer, setGlobalRenderer, currentGearSet, updateCurrentGearSet, region)}
+      {PresetField(globalRenderer, setGlobalRenderer, currentGearSet, updateCurrentGearSet, region, currentChooseMatrix, updateCurrentChooseMatrix)}
       <hr></hr>
       {GearsTable(globalRenderer, setGlobalRenderer, currentGearSet, updateCurrentGearSet, region)}
       <hr></hr>

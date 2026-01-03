@@ -4,10 +4,12 @@ import { slotTypeToGearType } from "@/gears/Gearset/gearset"
 
 import noneimg from "@/assets/images/noneimg.png"
 import { useState } from "react"
-import { useImmer } from "use-immer"
+import { useImmer, type Updater } from "use-immer"
+import type { Region } from "@/i18n"
+import type { ChooseMatrix } from "@/models/chooseMatrix"
 
-export const ListSlot = (typeName: string, slotTypeList: Array<SlotType>) => {
-    const [listShow, setListShow] = useImmer(slotTypeList.map(() => false))
+export const ListSlot = (typeName: string, slotTypeList: Array<SlotType>, region: Region, currentChooseMatrix: ChooseMatrix, updateCurrentChooseMatrix: Updater<ChooseMatrix>) => {
+    const [listShow, setListShow] = useImmer(slotTypeList.map(() => [false, false, false, false, false, false, false, false]))
 
     const filterBaseItemsBySlotType = (slotType: SlotType) => {
         return baseItems.filter((baseItem) => baseItem.type === slotTypeToGearType(slotType))
@@ -26,24 +28,79 @@ export const ListSlot = (typeName: string, slotTypeList: Array<SlotType>) => {
                 <td className="border border-slate-700">シンボルレベル</td>
                 <td className="border border-slate-700">その他</td>
             </tr>
-            {slotTypeList.map((slot, index) => { return (
+            {slotTypeList.map((slotType, index) => { return (
                 <>
-                    {/* ベース装備 */}
                     <tr>
-                        <td className="border border-slate-700">{slot}</td>
+                        {/* 装備スロット名 */}
+                        <td className="border border-slate-700">{slotType}</td>
+                        {/* ベース装備 */}
                         <td className="relative border border-slate-700">
                             <div className="">
                                 {/* 現在選択中のベース装備 */}
-                                <span onClick={() => setListShow((draft) => {draft[index] = !listShow[index]})}>
-                                    <img src={noneimg} className="rounded-xl border border-solid outline-gray-500 cursor-pointer"></img>
+                                <span onClick={() => setListShow((draft) => {draft[index]![0] = !listShow[index]![0]})}>
+                                    {
+                                        currentChooseMatrix.chooses.filter((choose) => choose.slot === slotType).map((choose) => choose.images.map((image) => <>
+                                            <img src={image} className="rounded-xl border border-solid outline-gray-500 cursor-pointer" alt={currentChooseMatrix.chooses[currentChooseMatrix.chooses.findIndex((choose) => choose.slot === slotType)]?.baseItemName}></img>
+                                        </>))
+                                    }
+                                    
+                                    
                                 </span>
                                 
                                 {/* このスロットに装備可能な装備の一覧 */}
-                                <div hidden={!listShow[index]} className="absolute h-6 p-1 -top-0 left-12 w-fit h-fit bg-white rounded-lg text-left text-black whitespace-nowrap">
-                                    {filterBaseItemsBySlotType(slot).map((baseItem) => { return (
-                                        <div className="h-6 mr-8 mb-2 hover:bg-linear-to-r from-pink-200 to-white cursor-pointer" onClick={() => {setListShow((draft) => {draft[index] = false}); }}>
+                                <div hidden={!listShow[index]![0]} className="absolute h-6 p-1 -top-0 left-12 w-fit h-fit z-99 bg-white rounded-lg text-left text-black whitespace-nowrap">
+                                    {filterBaseItemsBySlotType(slotType).map((baseItem) => { return (
+                                        <div 
+                                            className="h-6 mr-8 mb-2 hover:bg-linear-to-r from-pink-200 to-white cursor-pointer" 
+                                            onClick={() => {
+                                                // リストをしまう
+                                                setListShow((draft) => {draft[index]![0] = false})
+                                                // 選択した装備の名前をchooseに格納
+                                                updateCurrentChooseMatrix((draft) => { draft.chooses[currentChooseMatrix.chooses.findIndex((choose) => choose.slot === baseItem.type)]!.baseItemName = baseItem.JMSName})
+                                                // 選択した装備の画像パスをchooseに格納
+                                                updateCurrentChooseMatrix((draft) => { draft.chooses[currentChooseMatrix.chooses.findIndex((choose) => choose.slot === baseItem.type)]!.images = [baseItem.images!.default]})
+                                                }}>
                                             <img src={baseItem.images?.default} width={30} height={30} className="rounded-xl border border-solid outline-gray-500"></img>
                                             {baseItem.JMSName}
+                                        </div>
+                                    )})}
+                                </div>
+                            </div>
+                        </td>
+                        {/* UG */}
+                        <td className="relative border border-slate-700">
+                            <div className="">
+                                {/* 現在選択中のUG */}
+                                <span onClick={() => setListShow((draft) => {draft[index]![1] = !listShow[index]![1]})}>
+                                    {
+                                        currentChooseMatrix.chooses.filter((choose) => choose.slot === slotType).map((choose) => choose.UG?.images.map((image) => <>
+                                            <img src={image} className="rounded-xl border border-solid outline-gray-500 cursor-pointer" alt={currentChooseMatrix.chooses[currentChooseMatrix.chooses.findIndex((choose) => choose.slot === slotType)]?.baseItemName}></img>
+                                        </>))
+                                    }
+                                </span>
+                                
+                                {/* このスロットに適用可能なUGの一覧 */}
+                                <div hidden={!listShow[index]![1]} className="absolute h-6 p-1 -top-0 left-12 w-fit h-fit z-99 bg-white rounded-lg text-left text-black whitespace-nowrap">
+                                    {filterBaseItemsBySlotType(slotType).filter((baseItem) => true && baseItem.JMSName === currentChooseMatrix.chooses.filter((choose) => choose.slot === slotType)[0]?.baseItemName).map((baseItem) => { return (
+                                        <div>
+                                            {baseItem.UGPreset?.map((preset) => (<>
+                                                <div className="h-6 mr-8 mb-2 hover:bg-linear-to-r from-pink-200 to-white cursor-pointer" onClick={() => {
+                                                    // リストをしまう
+                                                    setListShow((draft) => {draft[index]![1] = false}); 
+                                                    // 選択したUGプリセットの名前をchooseに格納
+                                                    updateCurrentChooseMatrix((draft) => { draft.chooses[currentChooseMatrix.chooses.findIndex((choose) => choose.slot === baseItem.type)]!.UG = preset})
+                                                    // 選択したUGプリセットの画像パスをchooseに格納
+                                                    updateCurrentChooseMatrix((draft) => { draft.chooses[currentChooseMatrix.chooses.findIndex((choose) => choose.slot === baseItem.type)]!.UG!.images = preset.images})
+                                                    }}>
+                                                    {preset.images.map((image) => (
+                                                        <><img src={image} className="rounded-xl border border-solid outline-gray-500"></img>{preset.JMSName}</>
+                                                    ))}
+                                                </div>
+                                            </>
+                                            ))}
+                                            {/* {baseItem.UGPreset?.JMSName}
+                                            <img src={baseItem.UGPreset} width={30} height={30} className="rounded-xl border border-solid outline-gray-500"></img> */}
+                                            {/* {baseItem.JMSName} */}
                                         </div>
                                     )})}
                                 </div>
