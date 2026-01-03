@@ -73,7 +73,7 @@ export const ListSlot = (typeName: string, slotTypeList: Array<SlotType>, region
                                 {/* 現在選択中のUG */}
                                 <span onClick={() => setListShow((draft) => {draft[index]![1] = !listShow[index]![1]})}>
                                     {
-                                        currentChooseMatrix.chooses.filter((choose) => choose.slot === slotType).map((choose) => choose.UG?.images.map((image) => <>
+                                        currentChooseMatrix.chooses.filter((choose) => choose.slot === slotType).map((choose) => choose.UG?.images.map((image, index) => <>
                                             <img src={image} className="rounded-xl border border-solid outline-gray-500 cursor-pointer" alt={currentChooseMatrix.chooses[currentChooseMatrix.chooses.findIndex((choose) => choose.slot === slotType)]?.baseItemName}></img>
                                         </>))
                                     }
