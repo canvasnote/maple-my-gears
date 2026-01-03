@@ -328,6 +328,60 @@ export const slotTypeToGearType = (str: string): GearType => {
     }
 }
 
+export const slotTypeToName = (str: string, region: Region): string => {
+    // stringからSlotTypeに変換するためだけにある関数　泥臭い
+    switch(str){
+        case "Weapon": return "武器"
+        case "SubWeapon": return "補助武器"
+        case "Embrem": return "エンブレム"
+        case "Head": return "防止"
+        case "Armour | FullCloth": throw(Error("Armour | FullCloth => stringへの変換が呼ばれました"))
+        case "Armour": return "鎧上"
+        case "Pants": return "鎧下"
+        case "Shoulder": return "肩"
+        case "Mantle": return "マント"
+        case "Gloves": return "手袋"
+        case "Boots": return "靴"
+        case "Pendant": return "ペンダント"
+        case "PendantSlot": return "ペンスロ"
+        case "Ring1": return "指輪1"
+        case "Ring2": return "指輪2"
+        case "Ring3": return "指輪3"
+        case "Ring4": return "指輪4"
+        case "Belt": return "ベルト"
+        case "EarRing": return "イヤリング"
+        case "Face": return "顔の飾り"
+        case "Eyes": return "目の飾り"
+        case "Pocket": return "ポケット装備"
+        case "Badge": return "バッジ"
+        case "Heart": return "機械心臓部"
+        case "Title": return "称号"
+        case "Medal": return "勲章"
+        case "Totem1": return "トーテム1"
+        case "Totem2": return "トーテム2"
+        case "Totem3": return "トーテム3"
+        case "Jewel": return "宝玉"
+        case "PetEquip1": return "ペット装備1"
+        case "PetEquip2": return "ペット装備2"
+        case "PetEquip3": return "ペット装備3"
+        case "ArcaneSymbol1": return "アーケインシンボル1"
+        case "ArcaneSymbol2": return "アーケインシンボル2"
+        case "ArcaneSymbol3": return "アーケインシンボル3"
+        case "ArcaneSymbol4": return "アーケインシンボル4"
+        case "ArcaneSymbol5": return "アーケインシンボル5"
+        case "ArcaneSymbol6": return "アーケインシンボル6"
+        case "AuthenticSymbol1": return "オーセンティックシンボル1"
+        case "AuthenticSymbol2": return "オーセンティックシンボル2"
+        case "AuthenticSymbol3": return "オーセンティックシンボル3"
+        case "AuthenticSymbol4": return "オーセンティックシンボル4"
+        case "AuthenticSymbol5": return "オーセンティックシンボル5"
+        case "AuthenticSymbol6": return "オーセンティックシンボル6"
+        case "GrandAuthenticSymbol1": return "グランドオーセンティックシンボル1"
+
+        default: throw Error("strToGearType: 渡された文字列が装備スロットタイプと一致しません: " + str)
+    }
+}
+
 export const initGearSet = () => {
   let result = new GearSet();
   result.slots.push(new GearSlot("Weapon", "Weapon", "武器", new Gear("Weapon", "なし")));

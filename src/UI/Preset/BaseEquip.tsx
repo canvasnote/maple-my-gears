@@ -13,9 +13,13 @@ import genesis from "@/assets/images/weapon/genesis.png"
 import destiny from "@/assets/images/weapon/destiny.webp"
 
 import { SelectPreset } from "./SelectPreset"
-import { useState } from "react"
+import { useState, type Dispatch, type SetStateAction } from "react"
+import { ListSlot } from "./BaseEquip/ListSlot"
+import type { GearSet } from "@/gears/Gearset/gearset"
+import type { Region } from "@/i18n"
+import type { Updater } from "use-immer"
 
-export const BaseEquip = () => {
+export const BaseEquip = (globalRenderer: number, setGlobalRenderer: Dispatch<SetStateAction<number>>, currentGearSet: GearSet, updateCurrentGearSet: Updater<GearSet>, region: Region) => {
     const options = [
         {value: "キノコ装備7セット", label: "キノコ装備7セット"},
         {value: "アビス3セット", label: "アビス3セット"},
@@ -29,30 +33,31 @@ export const BaseEquip = () => {
 
     return (
         <>
-            
-            {SelectPreset(options, "防具")}
             <h1 className="text-2xl font-bold my-4 leading-tight">ベース装備のプリセット</h1>
             <table>
-                <tbody>
-                    <tr>
+                <tbody className="border-collapse border border-slate-500 break-after-column">
+                    
+                    {/* <tr>
                         <td>
                             武器
                         </td>
-                        < td className="relative">
-                            <button style={{border:'solid 1px', borderRadius: 14, padding: 2}} onClick={() => setWpshow(!wpshow)}><img src={fafnir} height={30} width={30}></img></button>
-                            <div hidden={wpshow} className="absolute left-10 my-64 bg-white rounded-lg">
-                                <button className="border-gray-500 p-2 bg-gray"><img src={fafnir} height={30} width={30}></img></button>
-                                <button style={{border:'solid 1px', borderRadius: 14, padding: 2}}><img src={fafnir} height={30} width={30}></img>ファフニール武器</button> <br />
-                                <button style={{border:'solid 1px', borderRadius: 14, padding: 2}}><img src={absolab} height={30} width={30}></img></button>
-                                <button style={{border:'solid 1px', borderRadius: 14, padding: 2}}><img src={arcaneshade} height={30} width={30}></img></button>
-                                <button style={{border:'solid 1px', borderRadius: 14, padding: 2}}><img src={genesis} height={30} width={30}></img></button>
-                                <button style={{border:'solid 1px', borderRadius: 14, padding: 2}}><img src={destiny} height={30} width={30}></img></button>
+                        <td className="relative">
+                            <div className="h-6 " onClick={() => setWpshow(!wpshow)}><img src={fafnir} className="rounded-xl border border-solid outline-gray-500"></img></div>
+                            <div hidden={wpshow} className="absolute p-1 -top-0 left-12 w-fit bg-white rounded-lg text-left text-black whitespace-nowrap">
+                                
+                                <div className="h-6 mr-8 mb-2"><img src={fafnir} width={30} height={30} className="rounded-xl border border-solid outline-gray-500"></img>ファフニール武器</div>
+                                <div className="h-6 mr-8 mb-2"><img src={absolab} width={30} height={30} className="rounded-xl border border-solid outline-gray-500"></img>アブソレス武器</div>
+                                <div className="h-6 mr-8 mb-2"><img src={arcaneshade} width={30} height={30} className="rounded-xl border border-solid outline-gray-500"></img>アーケインシェード武器</div>
+                                <div className="h-6 mr-8 mb-2"><img src={genesis} width={30} height={30} className="rounded-xl border border-solid outline-gray-500"></img>ジェネシス武器</div>
+                                <div className="h-6 mr-8 mb-2"><img src={destiny} width={30} height={30} className="rounded-xl border border-solid outline-gray-500"></img>ディスティニー武器</div>
+                                
+                                
                             </div>
                         </td>
-                        <td>
-                            あああああ
+                        <td className="whitespace-nowrap">
+                            あああああ<img src={fafnir}></img>いいいいい
                         </td>
-                    </tr>
+                    </tr> */}
                 </tbody>
             </table>
             <div className="container columns-10 gap-2">

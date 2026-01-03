@@ -1,9 +1,19 @@
 import type { IBaseItem } from "./baseitem";
 
+import noneimg from "@/assets/images/noneimg.png"
+import fafnir from "@/assets/images/weapon/fafnir.png"
+import absolab from "@/assets/images/weapon/absolab.png"
+import arcaneshade from "@/assets/images/weapon/arcaneshade.png"
+import genesis from "@/assets/images/weapon/genesis.png"
+import destiny from "@/assets/images/weapon/destiny.webp"
+
 export const weapons: Array<IBaseItem> = [
   {
     type: "Weapon",
     JMSName: "なし",
+    images: {
+      default: noneimg
+    },
     level: 0,
     setEffectName: [],
     baseStat: [
@@ -13,6 +23,9 @@ export const weapons: Array<IBaseItem> = [
   {
     type: "Weapon",
     JMSName: "ファフニール武器",
+    images: {
+      default: fafnir
+    },
     level: 150,
     setEffectName: ["Fafnir"],
     baseStat: [
@@ -27,6 +40,9 @@ export const weapons: Array<IBaseItem> = [
   {
     type: "Weapon",
     JMSName: "アブソレス武器",
+    images: {
+      default: absolab
+    },
     setEffectName: ["Absolab"],
     level: 150,
     baseStat: [
@@ -41,6 +57,9 @@ export const weapons: Array<IBaseItem> = [
   {
     type: "Weapon",
     JMSName: "アーケイン武器",
+    images: {
+      default: arcaneshade
+    },
     setEffectName: ["ArcaneShade"],
     level: 200,
     baseStat: [
@@ -55,6 +74,9 @@ export const weapons: Array<IBaseItem> = [
   {
     type: "Weapon",
     JMSName: "ジェネシス武器",
+    images: {
+      default: genesis
+    },
     setEffectName: ["Luckey", "Eternel"],
     level: 200,
     baseStat: [
@@ -70,6 +92,9 @@ export const weapons: Array<IBaseItem> = [
   {
     type: "Weapon",
     JMSName: "ディスティニー武器",
+    images: {
+      default: destiny
+    },
     setEffectName: ["Luckey", "Eternel"],
     level: 200,
     baseStat: [

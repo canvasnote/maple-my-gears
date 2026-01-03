@@ -37,7 +37,8 @@ export interface IBaseItem{
     JMSName: string
     level: IntRange<0, 251>
     baseStat: Array<IStat>,
-    setEffectName: Array<SetEffectName>
+    setEffectName: Array<SetEffectName>,
+    images?: {default: string, warrior?: string, archaer?: string, wizard?: string, thief?: string}
     // symbolLevel?: IntRange<1, 12>
     // UG: undefined
     // potential: undefined

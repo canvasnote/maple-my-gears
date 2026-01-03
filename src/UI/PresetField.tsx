@@ -14,6 +14,7 @@ import { PotentialWeapon } from "./Preset/PotentialWeapon"
 import { PotentialSubWeapon } from "./Preset/PotentialSubWeapon"
 import { PotentialEmbrem } from "./Preset/PotentialEmbrem"
 import { BonusStat } from "./Preset/BonusStat"
+import { ListSlot } from "./Preset/BaseEquip/ListSlot"
 
 export const PresetField = (globalRenderer: number, setGlobalRenderer: Dispatch<SetStateAction<number>>, currentGearSet: GearSet, updateCurrentGearSet: Updater<GearSet>, region: Region) => {
     const [choosingPreset, setChoosingPreset] = useState("default")
@@ -127,9 +128,27 @@ export const PresetField = (globalRenderer: number, setGlobalRenderer: Dispatch<
 
     return (
         <>
-            <h2>プリセットを適用</h2>
+            <h2>あなたの装備に一番近いものを選んでください</h2>
             <div className="container">
-                    {BaseEquip()}
+                {ListSlot("Weapon", ["Weapon"])}
+                {ListSlot("SubWeapon", ["SubWeapon"])}
+                {ListSlot("Embrem", ["Embrem"])}
+                {ListSlot("Pendant", ["Pendant", "PendantSlot"])}
+                {ListSlot("指輪", ["Ring1", "Ring2", "Ring3", "Ring4"])}
+                {ListSlot("顔の飾り", ["Face"])}
+                {ListSlot("目の飾り", ["Eyes"])}
+                {ListSlot("ポケット装備", ["Pocket"])}
+                {ListSlot("バッジ", ["Badge"])}
+                {ListSlot("機械心臓部", ["Heart"])}
+                {ListSlot("称号", ["Title"])}
+                {ListSlot("勲章", ["Medal"])}
+                {ListSlot("トーテム", ["Totem1", "Totem2", "Totem3"])}
+                {ListSlot("宝玉", ["Jewel"])}
+                {ListSlot("ペット装備", ["PetEquip1", "PetEquip2", "PetEquip3"])}
+                {ListSlot("アーケインシンボル", ["ArcaneSymbol1", "ArcaneSymbol2", "ArcaneSymbol3", "ArcaneSymbol4", "ArcaneSymbol5", "ArcaneSymbol6"])}
+                {ListSlot("オーセンティックシンボル", ["AuthenticSymbol1", "AuthenticSymbol2", "AuthenticSymbol3", "AuthenticSymbol4", "AuthenticSymbol5", "AuthenticSymbol6"])}
+                {ListSlot("グランドオーセンティックシンボル", ["GrandAuthenticSymbol1"])}
+                {BaseEquip(globalRenderer, setGlobalRenderer, currentGearSet, updateCurrentGearSet, region)}
                 <br />
                 <div className="container columns-7 gap-8">
                     {UG()}
