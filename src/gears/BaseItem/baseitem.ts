@@ -31,6 +31,7 @@ import { arcanesymbols } from "./arcanesymbols"
 import { authenticsymbols } from "./authenticsymbols"
 import { grandauthenticsymbols } from "./grandauthenticsymbols"
 import { petequips } from "./petequips"
+import type { UGPreset } from "@/models/UGPreset"
 
 export interface IBaseItem{
     type: GearType
@@ -38,7 +39,8 @@ export interface IBaseItem{
     level: IntRange<0, 251>
     baseStat: Array<IStat>,
     setEffectName: Array<SetEffectName>,
-    images?: {default: string, warrior?: string, archaer?: string, wizard?: string, thief?: string}
+    images?: {default: string, warrior?: string, archaer?: string, wizard?: string, thief?: string},
+    UGPreset?: Array<UGPreset>
     // symbolLevel?: IntRange<1, 12>
     // UG: undefined
     // potential: undefined

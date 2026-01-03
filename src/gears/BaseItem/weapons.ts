@@ -6,6 +6,7 @@ import absolab from "@/assets/images/weapon/absolab.png"
 import arcaneshade from "@/assets/images/weapon/arcaneshade.png"
 import genesis from "@/assets/images/weapon/genesis.png"
 import destiny from "@/assets/images/weapon/destiny.webp"
+import { UG_15, UG_30, UG_Magical } from "@/models/UGPreset/weapon";
 
 export const weapons: Array<IBaseItem> = [
   {
@@ -18,6 +19,9 @@ export const weapons: Array<IBaseItem> = [
     setEffectName: [],
     baseStat: [
     ],
+    UGPreset: [
+
+    ]
   }, 
 
   {
@@ -35,6 +39,11 @@ export const weapons: Array<IBaseItem> = [
       { type: "IgnoreDefence", amount: 10 },
       { type: "BossDamage", amount: 30 },
     ],
+    UGPreset: [
+      UG_Magical,
+      UG_15,
+      UG_30
+    ]
   },
 
   {
@@ -52,6 +61,11 @@ export const weapons: Array<IBaseItem> = [
       { type: "IgnoreDefence", amount: 10 },
       { type: "BossDamage", amount: 30 },
     ],
+    UGPreset: [
+      UG_Magical,
+      UG_15,
+      UG_30
+    ]
   },
 
   {
@@ -69,6 +83,11 @@ export const weapons: Array<IBaseItem> = [
       { type: "IgnoreDefence", amount: 20 },
       { type: "BossDamage", amount: 30 },
     ],
+    UGPreset: [
+      UG_Magical,
+      UG_15,
+      UG_30
+    ]
   },
 
   {
@@ -87,6 +106,9 @@ export const weapons: Array<IBaseItem> = [
       { type: "BossDamage", amount: 30 },
       { type: "FinalDamage", amount: 10 },
     ],
+    UGPreset: [
+      UG_15,
+    ]
   },
 
   {
@@ -105,5 +127,8 @@ export const weapons: Array<IBaseItem> = [
       { type: "BossDamage", amount: 30 },
       { type: "FinalDamage", amount: 10 },
     ],
+    UGPreset: [
+      UG_15,
+    ]
   },
 ];
