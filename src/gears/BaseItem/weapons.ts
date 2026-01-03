@@ -6,7 +6,7 @@ import absolab from "@/assets/images/weapon/absolab.png"
 import arcaneshade from "@/assets/images/weapon/arcaneshade.png"
 import genesis from "@/assets/images/weapon/genesis.png"
 import destiny from "@/assets/images/weapon/destiny.webp"
-import { UG_15, UG_30, UG_Magical } from "@/models/UGPreset/weapon";
+import { UG_15 as UG_15_Weapon, UG_30 as UG_30_Weapon, UG_Magical } from "@/models/UGPreset/weapon";
 
 export const weapons: Array<IBaseItem> = [
   {
@@ -41,8 +41,8 @@ export const weapons: Array<IBaseItem> = [
     ],
     UGPreset: [
       UG_Magical,
-      UG_15,
-      UG_30
+      UG_15_Weapon,
+      UG_30_Weapon
     ]
   },
 
@@ -63,8 +63,8 @@ export const weapons: Array<IBaseItem> = [
     ],
     UGPreset: [
       UG_Magical,
-      UG_15,
-      UG_30
+      UG_15_Weapon,
+      UG_30_Weapon
     ]
   },
 
@@ -85,8 +85,8 @@ export const weapons: Array<IBaseItem> = [
     ],
     UGPreset: [
       UG_Magical,
-      UG_15,
-      UG_30
+      UG_15_Weapon,
+      UG_30_Weapon
     ]
   },
 
@@ -107,7 +107,7 @@ export const weapons: Array<IBaseItem> = [
       { type: "FinalDamage", amount: 10 },
     ],
     UGPreset: [
-      UG_15,
+      UG_15_Weapon,
     ]
   },
 
@@ -128,7 +128,7 @@ export const weapons: Array<IBaseItem> = [
       { type: "FinalDamage", amount: 10 },
     ],
     UGPreset: [
-      UG_15,
+      UG_15_Weapon,
     ]
   },
 ];
