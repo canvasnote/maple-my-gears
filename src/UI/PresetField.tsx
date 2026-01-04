@@ -141,7 +141,7 @@ export const PresetField = (globalRenderer: number, setGlobalRenderer: Dispatch<
                 {ListSlot("マント", ["Mantle"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
                 {ListSlot("手袋", ["Gloves"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
                 {ListSlot("靴", ["Boots"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
-                {ListSlot("Pendant", ["Pendant", "PendantSlot"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
+                {ListSlot("ペンダント", ["Pendant", "PendantSlot"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
                 {ListSlot("指輪", ["Ring1", "Ring2", "Ring3", "Ring4"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
                 {ListSlot("顔の飾り", ["Face"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
                 {ListSlot("目の飾り", ["Eyes"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
