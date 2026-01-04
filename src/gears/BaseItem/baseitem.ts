@@ -34,6 +34,7 @@ import { petequips } from "./petequips"
 import type { UGPreset } from "@/models/UGPreset"
 import type { StarForcePreset } from "@/models/starforce"
 import type { PotentialPreset } from "@/models/PotentialPreset"
+import type { SymbolLevelPreset } from "@/models/SymbolsLevel"
 
 export interface IBaseItem{
     type: GearType
@@ -43,8 +44,9 @@ export interface IBaseItem{
     setEffectName: Array<SetEffectName>,
     images?: {default: string, warrior?: string, archaer?: string, wizard?: string, thief?: string},
     UGPreset?: Array<UGPreset>,
-    StarForcePreset?: Array<StarForcePreset>,
-    PotentialPreset?: Array<PotentialPreset>
+    StarForcePresets?: Array<StarForcePreset>,
+    PotentialPresets?: Array<PotentialPreset>,
+    SymbolLevelPresets?: Array<SymbolLevelPreset>
     // symbolLevel?: IntRange<1, 12>
     // UG: undefined
     // potential: undefined

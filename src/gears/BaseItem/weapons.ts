@@ -24,10 +24,10 @@ export const weapons: Array<IBaseItem> = [
     UGPreset: [
 
     ],
-    StarForcePreset: [
+    StarForcePresets: [
       StarForce_None
     ],
-    PotentialPreset: [
+    PotentialPresets: [
       Potential_None
     ]
   }, 
@@ -52,10 +52,10 @@ export const weapons: Array<IBaseItem> = [
       UG_15_Weapon,
       UG_30_Weapon
     ],
-    StarForcePreset: [
+    StarForcePresets: [
       ...StarForce150LV
     ],
-    PotentialPreset: [
+    PotentialPresets: [
       ...Potential_Weapon_150LV
     ]
   },
@@ -80,10 +80,10 @@ export const weapons: Array<IBaseItem> = [
       UG_15_Weapon,
       UG_30_Weapon
     ],
-    StarForcePreset: [
+    StarForcePresets: [
       ...StarForce160LV
     ],
-    PotentialPreset: [
+    PotentialPresets: [
       ...Potential_Weapon_160LV
     ]
   },
@@ -108,10 +108,10 @@ export const weapons: Array<IBaseItem> = [
       UG_15_Weapon,
       UG_30_Weapon
     ],
-    StarForcePreset: [
+    StarForcePresets: [
       ...StarForce200LV
     ],
-    PotentialPreset: [
+    PotentialPresets: [
       ...Potential_Weapon_200LV
     ]
   },
@@ -135,10 +135,10 @@ export const weapons: Array<IBaseItem> = [
     UGPreset: [
       UG_15_Weapon,
     ],
-    StarForcePreset: [
+    StarForcePresets: [
       ...StarForceGenesis
     ],
-    PotentialPreset: [
+    PotentialPresets: [
       ...Potential_Weapon_Genesis
     ]
   },
@@ -162,10 +162,10 @@ export const weapons: Array<IBaseItem> = [
     UGPreset: [
       UG_15_Weapon,
     ],
-    StarForcePreset: [
+    StarForcePresets: [
       ...StarForceDisteny
     ],
-    PotentialPreset: [
+    PotentialPresets: [
       ...Potential_Weapon_Destiny
     ]
   },

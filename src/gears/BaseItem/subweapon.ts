@@ -36,7 +36,7 @@ export const subweapons: Array<IBaseItem> = [
     UGPreset: [
       UG_None_SubWeapon
     ],
-    StarForcePreset: [
+    StarForcePresets: [
       StarForce_None
     ]
   }, 
@@ -56,7 +56,7 @@ export const subweapons: Array<IBaseItem> = [
     UGPreset: [
       UG_None_SubWeapon
     ],
-    StarForcePreset: [
+    StarForcePresets: [
       StarForce_None
     ]
   },
@@ -72,7 +72,7 @@ export const subweapons: Array<IBaseItem> = [
     UGPreset: [
       UG_None_SubWeapon
     ],
-    StarForcePreset: [
+    StarForcePresets: [
       StarForce_None
     ]
   },
@@ -92,7 +92,7 @@ export const subweapons: Array<IBaseItem> = [
     UGPreset: [
       UG_None_SubWeapon
     ],
-    StarForcePreset: [
+    StarForcePresets: [
       StarForce_None
     ]
   },
@@ -112,7 +112,7 @@ export const subweapons: Array<IBaseItem> = [
     UGPreset: [
       UG_None_SubWeapon
     ],
-    StarForcePreset: [
+    StarForcePresets: [
       StarForce_None
     ]
   },
@@ -131,7 +131,7 @@ export const subweapons: Array<IBaseItem> = [
       UG_15_SubWeapon,
       UG_30_SubWeapon
     ],
-    StarForcePreset: [
+    StarForcePresets: [
       ...StarForce130LV
     ]
   },
@@ -152,7 +152,7 @@ export const subweapons: Array<IBaseItem> = [
     UGPreset: [
 
     ],
-    StarForcePreset: [
+    StarForcePresets: [
       StarForce_None
     ]
   },
@@ -172,7 +172,7 @@ export const subweapons: Array<IBaseItem> = [
       UG_15_SubWeapon,
       UG_30_SubWeapon
     ],
-    StarForcePreset: [
+    StarForcePresets: [
       ...StarForce120LV
     ]
   },
@@ -195,7 +195,7 @@ export const subweapons: Array<IBaseItem> = [
       UG_15_SubWeapon,
       UG_30_SubWeapon
     ],
-    StarForcePreset: [
+    StarForcePresets: [
       ...StarForce160LV
     ]
   },
@@ -215,7 +215,7 @@ export const subweapons: Array<IBaseItem> = [
       UG_15_SubWeapon,
       UG_30_SubWeapon
     ],
-    StarForcePreset: [
+    StarForcePresets: [
       ...StarForce160LV
     ]
   },
@@ -235,7 +235,7 @@ export const subweapons: Array<IBaseItem> = [
       UG_15_SubWeapon,
       UG_30_SubWeapon
     ],
-    StarForcePreset: [
+    StarForcePresets: [
       ...StarForce200LV
     ]
   },
@@ -259,7 +259,7 @@ export const subweapons: Array<IBaseItem> = [
       UG_15_SubWeapon,
       UG_30_SubWeapon
     ],
-    StarForcePreset: [
+    StarForcePresets: [
       ...StarForce160LV
     ]
   },
@@ -283,7 +283,7 @@ export const subweapons: Array<IBaseItem> = [
       UG_15_SubWeapon,
       UG_30_SubWeapon
     ],
-    StarForcePreset: [
+    StarForcePresets: [
       ...StarForce160LV
     ]
   },
@@ -307,7 +307,7 @@ export const subweapons: Array<IBaseItem> = [
       UG_15_SubWeapon,
       UG_30_SubWeapon
     ],
-    StarForcePreset: [
+    StarForcePresets: [
       ...StarForce200LV
     ]
   },
@@ -329,7 +329,7 @@ export const subweapons: Array<IBaseItem> = [
     UGPreset: [
       UG_15_SubWeapon,
     ],
-    StarForcePreset: [
+    StarForcePresets: [
       ...StarForceGenesis
     ]
   },
@@ -351,7 +351,7 @@ export const subweapons: Array<IBaseItem> = [
     UGPreset: [
       UG_15_SubWeapon,
     ],
-    StarForcePreset: [
+    StarForcePresets: [
       ...StarForceDestiny
     ]
   },
@@ -371,7 +371,7 @@ export const subweapons: Array<IBaseItem> = [
       UG_15_Kanna,
       UG_30_Kanna
     ],
-    StarForcePreset: [
+    StarForcePresets: [
       ...StarForce160LV
     ]
   },
@@ -391,7 +391,7 @@ export const subweapons: Array<IBaseItem> = [
       UG_15_Kanna,
       UG_30_Kanna
     ],
-    StarForcePreset: [
+    StarForcePresets: [
       ...StarForce160LV
     ]
   },
