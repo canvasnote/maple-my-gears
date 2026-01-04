@@ -7,6 +7,7 @@ import { useState } from "react"
 import { useImmer, type Updater } from "use-immer"
 import type { Region } from "@/i18n"
 import type { ChooseMatrix } from "@/models/chooseMatrix"
+import fafnir from "@/assets/images/weapon/fafnir.png"
 
 export const ListSlot = (typeName: string, slotTypeList: Array<SlotType>, region: Region, currentChooseMatrix: ChooseMatrix, updateCurrentChooseMatrix: Updater<ChooseMatrix>) => {
     const [listShow, setListShow] = useImmer(slotTypeList.map(() => [false, false, false, false, false, false, false, false]))
@@ -73,7 +74,7 @@ export const ListSlot = (typeName: string, slotTypeList: Array<SlotType>, region
                                 {/* 現在選択中のUG */}
                                 <span onClick={() => setListShow((draft) => {draft[index]![1] = !listShow[index]![1]})}>
                                     {
-                                        currentChooseMatrix.chooses.filter((choose) => choose.slot === slotType).map((choose) => choose.UG?.images.map((image, index) => <>
+                                        currentChooseMatrix.chooses.filter((choose) => choose.slot === slotType).map((choose) => choose.UG?.images.map((image) => <>
                                             <img src={image} className="rounded-xl border border-solid outline-gray-500 cursor-pointer" alt={currentChooseMatrix.chooses[currentChooseMatrix.chooses.findIndex((choose) => choose.slot === slotType)]?.baseItemName}></img>
                                         </>))
                                     }
@@ -91,6 +92,46 @@ export const ListSlot = (typeName: string, slotTypeList: Array<SlotType>, region
                                                     updateCurrentChooseMatrix((draft) => { draft.chooses[currentChooseMatrix.chooses.findIndex((choose) => choose.slot === baseItem.type)]!.UG = preset})
                                                     // 選択したUGプリセットの画像パスをchooseに格納
                                                     updateCurrentChooseMatrix((draft) => { draft.chooses[currentChooseMatrix.chooses.findIndex((choose) => choose.slot === baseItem.type)]!.UG!.images = preset.images})
+                                                    }}>
+                                                    {preset.images.map((image) => (
+                                                        <><img src={image} className="rounded-xl border border-solid outline-gray-500"></img>{preset.JMSName}</>
+                                                    ))}
+                                                </div>
+                                            </>
+                                            ))}
+                                            {/* {baseItem.UGPreset?.JMSName}
+                                            <img src={baseItem.UGPreset} width={30} height={30} className="rounded-xl border border-solid outline-gray-500"></img> */}
+                                            {/* {baseItem.JMSName} */}
+                                        </div>
+                                    )})}
+                                </div>
+                            </div>
+                        </td>
+                        {/* スターフォース */}
+                        <td className="relative border border-slate-700">
+                            <div className="">
+                                {/* 現在選択中のスターフォース */}
+                                <span onClick={() => setListShow((draft) => {draft[index]![2] = !listShow[index]![2]})}>
+                                    {
+                                        currentChooseMatrix.chooses.filter((choose) => choose.slot === slotType).map((choose) => choose.starForce?.images.map((image) => <>
+                                            {/* <img src={image} className="rounded-xl border border-solid outline-gray-500 cursor-pointer" alt={currentChooseMatrix.chooses[currentChooseMatrix.chooses.findIndex((choose) => choose.slot === slotType)]?.starForce?.JMSName}></img> */}
+                                            <div className="rounded-xl border border-solid outline-gray-500 cursor-pointer">{currentChooseMatrix.chooses[currentChooseMatrix.chooses.findIndex((choose) => choose.slot === slotType)]?.starForce?.JMSName}</div>
+                                        </>))
+                                    }
+                                </span>
+                                
+                                {/* このスロットに適用可能なスターフォースの一覧 */}
+                                <div hidden={!listShow[index]![2]} className="absolute h-6 p-1 -top-0 left-12 w-fit h-fit z-99 bg-white rounded-lg text-left text-black whitespace-nowrap">
+                                    {filterBaseItemsBySlotType(slotType).filter((baseItem) => true && baseItem.JMSName === currentChooseMatrix.chooses.filter((choose) => choose.slot === slotType)[0]?.baseItemName).map((baseItem) => { return (
+                                        <div>
+                                            {baseItem.StarForcePreset?.map((preset) => (<>
+                                                <div className="h-6 mr-8 mb-2 hover:bg-linear-to-r from-pink-200 to-white cursor-pointer" onClick={() => {
+                                                    // リストをしまう
+                                                    setListShow((draft) => {draft[index]![2] = false}); 
+                                                    // 選択したスターフォースプリセットの名前をchooseに格納
+                                                    updateCurrentChooseMatrix((draft) => { draft.chooses[currentChooseMatrix.chooses.findIndex((choose) => choose.slot === baseItem.type)]!.starForce = preset})
+                                                    // 選択したスターフォースプリセットの画像パスをchooseに格納
+                                                    updateCurrentChooseMatrix((draft) => { draft.chooses[currentChooseMatrix.chooses.findIndex((choose) => choose.slot === baseItem.type)]!.starForce!.images = preset.images})
                                                     }}>
                                                     {preset.images.map((image) => (
                                                         <><img src={image} className="rounded-xl border border-solid outline-gray-500"></img>{preset.JMSName}</>

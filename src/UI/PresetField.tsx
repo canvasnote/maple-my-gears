@@ -156,9 +156,9 @@ export const PresetField = (globalRenderer: number, setGlobalRenderer: Dispatch<
                 {ListSlot("アーケインシンボル", ["ArcaneSymbol1", "ArcaneSymbol2", "ArcaneSymbol3", "ArcaneSymbol4", "ArcaneSymbol5", "ArcaneSymbol6"], region, currentChooseMatrix, updateCurrentChooseMatrix)}
                 {ListSlot("オーセンティックシンボル", ["AuthenticSymbol1", "AuthenticSymbol2", "AuthenticSymbol3", "AuthenticSymbol4", "AuthenticSymbol5", "AuthenticSymbol6"], region, currentChooseMatrix, updateCurrentChooseMatrix)}
                 {ListSlot("グランドオーセンティックシンボル", ["GrandAuthenticSymbol1"], region, currentChooseMatrix, updateCurrentChooseMatrix)}
-                {BaseEquip(globalRenderer, setGlobalRenderer, currentGearSet, updateCurrentGearSet, region)}
+                {/* {BaseEquip(globalRenderer, setGlobalRenderer, currentGearSet, updateCurrentGearSet, region)} */}
                 <br />
-                <div className="container columns-7 gap-8">
+                {/* <div className="container columns-7 gap-8">
                     {UG()}
                 </div>
                 <br />
@@ -174,9 +174,9 @@ export const PresetField = (globalRenderer: number, setGlobalRenderer: Dispatch<
                 <br />
                 <div className="container columns-7 gap-8">
                     {BonusStat()}
-                </div>
+                </div> */}
             </div>
-            <select
+            {/* <select
                 name="selectPreset"
                 onChange={e => {
                     setApplyCounter(applyCounter + 1)
@@ -194,7 +194,7 @@ export const PresetField = (globalRenderer: number, setGlobalRenderer: Dispatch<
                 if (preset != null) { applyPreset(currentGearSet, preset) }
                 else { throw TypeError("存在しないプリセットを適用しようとしました") }
                 console.log(JSON.stringify(preset))
-            }}>適用</button>
+            }}>適用</button> */}
         </>
     )
 }

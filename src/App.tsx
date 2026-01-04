@@ -30,7 +30,7 @@ export function App() {
 
       <h1 className="text-5xl font-bold my-4 leading-tight">メイプルマイギア</h1>
 
-      {WeaponType(globalRenderer, setGlobalRenderer, currentGearSet, updateCurrentGearSet, region)}
+      {/* {WeaponType(globalRenderer, setGlobalRenderer, currentGearSet, updateCurrentGearSet, region)} */}
       <hr></hr>
       {PresetField(globalRenderer, setGlobalRenderer, currentGearSet, updateCurrentGearSet, region, currentChooseMatrix, updateCurrentChooseMatrix)}
       <hr></hr>

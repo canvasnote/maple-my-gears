@@ -2,6 +2,25 @@ import { UG_Magical_Blade_Zero, UG_15_SubWeapon, UG_30_SubWeapon, UG_Magical_Kan
 import type { IBaseItem } from "./baseitem";
 
 import noneimg from "@/assets/images/noneimg.png"
+import absolab_blade from "@/assets/images/SubWeapon/absolab_blade.png"
+import absolab_fan from "@/assets/images/SubWeapon/absolab_fan.png"
+import arcaneshade_blade from "@/assets/images/SubWeapon/arcaneshade_blade.png"
+import arcaneshade_fan from "@/assets/images/SubWeapon/arcaneshade_fan.png"
+import black from "@/assets/images/SubWeapon/black.png"
+import daimos from "@/assets/images/SubWeapon/daimos.png"
+import fafnir_fan from "@/assets/images/SubWeapon/fafnir_fan.png"
+import lapis_7 from "@/assets/images/SubWeapon/lapis_7.png"
+import lapis_8 from "@/assets/images/SubWeapon/lapis_8.png"
+import lapis_9 from "@/assets/images/SubWeapon/lapis_9.png"
+import lapis_destiny from "@/assets/images/SubWeapon/lapis_destiny.png"
+import lapis_genesis from "@/assets/images/SubWeapon/lapis_genesis.png"
+import normal from "@/assets/images/SubWeapon/normal.png"
+import normal_nostat from "@/assets/images/SubWeapon/normal_nostat.png"
+import nouhime from "@/assets/images/SubWeapon/nouhime.png"
+import rava_knife from "@/assets/images/SubWeapon/rava_knife.png"
+import ruinforce from "@/assets/images/SubWeapon/ruinforce.png"
+import swingwater_blade from "@/assets/images/SubWeapon/swingwater_blade.png"
+import { StarForce120LV, StarForce130LV, StarForce160LV, StarForce200LV, StarForce_None, StarForceDisteny as StarForceDestiny, StarForceGenesis } from "@/models/starforce";
 
 export const subweapons: Array<IBaseItem> = [
   {
@@ -16,13 +35,16 @@ export const subweapons: Array<IBaseItem> = [
     ],
     UGPreset: [
       UG_None_SubWeapon
+    ],
+    StarForcePreset: [
+      StarForce_None
     ]
   }, 
   {
     type: "SubWeapon",
     JMSName: "補助武器(通常)",
     images: {
-      default: noneimg
+      default: normal
     },
     level: 100,
     setEffectName: [],
@@ -33,26 +55,32 @@ export const subweapons: Array<IBaseItem> = [
     ],
     UGPreset: [
       UG_None_SubWeapon
+    ],
+    StarForcePreset: [
+      StarForce_None
     ]
   },
   {
     type: "SubWeapon",
     JMSName: "補助武器(通常, 能力なし--メルセデス等)",
     images: {
-      default: noneimg
+      default: normal_nostat
     },
     level: 100,
     setEffectName: [],
     baseStat: [],
     UGPreset: [
       UG_None_SubWeapon
+    ],
+    StarForcePreset: [
+      StarForce_None
     ]
   },
   {
     type: "SubWeapon",
     JMSName: "補助武器(ブラック)",
     images: {
-      default: noneimg
+      default: black
     },
     level: 100,
     setEffectName: [],
@@ -63,13 +91,16 @@ export const subweapons: Array<IBaseItem> = [
     ],
     UGPreset: [
       UG_None_SubWeapon
+    ],
+    StarForcePreset: [
+      StarForce_None
     ]
   },
   {
     type: "SubWeapon",
     JMSName: "補助武器(ノウヒメ)",
     images: {
-      default: noneimg
+      default: nouhime
     },
     level: 100,
     setEffectName: [],
@@ -80,13 +111,16 @@ export const subweapons: Array<IBaseItem> = [
     ],
     UGPreset: [
       UG_None_SubWeapon
+    ],
+    StarForcePreset: [
+      StarForce_None
     ]
   },
   {
     type: "SubWeapon",
     JMSName: "130(ダイモス)盾",
     images: {
-      default: noneimg
+      default: daimos
     },
     level: 130,
     setEffectName: [],
@@ -96,13 +130,16 @@ export const subweapons: Array<IBaseItem> = [
     UGPreset: [
       UG_15_SubWeapon,
       UG_30_SubWeapon
+    ],
+    StarForcePreset: [
+      ...StarForce130LV
     ]
   },
   {
     type: "SubWeapon",
     JMSName: "ルインフォースシールド",
     images: {
-      default: noneimg
+      default: ruinforce
     },
     level: 100,
     setEffectName: [],
@@ -114,13 +151,16 @@ export const subweapons: Array<IBaseItem> = [
     ],
     UGPreset: [
 
+    ],
+    StarForcePreset: [
+      StarForce_None
     ]
   },
   {
     type: "SubWeapon",
     JMSName: "ラヴァナイフ",
     images: {
-      default: noneimg
+      default: rava_knife
     },
     level: 150,
     setEffectName: [],
@@ -131,13 +171,16 @@ export const subweapons: Array<IBaseItem> = [
     UGPreset: [
       UG_15_SubWeapon,
       UG_30_SubWeapon
+    ],
+    StarForcePreset: [
+      ...StarForce120LV
     ]
   },
   {
     type: "SubWeapon",
     JMSName: "アブソレスブレイド",
     images: {
-      default: noneimg
+      default: absolab_blade
     },
     level: 160,
     setEffectName: [],
@@ -151,13 +194,16 @@ export const subweapons: Array<IBaseItem> = [
       UG_Magical_Blade_Zero,
       UG_15_SubWeapon,
       UG_30_SubWeapon
+    ],
+    StarForcePreset: [
+      ...StarForce160LV
     ]
   },
   {
     type: "SubWeapon",
     JMSName: "スイングウォーターブレイド",
     images: {
-      default: noneimg
+      default: swingwater_blade
     },
     level: 160,
     setEffectName: [],
@@ -168,13 +214,16 @@ export const subweapons: Array<IBaseItem> = [
       UG_Magical_Blade_Zero,
       UG_15_SubWeapon,
       UG_30_SubWeapon
+    ],
+    StarForcePreset: [
+      ...StarForce160LV
     ]
   },
   {
     type: "SubWeapon",
     JMSName: "アーケインシェードブレイド",
     images: {
-      default: noneimg
+      default: arcaneshade_blade
     },
     level: 200,
     setEffectName: [],
@@ -185,13 +234,16 @@ export const subweapons: Array<IBaseItem> = [
       UG_Magical_Blade_Zero,
       UG_15_SubWeapon,
       UG_30_SubWeapon
+    ],
+    StarForcePreset: [
+      ...StarForce200LV
     ]
   },
   {
     type: "SubWeapon",
     JMSName: "ラピス 7型(170LV/ベータ)",
     images: {
-      default: noneimg
+      default: lapis_7
     },
     level: 170,
     setEffectName: [],
@@ -206,13 +258,16 @@ export const subweapons: Array<IBaseItem> = [
       UG_Magical_Blade_Zero,
       UG_15_SubWeapon,
       UG_30_SubWeapon
+    ],
+    StarForcePreset: [
+      ...StarForce160LV
     ]
   },
   {
     type: "SubWeapon",
     JMSName: "ラピス 8型(180LV/アブソレス/ベータ)",
     images: {
-      default: noneimg
+      default: lapis_8
     },
     level: 180,
     setEffectName: [],
@@ -227,13 +282,16 @@ export const subweapons: Array<IBaseItem> = [
       UG_Magical_Blade_Zero,
       UG_15_SubWeapon,
       UG_30_SubWeapon
+    ],
+    StarForcePreset: [
+      ...StarForce160LV
     ]
   },
   {
     type: "SubWeapon",
     JMSName: "ラピス 9型(200LV/アーケイン/ベータ)",
     images: {
-      default: noneimg
+      default: lapis_9
     },
     level: 200,
     setEffectName: [],
@@ -248,13 +306,16 @@ export const subweapons: Array<IBaseItem> = [
       UG_Magical_Blade_Zero,
       UG_15_SubWeapon,
       UG_30_SubWeapon
+    ],
+    StarForcePreset: [
+      ...StarForce200LV
     ]
   },
   {
     type: "SubWeapon",
     JMSName: "ラピス 10型(200LV/ジェネシス/ベータ)",
     images: {
-      default: noneimg
+      default: lapis_genesis
     },
     level: 200,
     setEffectName: [],
@@ -267,13 +328,16 @@ export const subweapons: Array<IBaseItem> = [
     ],
     UGPreset: [
       UG_15_SubWeapon,
+    ],
+    StarForcePreset: [
+      ...StarForceGenesis
     ]
   },
 {
     type: "SubWeapon",
     JMSName: "ディスティニーラピス(250LV/ベータ)",
     images: {
-      default: noneimg
+      default: lapis_destiny
     },
     level: 250,
     setEffectName: [],
@@ -286,13 +350,16 @@ export const subweapons: Array<IBaseItem> = [
     ],
     UGPreset: [
       UG_15_SubWeapon,
+    ],
+    StarForcePreset: [
+      ...StarForceDestiny
     ]
   },
   {
     type: "SubWeapon",
     JMSName: "アブソレス扇(UGとスタフォと転生は魔力の半分を入力してください)",
     images: {
-      default: noneimg
+      default: absolab_fan
     },
     level: 160,
     setEffectName: [],
@@ -303,13 +370,16 @@ export const subweapons: Array<IBaseItem> = [
       UG_Magical_Kanna,
       UG_15_Kanna,
       UG_30_Kanna
+    ],
+    StarForcePreset: [
+      ...StarForce160LV
     ]
   },
   {
     type: "SubWeapon",
     JMSName: "アーケインシェード扇(UGとスタフォと転生は魔力の半分を入力してください)",
     images: {
-      default: noneimg
+      default: arcaneshade_fan
     },
     level: 200,
     setEffectName: [],
@@ -320,6 +390,9 @@ export const subweapons: Array<IBaseItem> = [
       UG_Magical_Kanna,
       UG_15_Kanna,
       UG_30_Kanna
+    ],
+    StarForcePreset: [
+      ...StarForce160LV
     ]
   },
 ];

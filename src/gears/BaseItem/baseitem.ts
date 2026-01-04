@@ -32,6 +32,7 @@ import { authenticsymbols } from "./authenticsymbols"
 import { grandauthenticsymbols } from "./grandauthenticsymbols"
 import { petequips } from "./petequips"
 import type { UGPreset } from "@/models/UGPreset"
+import type { StarForcePreset } from "@/models/starforce"
 
 export interface IBaseItem{
     type: GearType
@@ -40,7 +41,8 @@ export interface IBaseItem{
     baseStat: Array<IStat>,
     setEffectName: Array<SetEffectName>,
     images?: {default: string, warrior?: string, archaer?: string, wizard?: string, thief?: string},
-    UGPreset?: Array<UGPreset>
+    UGPreset?: Array<UGPreset>,
+    StarForcePreset?: Array<StarForcePreset>
     // symbolLevel?: IntRange<1, 12>
     // UG: undefined
     // potential: undefined
