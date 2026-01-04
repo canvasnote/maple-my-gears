@@ -35,6 +35,7 @@ export class Choose{
     bonusPotentialPresets: Array<BonusPotentialPreset> | undefined
     bonusStats: Array<IStat> | undefined
     symbolLevel: SymbolLevelPreset | undefined
+    otherStats: Array<IStat> | undefined
 
     constructor(
         slot: SlotType, 
@@ -45,7 +46,8 @@ export class Choose{
         potentialPresets: Array<PotentialPreset> | undefined, 
         bonusPotentialPresets: Array<BonusPotentialPreset> | undefined, 
         bonusStat: Array<IStat>,
-        symbolLevel: SymbolLevelPreset | undefined){
+        symbolLevel: SymbolLevelPreset | undefined,
+        otherStats: Array<IStat> | undefined){
             this.slot = slot
             this.baseItemName = baseItemName
             this.images = images
@@ -55,6 +57,7 @@ export class Choose{
             this.bonusPotentialPresets = bonusPotentialPresets
             this.bonusStats = bonusStat
             this.symbolLevel = symbolLevel
+            this.otherStats = otherStats
     }
 }
 
@@ -79,7 +82,8 @@ export const initChooseMatrix = () => {
                     {type: "SubStat2", amount: 0},
                     {type: "HP", amount: 0},
                 ],
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "SubWeapon",
@@ -99,7 +103,8 @@ export const initChooseMatrix = () => {
                     {type: "SubStat2", amount: 0},
                     {type: "HP", amount: 0},
                 ],
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "Embrem",
@@ -110,7 +115,8 @@ export const initChooseMatrix = () => {
                 potentialPresets: [Potential_None, Potential_None, Potential_None],
                 bonusPotentialPresets: [BonusPotential_None, BonusPotential_None, BonusPotential_None],
                 bonusStats: undefined,
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "Head",
@@ -128,7 +134,8 @@ export const initChooseMatrix = () => {
                     {type: "SubStat2", amount: 0},
                     {type: "HP", amount: 0},
                 ],
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "Armour",
@@ -146,7 +153,8 @@ export const initChooseMatrix = () => {
                     {type: "SubStat2", amount: 0},
                     {type: "HP", amount: 0},
                 ],
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "Pants",
@@ -164,7 +172,8 @@ export const initChooseMatrix = () => {
                     {type: "SubStat2", amount: 0},
                     {type: "HP", amount: 0},
                 ],
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "Mantle",
@@ -182,7 +191,8 @@ export const initChooseMatrix = () => {
                     {type: "SubStat2", amount: 0},
                     {type: "HP", amount: 0},
                 ],
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "Gloves",
@@ -200,7 +210,8 @@ export const initChooseMatrix = () => {
                     {type: "SubStat2", amount: 0},
                     {type: "HP", amount: 0},
                 ],
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "Shoulder",
@@ -211,7 +222,8 @@ export const initChooseMatrix = () => {
                 potentialPresets: [Potential_None, Potential_None, Potential_None],
                 bonusPotentialPresets: [BonusPotential_None, BonusPotential_None, BonusPotential_None],
                 bonusStats: undefined,
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "Boots",
@@ -229,7 +241,8 @@ export const initChooseMatrix = () => {
                     {type: "SubStat2", amount: 0},
                     {type: "HP", amount: 0},
                 ],
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "Pendant",
@@ -247,7 +260,8 @@ export const initChooseMatrix = () => {
                     {type: "SubStat2", amount: 0},
                     {type: "HP", amount: 0},
                 ],
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "PendantSlot",
@@ -265,7 +279,8 @@ export const initChooseMatrix = () => {
                     {type: "SubStat2", amount: 0},
                     {type: "HP", amount: 0},
                 ],
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "Ring1",
@@ -276,7 +291,8 @@ export const initChooseMatrix = () => {
                 potentialPresets: [Potential_None, Potential_None, Potential_None],
                 bonusPotentialPresets: [BonusPotential_None, BonusPotential_None, BonusPotential_None],
                 bonusStats: undefined,
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "Ring2",
@@ -287,7 +303,8 @@ export const initChooseMatrix = () => {
                 potentialPresets: [Potential_None, Potential_None, Potential_None],
                 bonusPotentialPresets: [BonusPotential_None, BonusPotential_None, BonusPotential_None],
                 bonusStats: undefined,
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "Ring3",
@@ -298,7 +315,8 @@ export const initChooseMatrix = () => {
                 potentialPresets: [Potential_None, Potential_None, Potential_None],
                 bonusPotentialPresets: [BonusPotential_None, BonusPotential_None, BonusPotential_None],
                 bonusStats: undefined,
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "Ring4",
@@ -309,7 +327,8 @@ export const initChooseMatrix = () => {
                 potentialPresets: [Potential_None, Potential_None, Potential_None],
                 bonusPotentialPresets: [BonusPotential_None, BonusPotential_None, BonusPotential_None],
                 bonusStats: undefined,
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "Face",
@@ -327,7 +346,8 @@ export const initChooseMatrix = () => {
                     {type: "SubStat2", amount: 0},
                     {type: "HP", amount: 0},
                 ],
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "Eyes",
@@ -345,7 +365,8 @@ export const initChooseMatrix = () => {
                     {type: "SubStat2", amount: 0},
                     {type: "HP", amount: 0},
                 ],
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "Pocket",
@@ -363,7 +384,8 @@ export const initChooseMatrix = () => {
                     {type: "SubStat2", amount: 0},
                     {type: "HP", amount: 0},
                 ],
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "Badge",
@@ -374,7 +396,8 @@ export const initChooseMatrix = () => {
                 potentialPresets: undefined,
                 bonusPotentialPresets: undefined,
                 bonusStats: undefined,
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "Heart",
@@ -385,7 +408,8 @@ export const initChooseMatrix = () => {
                 potentialPresets: [Potential_None, Potential_None, Potential_None],
                 bonusPotentialPresets: [BonusPotential_None, BonusPotential_None, BonusPotential_None],
                 bonusStats: undefined,
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "Title",
@@ -396,7 +420,8 @@ export const initChooseMatrix = () => {
                 potentialPresets: undefined,
                 bonusPotentialPresets: undefined,
                 bonusStats: undefined,
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "Medal",
@@ -414,7 +439,8 @@ export const initChooseMatrix = () => {
                     {type: "SubStat2", amount: 0},
                     {type: "HP", amount: 0},
                 ],
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "Totem1",
@@ -432,7 +458,8 @@ export const initChooseMatrix = () => {
                     {type: "SubStat2", amount: 0},
                     {type: "HP", amount: 0},
                 ],
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "Totem2",
@@ -450,7 +477,8 @@ export const initChooseMatrix = () => {
                     {type: "SubStat2", amount: 0},
                     {type: "HP", amount: 0},
                 ],
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "Totem3",
@@ -468,7 +496,8 @@ export const initChooseMatrix = () => {
                     {type: "SubStat2", amount: 0},
                     {type: "HP", amount: 0},
                 ],
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "Jewel",
@@ -479,7 +508,8 @@ export const initChooseMatrix = () => {
                 potentialPresets: undefined,
                 bonusPotentialPresets: undefined,
                 bonusStats: undefined,
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: [{type: "MainStatNot%", amount: 0}]
             },
             {
                 slot: "PetEquip1",
@@ -490,7 +520,8 @@ export const initChooseMatrix = () => {
                 potentialPresets: undefined,
                 bonusPotentialPresets: undefined,
                 bonusStats: undefined,
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "PetEquip2",
@@ -501,7 +532,8 @@ export const initChooseMatrix = () => {
                 potentialPresets: undefined,
                 bonusPotentialPresets: undefined,
                 bonusStats: undefined,
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "PetEquip3",
@@ -512,7 +544,8 @@ export const initChooseMatrix = () => {
                 potentialPresets: undefined,
                 bonusPotentialPresets: undefined,
                 bonusStats: undefined,
-                symbolLevel: undefined
+                symbolLevel: undefined,
+                otherStats: undefined
             },
             {
                 slot: "ArcaneSymbol1",
@@ -523,7 +556,8 @@ export const initChooseMatrix = () => {
                 potentialPresets: undefined,
                 bonusPotentialPresets: undefined,
                 bonusStats: undefined,
-                symbolLevel: SymbolLevel_None
+                symbolLevel: SymbolLevel_None,
+                otherStats: undefined
             },
             {
                 slot: "ArcaneSymbol2",
@@ -534,7 +568,8 @@ export const initChooseMatrix = () => {
                 potentialPresets: undefined,
                 bonusPotentialPresets: undefined,
                 bonusStats: undefined,
-                symbolLevel: SymbolLevel_None
+                symbolLevel: SymbolLevel_None,
+                otherStats: undefined
             },
             {
                 slot: "ArcaneSymbol3",
@@ -545,7 +580,8 @@ export const initChooseMatrix = () => {
                 potentialPresets: undefined,
                 bonusPotentialPresets: undefined,
                 bonusStats: undefined,
-                symbolLevel: SymbolLevel_None
+                symbolLevel: SymbolLevel_None,
+                otherStats: undefined
             },
             {
                 slot: "ArcaneSymbol4",
@@ -556,7 +592,8 @@ export const initChooseMatrix = () => {
                 potentialPresets: undefined,
                 bonusPotentialPresets: undefined,
                 bonusStats: undefined,
-                symbolLevel: SymbolLevel_None
+                symbolLevel: SymbolLevel_None,
+                otherStats: undefined
             },
             {
                 slot: "ArcaneSymbol5",
@@ -567,7 +604,8 @@ export const initChooseMatrix = () => {
                 potentialPresets: undefined,
                 bonusPotentialPresets: undefined,
                 bonusStats: undefined,
-                symbolLevel: SymbolLevel_None
+                symbolLevel: SymbolLevel_None,
+                otherStats: undefined
             },
             {
                 slot: "ArcaneSymbol6",
@@ -578,7 +616,8 @@ export const initChooseMatrix = () => {
                 potentialPresets: undefined,
                 bonusPotentialPresets: undefined,
                 bonusStats: undefined,
-                symbolLevel: SymbolLevel_None
+                symbolLevel: SymbolLevel_None,
+                otherStats: undefined
             },
             {
                 slot: "AuthenticSymbol1",
@@ -589,7 +628,8 @@ export const initChooseMatrix = () => {
                 potentialPresets: undefined,
                 bonusPotentialPresets: undefined,
                 bonusStats: undefined,
-                symbolLevel: SymbolLevel_None
+                symbolLevel: SymbolLevel_None,
+                otherStats: undefined
             },
             {
                 slot: "AuthenticSymbol2",
@@ -600,7 +640,8 @@ export const initChooseMatrix = () => {
                 potentialPresets: undefined,
                 bonusPotentialPresets: undefined,
                 bonusStats: undefined,
-                symbolLevel: SymbolLevel_None
+                symbolLevel: SymbolLevel_None,
+                otherStats: undefined
             },
             {
                 slot: "AuthenticSymbol3",
@@ -611,7 +652,8 @@ export const initChooseMatrix = () => {
                 potentialPresets: undefined,
                 bonusPotentialPresets: undefined,
                 bonusStats: undefined,
-                symbolLevel: SymbolLevel_None
+                symbolLevel: SymbolLevel_None,
+                otherStats: undefined
             },
             {
                 slot: "AuthenticSymbol4",
@@ -622,7 +664,8 @@ export const initChooseMatrix = () => {
                 potentialPresets: undefined,
                 bonusPotentialPresets: undefined,
                 bonusStats: undefined,
-                symbolLevel: SymbolLevel_None
+                symbolLevel: SymbolLevel_None,
+                otherStats: undefined
             },
             {
                 slot: "AuthenticSymbol5",
@@ -633,7 +676,8 @@ export const initChooseMatrix = () => {
                 potentialPresets: undefined,
                 bonusPotentialPresets: undefined,
                 bonusStats: undefined,
-                symbolLevel: SymbolLevel_None
+                symbolLevel: SymbolLevel_None,
+                otherStats: undefined
             },
             {
                 slot: "AuthenticSymbol6",
@@ -644,7 +688,8 @@ export const initChooseMatrix = () => {
                 potentialPresets: undefined,
                 bonusPotentialPresets: undefined,
                 bonusStats: undefined,
-                symbolLevel: SymbolLevel_None
+                symbolLevel: SymbolLevel_None,
+                otherStats: undefined
             },
             {
                 slot: "GrandAuthenticSymbol1",
@@ -655,7 +700,8 @@ export const initChooseMatrix = () => {
                 potentialPresets: undefined,
                 bonusPotentialPresets: undefined,
                 bonusStats: undefined,
-                symbolLevel: SymbolLevel_None
+                symbolLevel: SymbolLevel_None,
+                otherStats: undefined
             },
         ]
     )

@@ -158,7 +158,7 @@ export const PresetField = (globalRenderer: number, setGlobalRenderer: Dispatch<
                 {ListSlot("グランドオーセンティックシンボル", ["GrandAuthenticSymbol1"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
                 {/* {BaseEquip(globalRenderer, setGlobalRenderer, currentGearSet, updateCurrentGearSet, region)} */}
                 <br />
-                <div className="container columns-7 gap-8">
+                {/* <div className="container columns-7 gap-8">
                     {UG()}
                 </div>
                 <br />
@@ -174,7 +174,7 @@ export const PresetField = (globalRenderer: number, setGlobalRenderer: Dispatch<
                 <br />
                 <div className="container columns-7 gap-8">
                     {BonusStat()}
-                </div>
+                </div> */}
             </div>
             {/* <select
                 name="selectPreset"
