@@ -131,34 +131,34 @@ export const PresetField = (globalRenderer: number, setGlobalRenderer: Dispatch<
         <>
             <h2>あなたの装備に一番近いものを選んでください</h2>
             <div className="container">
-                {ListSlot("武器", ["Weapon"], region, currentChooseMatrix, updateCurrentChooseMatrix)}
-                {ListSlot("補助武器", ["SubWeapon"], region, currentChooseMatrix, updateCurrentChooseMatrix)}
-                {ListSlot("エンブレム", ["Embrem"], region, currentChooseMatrix, updateCurrentChooseMatrix)}
-                {ListSlot("頭", ["Head"], region, currentChooseMatrix, updateCurrentChooseMatrix)}
-                {ListSlot("鎧上", ["Armour"], region, currentChooseMatrix, updateCurrentChooseMatrix)}
-                {ListSlot("鎧下", ["Pants"], region, currentChooseMatrix, updateCurrentChooseMatrix)}
-                {ListSlot("肩", ["Shoulder"], region, currentChooseMatrix, updateCurrentChooseMatrix)}
-                {ListSlot("マント", ["Mantle"], region, currentChooseMatrix, updateCurrentChooseMatrix)}
-                {ListSlot("手袋", ["Gloves"], region, currentChooseMatrix, updateCurrentChooseMatrix)}
-                {ListSlot("靴", ["Boots"], region, currentChooseMatrix, updateCurrentChooseMatrix)}
-                {ListSlot("Pendant", ["Pendant", "PendantSlot"], region, currentChooseMatrix, updateCurrentChooseMatrix)}
-                {ListSlot("指輪", ["Ring1", "Ring2", "Ring3", "Ring4"], region, currentChooseMatrix, updateCurrentChooseMatrix)}
-                {ListSlot("顔の飾り", ["Face"], region, currentChooseMatrix, updateCurrentChooseMatrix)}
-                {ListSlot("目の飾り", ["Eyes"], region, currentChooseMatrix, updateCurrentChooseMatrix)}
-                {ListSlot("ポケット装備", ["Pocket"], region, currentChooseMatrix, updateCurrentChooseMatrix)}
-                {ListSlot("バッジ", ["Badge"], region, currentChooseMatrix, updateCurrentChooseMatrix)}
-                {ListSlot("機械心臓部", ["Heart"], region, currentChooseMatrix, updateCurrentChooseMatrix)}
-                {ListSlot("称号", ["Title"], region, currentChooseMatrix, updateCurrentChooseMatrix)}
-                {ListSlot("勲章", ["Medal"], region, currentChooseMatrix, updateCurrentChooseMatrix)}
-                {ListSlot("トーテム", ["Totem1", "Totem2", "Totem3"], region, currentChooseMatrix, updateCurrentChooseMatrix)}
-                {ListSlot("宝玉", ["Jewel"], region, currentChooseMatrix, updateCurrentChooseMatrix)}
-                {ListSlot("ペット装備", ["PetEquip1", "PetEquip2", "PetEquip3"], region, currentChooseMatrix, updateCurrentChooseMatrix)}
-                {ListSlot("アーケインシンボル", ["ArcaneSymbol1", "ArcaneSymbol2", "ArcaneSymbol3", "ArcaneSymbol4", "ArcaneSymbol5", "ArcaneSymbol6"], region, currentChooseMatrix, updateCurrentChooseMatrix)}
-                {ListSlot("オーセンティックシンボル", ["AuthenticSymbol1", "AuthenticSymbol2", "AuthenticSymbol3", "AuthenticSymbol4", "AuthenticSymbol5", "AuthenticSymbol6"], region, currentChooseMatrix, updateCurrentChooseMatrix)}
-                {ListSlot("グランドオーセンティックシンボル", ["GrandAuthenticSymbol1"], region, currentChooseMatrix, updateCurrentChooseMatrix)}
+                {ListSlot("武器", ["Weapon"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
+                {ListSlot("補助武器", ["SubWeapon"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
+                {ListSlot("エンブレム", ["Embrem"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
+                {ListSlot("頭", ["Head"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
+                {ListSlot("鎧上", ["Armour"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
+                {ListSlot("鎧下", ["Pants"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
+                {ListSlot("肩", ["Shoulder"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
+                {ListSlot("マント", ["Mantle"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
+                {ListSlot("手袋", ["Gloves"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
+                {ListSlot("靴", ["Boots"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
+                {ListSlot("Pendant", ["Pendant", "PendantSlot"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
+                {ListSlot("指輪", ["Ring1", "Ring2", "Ring3", "Ring4"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
+                {ListSlot("顔の飾り", ["Face"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
+                {ListSlot("目の飾り", ["Eyes"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
+                {ListSlot("ポケット装備", ["Pocket"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
+                {ListSlot("バッジ", ["Badge"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
+                {ListSlot("機械心臓部", ["Heart"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
+                {ListSlot("称号", ["Title"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
+                {ListSlot("勲章", ["Medal"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
+                {ListSlot("トーテム", ["Totem1", "Totem2", "Totem3"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
+                {ListSlot("宝玉", ["Jewel"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
+                {ListSlot("ペット装備", ["PetEquip1", "PetEquip2", "PetEquip3"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
+                {ListSlot("アーケインシンボル", ["ArcaneSymbol1", "ArcaneSymbol2", "ArcaneSymbol3", "ArcaneSymbol4", "ArcaneSymbol5", "ArcaneSymbol6"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
+                {ListSlot("オーセンティックシンボル", ["AuthenticSymbol1", "AuthenticSymbol2", "AuthenticSymbol3", "AuthenticSymbol4", "AuthenticSymbol5", "AuthenticSymbol6"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
+                {ListSlot("グランドオーセンティックシンボル", ["GrandAuthenticSymbol1"], region, currentGearSet, updateCurrentGearSet, currentChooseMatrix, updateCurrentChooseMatrix)}
                 {/* {BaseEquip(globalRenderer, setGlobalRenderer, currentGearSet, updateCurrentGearSet, region)} */}
                 <br />
-                {/* <div className="container columns-7 gap-8">
+                <div className="container columns-7 gap-8">
                     {UG()}
                 </div>
                 <br />
@@ -174,7 +174,7 @@ export const PresetField = (globalRenderer: number, setGlobalRenderer: Dispatch<
                 <br />
                 <div className="container columns-7 gap-8">
                     {BonusStat()}
-                </div> */}
+                </div>
             </div>
             {/* <select
                 name="selectPreset"

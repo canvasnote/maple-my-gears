@@ -8,6 +8,7 @@ import genesis from "@/assets/images/weapon/genesis.png"
 import destiny from "@/assets/images/weapon/destiny.webp"
 import { UG_15 as UG_15_Weapon, UG_30 as UG_30_Weapon, UG_Magical } from "@/models/UGPreset/weapon";
 import { StarForce150LV, StarForce160LV, StarForce200LV, StarForce_None, StarForceDisteny, StarForceGenesis } from "@/models/starforce";
+import { Potential_None, Potential_Weapon_150LV, Potential_Weapon_160LV, Potential_Weapon_200LV, Potential_Weapon_Destiny, Potential_Weapon_Genesis } from "@/models/PotentialPreset/weapon";
 
 export const weapons: Array<IBaseItem> = [
   {
@@ -25,6 +26,9 @@ export const weapons: Array<IBaseItem> = [
     ],
     StarForcePreset: [
       StarForce_None
+    ],
+    PotentialPreset: [
+      Potential_None
     ]
   }, 
 
@@ -50,6 +54,9 @@ export const weapons: Array<IBaseItem> = [
     ],
     StarForcePreset: [
       ...StarForce150LV
+    ],
+    PotentialPreset: [
+      ...Potential_Weapon_150LV
     ]
   },
 
@@ -75,6 +82,9 @@ export const weapons: Array<IBaseItem> = [
     ],
     StarForcePreset: [
       ...StarForce160LV
+    ],
+    PotentialPreset: [
+      ...Potential_Weapon_160LV
     ]
   },
 
@@ -100,6 +110,9 @@ export const weapons: Array<IBaseItem> = [
     ],
     StarForcePreset: [
       ...StarForce200LV
+    ],
+    PotentialPreset: [
+      ...Potential_Weapon_200LV
     ]
   },
 
@@ -124,6 +137,9 @@ export const weapons: Array<IBaseItem> = [
     ],
     StarForcePreset: [
       ...StarForceGenesis
+    ],
+    PotentialPreset: [
+      ...Potential_Weapon_Genesis
     ]
   },
 
@@ -148,6 +164,9 @@ export const weapons: Array<IBaseItem> = [
     ],
     StarForcePreset: [
       ...StarForceDisteny
+    ],
+    PotentialPreset: [
+      ...Potential_Weapon_Destiny
     ]
   },
 ];

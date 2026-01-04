@@ -178,7 +178,7 @@ export const describeStat = (statType: StatType, amount: number, mainStat: MainS
             case "AuthenticForce": return `オーセンティックフォース: +${amount}`
             case "MesoAmount": return `メル獲得量: +${amount}%`
             case "DropRate": return `ドロップ率: +${amount}`
-            case "None": return ``
+            case "None": return `なし`
         }
     }
 

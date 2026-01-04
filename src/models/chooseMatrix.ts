@@ -10,6 +10,8 @@ import type { IStat } from "@/gears/stat"
 import noneimg from "@/assets/images/noneimg.png"
 import { UG_None } from "./UGPreset/weapon"
 import { StarForce_None, type StarForcePreset } from "./starforce"
+import { Potential_None, Potential_Weapon_AMA12Percent, Potential_Weapon_AMA6Percent, Potential_Weapon_AMA9Percent } from "./PotentialPreset/weapon"
+import type { PotentialPreset } from "./PotentialPreset"
 
 export class ChooseMatrix{
     [immerable] = true
@@ -26,7 +28,7 @@ export class Choose{
     images: Array<string>
     UG: UGPreset | undefined
     starForce: StarForcePreset | undefined
-    potential: Array<Potential> | undefined
+    potentialPresets: Array<PotentialPreset> | undefined
     bonusPotential: Array<BonusPotential> | undefined
     additionalStat: Array<IStat> | undefined
     symbolLevel: number | undefined
@@ -37,7 +39,7 @@ export class Choose{
         images: Array<string>,
         UG: UGPreset | undefined, 
         starForce: StarForcePreset | undefined, 
-        potential: Array<Potential> | undefined, 
+        potentialPresets: Array<PotentialPreset> | undefined, 
         bonusPotential: Array<BonusPotential> | undefined, 
         additionalStat: Array<IStat>,
         symbolLevel: number | undefined){
@@ -46,7 +48,7 @@ export class Choose{
             this.images = images
             this.UG = UG
             this.starForce = starForce
-            this.potential = potential
+            this.potentialPresets = potentialPresets
             this.bonusPotential = bonusPotential
             this.additionalStat = additionalStat
             this.symbolLevel = symbolLevel
@@ -62,7 +64,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: UG_None,
                 starForce: StarForce_None,
-                potential: undefined,
+                potentialPresets: [Potential_None, Potential_None, Potential_None],
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -73,7 +75,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: UG_None,
                 starForce: StarForce_None,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -84,7 +86,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: undefined,
                 starForce: undefined,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -95,7 +97,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: UG_None,
                 starForce: StarForce_None,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -106,7 +108,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: UG_None,
                 starForce: StarForce_None,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -117,7 +119,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: UG_None,
                 starForce: StarForce_None,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -128,7 +130,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: UG_None,
                 starForce: StarForce_None,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -139,7 +141,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: UG_None,
                 starForce: StarForce_None,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -150,7 +152,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: UG_None,
                 starForce: StarForce_None,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -161,7 +163,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: UG_None,
                 starForce: StarForce_None,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -172,7 +174,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: UG_None,
                 starForce: StarForce_None,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -183,7 +185,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: UG_None,
                 starForce: StarForce_None,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -194,7 +196,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: UG_None,
                 starForce: StarForce_None,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -205,7 +207,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: UG_None,
                 starForce: StarForce_None,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -216,7 +218,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: UG_None,
                 starForce: StarForce_None,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -227,7 +229,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: UG_None,
                 starForce: StarForce_None,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -238,7 +240,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: UG_None,
                 starForce: StarForce_None,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -249,7 +251,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: UG_None,
                 starForce: StarForce_None,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -260,7 +262,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: undefined,
                 starForce: undefined,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -271,7 +273,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: undefined,
                 starForce: undefined,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -282,7 +284,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: UG_None,
                 starForce: StarForce_None,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -293,7 +295,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: undefined,
                 starForce: undefined,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -304,7 +306,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: undefined,
                 starForce: undefined,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -315,7 +317,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: undefined,
                 starForce: undefined,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -326,7 +328,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: undefined,
                 starForce: undefined,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -337,7 +339,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: undefined,
                 starForce: undefined,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -348,7 +350,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: undefined,
                 starForce: undefined,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -359,7 +361,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: UG_None,
                 starForce: undefined,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -370,7 +372,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: UG_None,
                 starForce: undefined,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -381,7 +383,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: UG_None,
                 starForce: undefined,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -392,7 +394,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: undefined,
                 starForce: undefined,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -403,7 +405,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: undefined,
                 starForce: undefined,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -414,7 +416,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: undefined,
                 starForce: undefined,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -425,7 +427,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: undefined,
                 starForce: undefined,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -436,7 +438,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: undefined,
                 starForce: undefined,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -447,7 +449,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: undefined,
                 starForce: undefined,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -458,7 +460,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: undefined,
                 starForce: undefined,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -469,7 +471,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: undefined,
                 starForce: undefined,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -480,7 +482,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: undefined,
                 starForce: undefined,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -491,7 +493,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: undefined,
                 starForce: undefined,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -502,7 +504,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: undefined,
                 starForce: undefined,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined
@@ -513,7 +515,7 @@ export const initChooseMatrix = () => {
                 images: [noneimg],
                 UG: undefined,
                 starForce: undefined,
-                potential: undefined,
+                potentialPresets: undefined,
                 bonusPotential: undefined,
                 additionalStat: undefined,
                 symbolLevel: undefined

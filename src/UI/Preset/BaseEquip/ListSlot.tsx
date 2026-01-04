@@ -1,4 +1,4 @@
-import type { SlotType } from "@/gears/Gearset/gearset"
+import type { GearSet, SlotType } from "@/gears/Gearset/gearset"
 import { baseItems } from "@/gears/BaseItem/baseitem"
 import { slotTypeToGearType } from "@/gears/Gearset/gearset"
 
@@ -8,9 +8,10 @@ import { useImmer, type Updater } from "use-immer"
 import type { Region } from "@/i18n"
 import type { ChooseMatrix } from "@/models/chooseMatrix"
 import fafnir from "@/assets/images/weapon/fafnir.png"
+import { describeStat, getLocaledStat } from "@/gears/stat"
 
-export const ListSlot = (typeName: string, slotTypeList: Array<SlotType>, region: Region, currentChooseMatrix: ChooseMatrix, updateCurrentChooseMatrix: Updater<ChooseMatrix>) => {
-    const [listShow, setListShow] = useImmer(slotTypeList.map(() => [false, false, false, false, false, false, false, false]))
+export const ListSlot = (typeName: string, slotTypeList: Array<SlotType>, region: Region, currentGearSet: GearSet, updateCurrentGearSet: Updater<GearSet>, currentChooseMatrix: ChooseMatrix, updateCurrentChooseMatrix: Updater<ChooseMatrix>) => {
+    const [listShow, setListShow] = useImmer(slotTypeList.map(() => [[false], [false], [false], [false, false, false], [false], [false], [false], [false]]))
 
     const filterBaseItemsBySlotType = (slotType: SlotType) => {
         return baseItems.filter((baseItem) => baseItem.type === slotTypeToGearType(slotType))
@@ -38,7 +39,7 @@ export const ListSlot = (typeName: string, slotTypeList: Array<SlotType>, region
                         <td className="relative border border-slate-700">
                             <div className="">
                                 {/* 現在選択中のベース装備 */}
-                                <span onClick={() => setListShow((draft) => {draft[index]![0] = !listShow[index]![0]})}>
+                                <span onClick={() => setListShow((draft) => {draft[index]![0]![0] = !listShow[index]![0]![0]; console.log(JSON.stringify(listShow))})}>
                                     {
                                         currentChooseMatrix.chooses.filter((choose) => choose.slot === slotType).map((choose) => choose.images.map((image) => <>
                                             <img src={image} className="rounded-xl border border-solid outline-gray-500 cursor-pointer" alt={currentChooseMatrix.chooses[currentChooseMatrix.chooses.findIndex((choose) => choose.slot === slotType)]?.baseItemName}></img>
@@ -49,13 +50,13 @@ export const ListSlot = (typeName: string, slotTypeList: Array<SlotType>, region
                                 </span>
                                 
                                 {/* このスロットに装備可能な装備の一覧 */}
-                                <div hidden={!listShow[index]![0]} className="absolute h-6 p-1 -top-0 left-12 w-fit h-fit z-99 bg-white rounded-lg text-left text-black whitespace-nowrap">
+                                <div hidden={!listShow[index]![0]![0]} className="absolute h-6 p-1 -top-0 left-12 w-fit h-fit z-99 bg-white rounded-lg text-left text-black whitespace-nowrap">
                                     {filterBaseItemsBySlotType(slotType).map((baseItem) => { return (
                                         <div 
                                             className="h-6 mr-8 mb-2 hover:bg-linear-to-r from-pink-200 to-white cursor-pointer" 
                                             onClick={() => {
                                                 // リストをしまう
-                                                setListShow((draft) => {draft[index]![0] = false})
+                                                setListShow((draft) => {draft[index]![0]![0] = false})
                                                 // 選択した装備の名前をchooseに格納
                                                 updateCurrentChooseMatrix((draft) => { draft.chooses[currentChooseMatrix.chooses.findIndex((choose) => choose.slot === baseItem.type)]!.baseItemName = baseItem.JMSName})
                                                 // 選択した装備の画像パスをchooseに格納
@@ -72,7 +73,7 @@ export const ListSlot = (typeName: string, slotTypeList: Array<SlotType>, region
                         <td className="relative border border-slate-700">
                             <div className="">
                                 {/* 現在選択中のUG */}
-                                <span onClick={() => setListShow((draft) => {draft[index]![1] = !listShow[index]![1]})}>
+                                <span onClick={() => setListShow((draft) => {draft[index]![1]![0] = !listShow[index]![1]![0]})}>
                                     {
                                         currentChooseMatrix.chooses.filter((choose) => choose.slot === slotType).map((choose) => choose.UG?.images.map((image) => <>
                                             <img src={image} className="rounded-xl border border-solid outline-gray-500 cursor-pointer" alt={currentChooseMatrix.chooses[currentChooseMatrix.chooses.findIndex((choose) => choose.slot === slotType)]?.baseItemName}></img>
@@ -81,13 +82,13 @@ export const ListSlot = (typeName: string, slotTypeList: Array<SlotType>, region
                                 </span>
                                 
                                 {/* このスロットに適用可能なUGの一覧 */}
-                                <div hidden={!listShow[index]![1]} className="absolute h-6 p-1 -top-0 left-12 w-fit h-fit z-99 bg-white rounded-lg text-left text-black whitespace-nowrap">
+                                <div hidden={!listShow[index]![1]![0]} className="absolute h-6 p-1 -top-0 left-12 w-fit h-fit z-99 bg-white rounded-lg text-left text-black whitespace-nowrap">
                                     {filterBaseItemsBySlotType(slotType).filter((baseItem) => true && baseItem.JMSName === currentChooseMatrix.chooses.filter((choose) => choose.slot === slotType)[0]?.baseItemName).map((baseItem) => { return (
                                         <div>
                                             {baseItem.UGPreset?.map((preset) => (<>
                                                 <div className="h-6 mr-8 mb-2 hover:bg-linear-to-r from-pink-200 to-white cursor-pointer" onClick={() => {
                                                     // リストをしまう
-                                                    setListShow((draft) => {draft[index]![1] = false}); 
+                                                    setListShow((draft) => {draft[index]![1]![0] = false}); 
                                                     // 選択したUGプリセットの名前をchooseに格納
                                                     updateCurrentChooseMatrix((draft) => { draft.chooses[currentChooseMatrix.chooses.findIndex((choose) => choose.slot === baseItem.type)]!.UG = preset})
                                                     // 選択したUGプリセットの画像パスをchooseに格納
@@ -111,7 +112,7 @@ export const ListSlot = (typeName: string, slotTypeList: Array<SlotType>, region
                         <td className="relative border border-slate-700">
                             <div className="">
                                 {/* 現在選択中のスターフォース */}
-                                <span onClick={() => setListShow((draft) => {draft[index]![2] = !listShow[index]![2]})}>
+                                <span onClick={() => setListShow((draft) => {draft[index]![2]![0] = !listShow[index]![2]![0]})}>
                                     {
                                         currentChooseMatrix.chooses.filter((choose) => choose.slot === slotType).map((choose) => choose.starForce?.images.map((image) => <>
                                             {/* <img src={image} className="rounded-xl border border-solid outline-gray-500 cursor-pointer" alt={currentChooseMatrix.chooses[currentChooseMatrix.chooses.findIndex((choose) => choose.slot === slotType)]?.starForce?.JMSName}></img> */}
@@ -121,13 +122,13 @@ export const ListSlot = (typeName: string, slotTypeList: Array<SlotType>, region
                                 </span>
                                 
                                 {/* このスロットに適用可能なスターフォースの一覧 */}
-                                <div hidden={!listShow[index]![2]} className="absolute h-6 p-1 -top-0 left-12 w-fit h-fit z-99 bg-white rounded-lg text-left text-black whitespace-nowrap">
+                                <div hidden={!listShow[index]![2]![0]} className="absolute h-6 p-1 -top-0 left-12 w-fit h-fit z-99 bg-white rounded-lg text-left text-black whitespace-nowrap">
                                     {filterBaseItemsBySlotType(slotType).filter((baseItem) => true && baseItem.JMSName === currentChooseMatrix.chooses.filter((choose) => choose.slot === slotType)[0]?.baseItemName).map((baseItem) => { return (
                                         <div>
                                             {baseItem.StarForcePreset?.map((preset) => (<>
                                                 <div className="h-6 mr-8 mb-2 hover:bg-linear-to-r from-pink-200 to-white cursor-pointer" onClick={() => {
                                                     // リストをしまう
-                                                    setListShow((draft) => {draft[index]![2] = false}); 
+                                                    setListShow((draft) => {draft[index]![2]![0] = false}); 
                                                     // 選択したスターフォースプリセットの名前をchooseに格納
                                                     updateCurrentChooseMatrix((draft) => { draft.chooses[currentChooseMatrix.chooses.findIndex((choose) => choose.slot === baseItem.type)]!.starForce = preset})
                                                     // 選択したスターフォースプリセットの画像パスをchooseに格納
@@ -139,12 +140,56 @@ export const ListSlot = (typeName: string, slotTypeList: Array<SlotType>, region
                                                 </div>
                                             </>
                                             ))}
-                                            {/* {baseItem.UGPreset?.JMSName}
-                                            <img src={baseItem.UGPreset} width={30} height={30} className="rounded-xl border border-solid outline-gray-500"></img> */}
-                                            {/* {baseItem.JMSName} */}
                                         </div>
                                     )})}
                                 </div>
+                            </div>
+                        </td>
+                        {/* 潜在能力 */}
+                        <td className="relative border border-slate-700">
+                            <div className="">
+                                {/* 現在選択中の潜在能力 */}
+                                <span>
+                                    {
+                                        currentChooseMatrix.chooses
+                                        .filter((choose) => choose.slot === slotType)
+                                        .map((choose) => 
+                                            choose.potentialPresets
+                                            ?.map((potential, index_pot) => <>
+                                                <div 
+                                                className="relative rounded-xl border border-solid outline-gray-500 cursor-pointer"  
+                                                onClick={() => setListShow((draft) => {draft[index]![3]![index_pot] = !listShow[index]![3]![index_pot]; console.log(index_pot, JSON.stringify(listShow))})}>
+                                                    {describeStat(potential.stat.type, potential.stat.amount, currentGearSet.weaponType.mainStat, currentGearSet.weaponType.subStat, currentGearSet.weaponType.subStat2, region, slotTypeToGearType(slotType), currentGearSet)}
+                                                    
+                                                    {/* このスロットに適用可能な潜在能力の一覧 */}
+                                                    <div hidden={!listShow[index]![3]![index_pot]} className="absolute h-6 p-1 -top-0 left-12 w-fit h-fit z-99 bg-white rounded-lg text-left text-black whitespace-nowrap">
+                                                        {filterBaseItemsBySlotType(slotType).filter((baseItem) => true && baseItem.JMSName === currentChooseMatrix.chooses.filter((choose) => choose.slot === slotType)[0]?.baseItemName).map((baseItem, index2) => { return (
+                                                            <div>
+                                                                {baseItem.PotentialPreset?.map((preset, index3) => (<>
+                                                                    <div className="h-6 mr-8 mb-2 hover:bg-linear-to-r from-pink-200 to-white cursor-pointer" onClick={() => {
+                                                                        // リストをしまう
+                                                                        setListShow((draft) => {draft[index]![3]![index_pot] = false}); 
+                                                                        // 選択した潜在能力プリセットの名前をchooseに格納
+                                                                        updateCurrentChooseMatrix((draft) => { draft.chooses[currentChooseMatrix.chooses.findIndex((choose) => choose.slot === baseItem.type)]!.potentialPresets![index_pot] = preset})
+                                                                        // 選択したスターフォースプリセットの画像パスをchooseに格納
+                                                                        // updateCurrentChooseMatrix((draft) => { draft.chooses[currentChooseMatrix.chooses.findIndex((choose) => choose.slot === baseItem.type)]!.starForce!.images = preset.images})
+                                                                        }}>
+                                                                        {preset.images.map((image) => (
+                                                                            <><img src={image} className="rounded-xl border border-solid outline-gray-500"></img>{preset.JMSName}</>
+                                                                        ))}
+                                                                    </div>
+                                                                </>
+                                                                ))}
+                                                            </div>
+                                                        )})}
+                                                    </div>
+                                                </div>
+                                            </>)
+                                        )
+                                    }
+                                </span>
+                                
+                                
                             </div>
                         </td>
                     </tr>
