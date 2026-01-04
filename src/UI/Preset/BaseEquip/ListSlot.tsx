@@ -231,6 +231,38 @@ export const ListSlot = (typeName: string, slotTypeList: Array<SlotType>, region
                                 </span>
                             </div>
                         </td>
+                        {/* 追加オプション(転生) */}
+                        <td className="relative border border-slate-700">
+                            <div className="">
+                                {/* 現在選択中の追加オプション */}
+                                <span>
+                                    {
+                                        currentChooseMatrix.chooses
+                                        .filter((choose) => choose.slot === slotType)
+                                        .map((choose) => 
+                                            choose.bonusStats
+                                            ?.map((bstat, index_bstat) => <>
+                                                <div 
+                                                className="relative rounded-xl border border-solid outline-gray-500 gap-2"  
+                                                
+                                                >
+                                                    <span className="text-left">{getLocaledStat(bstat.type, currentGearSet.weaponType.mainStat, currentGearSet.weaponType.subStat, currentGearSet.weaponType.subStat2, region)} </span>
+                                                    <span>　　</span>
+                                                    <input 
+                                                    className="text-right" 
+                                                    type="number" 
+                                                    max={999} min={0} placeholder="0" step={1} 
+                                                    name={slotType + " " + bstat.type}
+                                                    onChange={(e) => {updateCurrentChooseMatrix(draft => {
+                                                        draft.chooses[currentChooseMatrix.chooses.findIndex((choose) => choose.slot === slotType)]!.bonusStats![index_bstat]!.amount = Number(e.target.value)
+                                                    })}}></input>
+                                                </div>
+                                            </>)
+                                        )
+                                    }
+                                </span>
+                            </div>
+                        </td>
                     </tr>
                 {   
                     /* 呪文書強化 */
