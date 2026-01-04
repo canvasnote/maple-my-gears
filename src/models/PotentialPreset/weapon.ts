@@ -74,6 +74,7 @@ export const Potential_Weapon_AMA3Percent: PotentialPreset = new PotentialPreset
 
 
 export const Potential_Weapon_150LV = [
+    Potential_None,
     Potential_Weapon_AMA12Percent,
     Potential_Weapon_AMA9Percent,
     Potential_Weapon_AMA6Percent,
@@ -81,6 +82,7 @@ export const Potential_Weapon_150LV = [
 ]
 
 export const Potential_Weapon_160LV = [
+    Potential_None,
     Potential_Weapon_AMA12Percent,
     Potential_Weapon_AMA9Percent,
     Potential_Weapon_AMA6Percent,
@@ -88,6 +90,7 @@ export const Potential_Weapon_160LV = [
 ]
 
 export const Potential_Weapon_200LV = [
+    Potential_None,
     Potential_Weapon_AMA12Percent,
     Potential_Weapon_AMA9Percent,
     Potential_Weapon_AMA6Percent,
@@ -95,6 +98,7 @@ export const Potential_Weapon_200LV = [
 ]
 
 export const Potential_Weapon_Genesis = [
+    Potential_None,
     Potential_Weapon_AMA12Percent,
     Potential_Weapon_AMA9Percent,
     Potential_Weapon_AMA6Percent,
@@ -102,6 +106,7 @@ export const Potential_Weapon_Genesis = [
 ]
 
 export const Potential_Weapon_Destiny = [
+    Potential_None,
     Potential_Weapon_AMA13Percent,
     Potential_Weapon_AMA10Percent,
     Potential_Weapon_AMA7Percent,
