@@ -19,7 +19,7 @@ export const ListSlot = (typeName: string, slotTypeList: Array<SlotType>, region
 
     return (
         <>
-            <tr>
+            <tr className="bg-gray-500">
                 <td className="border border-slate-700">{typeName}</td>
                 <td className="border border-slate-700">ベース装備</td>
                 <td className="border border-slate-700">呪文書強化</td>
@@ -32,7 +32,7 @@ export const ListSlot = (typeName: string, slotTypeList: Array<SlotType>, region
             </tr>
             {slotTypeList.map((slotType, index) => { return (
                 <>
-                    <tr>
+                    <tr className="bg-gray-700">
                         {/* 装備スロット名 */}
                         <td className="border border-slate-700">{slotType}</td>
                         {/* ベース装備 */}
@@ -43,6 +43,7 @@ export const ListSlot = (typeName: string, slotTypeList: Array<SlotType>, region
                                     {
                                         currentChooseMatrix.chooses.filter((choose) => choose.slot === slotType).map((choose) => choose.images.map((image) => <>
                                             <img src={image} className="rounded-xl border border-solid outline-gray-500 cursor-pointer" alt={currentChooseMatrix.chooses[currentChooseMatrix.chooses.findIndex((choose) => choose.slot === slotType)]?.baseItemName}></img>
+                                            {currentChooseMatrix.chooses[currentChooseMatrix.chooses.findIndex((choose) => choose.slot === slotType)]?.baseItemName}
                                         </>))
                                     }
                                     
@@ -77,7 +78,8 @@ export const ListSlot = (typeName: string, slotTypeList: Array<SlotType>, region
                                 <span onClick={() => setListShow((draft) => {draft[index]![1]![0] = !listShow[index]![1]![0]})}>
                                     {
                                         currentChooseMatrix.chooses.filter((choose) => choose.slot === slotType).map((choose) => choose.UG?.images.map((image) => <>
-                                            <img src={image} className="rounded-xl border border-solid outline-gray-500 cursor-pointer" alt={currentChooseMatrix.chooses[currentChooseMatrix.chooses.findIndex((choose) => choose.slot === slotType)]?.baseItemName}></img>
+                                            <img src={image} className="rounded-xl border border-solid outline-gray-500 cursor-pointer" alt={currentChooseMatrix.chooses[currentChooseMatrix.chooses.findIndex((choose) => choose.slot === slotType)]?.UG?.JMSName}></img>
+                                            {currentChooseMatrix.chooses[currentChooseMatrix.chooses.findIndex((choose) => choose.slot === slotType)]?.UG?.JMSName}
                                         </>))
                                     }
                                 </span>
