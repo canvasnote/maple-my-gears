@@ -211,7 +211,7 @@ export const ListSlot = (typeName: string, slotTypeList: Array<SlotType>, region
                                                     <div hidden={!listShow[index]![4]![index_pot]} className="absolute h-6 p-1 -top-0 left-12 w-fit h-fit z-99 bg-white rounded-lg text-left text-black whitespace-nowrap">
                                                         {filterBaseItemsBySlotType(slotType).filter((baseItem) => true && baseItem.JMSName === currentChooseMatrix.chooses.filter((choose) => choose.slot === slotType)[0]?.baseItemName).map((baseItem, index2) => { return (
                                                             <div>
-                                                                {baseItem.PotentialPresets?.map((preset) => (<>
+                                                                {baseItem.bonusPotentialPresets?.map((preset) => (<>
                                                                     <div className="h-6 mr-8 mb-2 hover:bg-linear-to-r from-pink-200 to-white cursor-pointer" onClick={() => {
                                                                         // リストをしまう
                                                                         setListShow((draft) => {draft[index]![4]![index_pot] = false}); 

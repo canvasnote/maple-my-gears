@@ -35,6 +35,7 @@ import type { UGPreset } from "@/models/UGPreset"
 import type { StarForcePreset } from "@/models/starforce"
 import type { PotentialPreset } from "@/models/PotentialPreset"
 import type { SymbolLevelPreset } from "@/models/SymbolsLevel"
+import type { BonusPotentialPreset } from "@/models/BonusPotentialPreset"
 
 export interface IBaseItem{
     type: GearType
@@ -46,6 +47,7 @@ export interface IBaseItem{
     UGPreset?: Array<UGPreset>,
     StarForcePresets?: Array<StarForcePreset>,
     PotentialPresets?: Array<PotentialPreset>,
+    bonusPotentialPresets?: Array<BonusPotentialPreset>,
     SymbolLevelPresets?: Array<SymbolLevelPreset>
     // symbolLevel?: IntRange<1, 12>
     // UG: undefined

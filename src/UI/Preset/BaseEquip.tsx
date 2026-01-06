@@ -14,7 +14,7 @@ import destiny from "@/assets/images/weapon/destiny.webp"
 
 import { SelectPreset } from "./SelectPreset"
 import { useState, type Dispatch, type SetStateAction } from "react"
-import { ListSlot } from "./BaseEquip/ListSlot"
+import { ListSlot } from "./ListSlot"
 import type { GearSet } from "@/gears/Gearset/gearset"
 import type { Region } from "@/i18n"
 import type { Updater } from "use-immer"

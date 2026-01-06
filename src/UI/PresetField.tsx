@@ -14,7 +14,7 @@ import { PotentialWeapon } from "./Preset/PotentialWeapon"
 import { PotentialSubWeapon } from "./Preset/PotentialSubWeapon"
 import { PotentialEmbrem } from "./Preset/PotentialEmbrem"
 import { BonusStat } from "./Preset/BonusStat"
-import { ListSlot } from "./Preset/BaseEquip/ListSlot"
+import { ListSlot } from "./Preset/ListSlot"
 import type { ChooseMatrix } from "@/models/chooseMatrix"
 
 export const PresetField = (globalRenderer: number, setGlobalRenderer: Dispatch<SetStateAction<number>>, currentGearSet: GearSet, updateCurrentGearSet: Updater<GearSet>, region: Region, currentChooseMatrix: ChooseMatrix, updateCurrentChooseMatrix: Updater<ChooseMatrix>) => {
